@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0272C289796C8F952CFCABC8 /* libPods-MobileFinaliOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2BA2D745D007767402234BD /* libPods-MobileFinaliOS.a */; };
 		D1347FC81D26FBA7007B32E2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D1347FC71D26FBA7007B32E2 /* main.m */; };
 		D1347FCB1D26FBA7007B32E2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D1347FCA1D26FBA7007B32E2 /* AppDelegate.m */; };
 		D1347FCE1D26FBA7007B32E2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1347FCD1D26FBA7007B32E2 /* ViewController.m */; };
@@ -17,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		692DB7F0BB074A33CCC36FD7 /* Pods-MobileFinaliOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileFinaliOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-MobileFinaliOS/Pods-MobileFinaliOS.release.xcconfig"; sourceTree = "<group>"; };
+		BD83143C2748E6702DEA32E4 /* Pods-MobileFinaliOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileFinaliOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MobileFinaliOS/Pods-MobileFinaliOS.debug.xcconfig"; sourceTree = "<group>"; };
 		D1347FC31D26FBA7007B32E2 /* MobileFinaliOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileFinaliOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1347FC71D26FBA7007B32E2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D1347FC91D26FBA7007B32E2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -28,6 +31,7 @@
 		D1347FD51D26FBA7007B32E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D1347FD81D26FBA7007B32E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D1347FDA1D26FBA7007B32E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2BA2D745D007767402234BD /* libPods-MobileFinaliOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MobileFinaliOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +39,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0272C289796C8F952CFCABC8 /* libPods-MobileFinaliOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9A8CCAB79E3772BEC33BBC04 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BD83143C2748E6702DEA32E4 /* Pods-MobileFinaliOS.debug.xcconfig */,
+				692DB7F0BB074A33CCC36FD7 /* Pods-MobileFinaliOS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D1347FBA1D26FBA7007B32E2 = {
 			isa = PBXGroup;
 			children = (
 				D1347FC51D26FBA7007B32E2 /* MobileFinaliOS */,
 				D1347FC41D26FBA7007B32E2 /* Products */,
+				9A8CCAB79E3772BEC33BBC04 /* Pods */,
+				D9A5DFD2869D58E151724460 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -82,6 +98,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		D9A5DFD2869D58E151724460 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D2BA2D745D007767402234BD /* libPods-MobileFinaliOS.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -89,9 +113,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D1347FDD1D26FBA7007B32E2 /* Build configuration list for PBXNativeTarget "MobileFinaliOS" */;
 			buildPhases = (
+				3EFB16E214BA15E5757967AA /* [CP] Check Pods Manifest.lock */,
 				D1347FBF1D26FBA7007B32E2 /* Sources */,
 				D1347FC01D26FBA7007B32E2 /* Frameworks */,
 				D1347FC11D26FBA7007B32E2 /* Resources */,
+				79F85F6D1C6E7A9A7DEF6985 /* [CP] Embed Pods Frameworks */,
+				07C7C9F225CA3D3E67271AF8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -146,6 +173,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		07C7C9F225CA3D3E67271AF8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MobileFinaliOS/Pods-MobileFinaliOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3EFB16E214BA15E5757967AA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		79F85F6D1C6E7A9A7DEF6985 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MobileFinaliOS/Pods-MobileFinaliOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D1347FBF1D26FBA7007B32E2 /* Sources */ = {
@@ -265,6 +340,7 @@
 		};
 		D1347FDE1D26FBA7007B32E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD83143C2748E6702DEA32E4 /* Pods-MobileFinaliOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MobileFinaliOS/Info.plist;
@@ -276,6 +352,7 @@
 		};
 		D1347FDF1D26FBA7007B32E2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 692DB7F0BB074A33CCC36FD7 /* Pods-MobileFinaliOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MobileFinaliOS/Info.plist;
@@ -304,6 +381,7 @@
 				D1347FDF1D26FBA7007B32E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
