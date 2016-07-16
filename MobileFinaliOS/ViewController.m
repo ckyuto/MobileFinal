@@ -16,7 +16,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    // TODO(developer) Configure the sign-in button look/feel
+    
+    [GIDSignIn sharedInstance].uiDelegate = self;
+    
+    // Uncomment to automatically sign in the user.
+    //[[GIDSignIn sharedInstance] signInSilently];
 }
 
 - (void)didReceiveMemoryWarning {
