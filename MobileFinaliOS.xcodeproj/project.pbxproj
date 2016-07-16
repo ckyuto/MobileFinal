@@ -15,6 +15,11 @@
 		D1347FD41D26FBA7007B32E2 /* MobileFinaliOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D1347FD21D26FBA7007B32E2 /* MobileFinaliOS.xcdatamodeld */; };
 		D1347FD61D26FBA7007B32E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1347FD51D26FBA7007B32E2 /* Assets.xcassets */; };
 		D1347FD91D26FBA7007B32E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1347FD71D26FBA7007B32E2 /* LaunchScreen.storyboard */; };
+		D135C0591D39B9450087BC8A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D135C0581D39B9450087BC8A /* GoogleService-Info.plist */; };
+		D135C05B1D39F9A30087BC8A /* GoogleSignIn.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D135C05A1D39F9A30087BC8A /* GoogleSignIn.bundle */; };
+		D135C05D1D39F9D10087BC8A /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D135C05C1D39F9D10087BC8A /* AddressBook.framework */; };
+		D135C05F1D39F9DE0087BC8A /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D135C05E1D39F9DE0087BC8A /* SafariServices.framework */; };
+		D135C0611D39F9E70087BC8A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D135C0601D39F9E70087BC8A /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +36,11 @@
 		D1347FD51D26FBA7007B32E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D1347FD81D26FBA7007B32E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D1347FDA1D26FBA7007B32E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D135C0581D39B9450087BC8A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D135C05A1D39F9A30087BC8A /* GoogleSignIn.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GoogleSignIn.bundle; sourceTree = "<group>"; };
+		D135C05C1D39F9D10087BC8A /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		D135C05E1D39F9DE0087BC8A /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		D135C0601D39F9E70087BC8A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D2BA2D745D007767402234BD /* libPods-MobileFinaliOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MobileFinaliOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -39,6 +49,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D135C0611D39F9E70087BC8A /* SystemConfiguration.framework in Frameworks */,
+				D135C05F1D39F9DE0087BC8A /* SafariServices.framework in Frameworks */,
+				D135C05D1D39F9D10087BC8A /* AddressBook.framework in Frameworks */,
 				0272C289796C8F952CFCABC8 /* libPods-MobileFinaliOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -58,6 +71,8 @@
 		D1347FBA1D26FBA7007B32E2 = {
 			isa = PBXGroup;
 			children = (
+				D135C05A1D39F9A30087BC8A /* GoogleSignIn.bundle */,
+				D135C0581D39B9450087BC8A /* GoogleService-Info.plist */,
 				D1347FC51D26FBA7007B32E2 /* MobileFinaliOS */,
 				D1347FC41D26FBA7007B32E2 /* Products */,
 				9A8CCAB79E3772BEC33BBC04 /* Pods */,
@@ -101,6 +116,9 @@
 		D9A5DFD2869D58E151724460 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D135C0601D39F9E70087BC8A /* SystemConfiguration.framework */,
+				D135C05E1D39F9DE0087BC8A /* SafariServices.framework */,
+				D135C05C1D39F9D10087BC8A /* AddressBook.framework */,
 				D2BA2D745D007767402234BD /* libPods-MobileFinaliOS.a */,
 			);
 			name = Frameworks;
@@ -166,7 +184,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D135C05B1D39F9A30087BC8A /* GoogleSignIn.bundle in Resources */,
 				D1347FD91D26FBA7007B32E2 /* LaunchScreen.storyboard in Resources */,
+				D135C0591D39B9450087BC8A /* GoogleService-Info.plist in Resources */,
 				D1347FD61D26FBA7007B32E2 /* Assets.xcassets in Resources */,
 				D1347FD11D26FBA7007B32E2 /* Main.storyboard in Resources */,
 			);
@@ -296,6 +316,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -333,6 +354,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -345,7 +367,62 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MobileFinaliOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cmu.MobileFinaliOS;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-l\"c++\"",
+					"-l\"sqlite3\"",
+					"-l\"stdc++\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AdSupport\"",
+					"-framework",
+					"\"AddressBook\"",
+					"-framework",
+					"\"AssetsLibrary\"",
+					"-framework",
+					"\"CoreFoundation\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreMotion\"",
+					"-framework",
+					"\"CoreText\"",
+					"-framework",
+					"\"FirebaseAnalytics\"",
+					"-framework",
+					"\"FirebaseInstanceID\"",
+					"-framework",
+					"\"GGLCore\"",
+					"-framework",
+					"\"GGLSignIn\"",
+					"-framework",
+					"\"GoogleAppUtilities\"",
+					"-framework",
+					"\"GoogleAuthUtilities\"",
+					"-framework",
+					"\"GoogleInterchangeUtilities\"",
+					"-framework",
+					"\"GoogleNetworkingUtilities\"",
+					"-framework",
+					"\"GoogleSignIn\"",
+					"-framework",
+					"\"GoogleSymbolUtilities\"",
+					"-framework",
+					"\"GoogleUtilities\"",
+					"-framework",
+					"\"MessageUI\"",
+					"-framework",
+					"\"SafariServices\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"StoreKit\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = mobile.final.project.team4;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -357,7 +434,62 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MobileFinaliOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cmu.MobileFinaliOS;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-l\"c++\"",
+					"-l\"sqlite3\"",
+					"-l\"stdc++\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AdSupport\"",
+					"-framework",
+					"\"AddressBook\"",
+					"-framework",
+					"\"AssetsLibrary\"",
+					"-framework",
+					"\"CoreFoundation\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreMotion\"",
+					"-framework",
+					"\"CoreText\"",
+					"-framework",
+					"\"FirebaseAnalytics\"",
+					"-framework",
+					"\"FirebaseInstanceID\"",
+					"-framework",
+					"\"GGLCore\"",
+					"-framework",
+					"\"GGLSignIn\"",
+					"-framework",
+					"\"GoogleAppUtilities\"",
+					"-framework",
+					"\"GoogleAuthUtilities\"",
+					"-framework",
+					"\"GoogleInterchangeUtilities\"",
+					"-framework",
+					"\"GoogleNetworkingUtilities\"",
+					"-framework",
+					"\"GoogleSignIn\"",
+					"-framework",
+					"\"GoogleSymbolUtilities\"",
+					"-framework",
+					"\"GoogleUtilities\"",
+					"-framework",
+					"\"MessageUI\"",
+					"-framework",
+					"\"SafariServices\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"StoreKit\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = mobile.final.project.team4;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
