@@ -117,6 +117,8 @@ didSignInForUser:(GIDGoogleUser *)user
                                          NSDictionary *userDict = [NSJSONSerialization JSONObjectWithData:data
                                                                                                   options:0
                                                                                                     error:NULL];
+                                         
+                                         NSLog(@"%@", [userDict descriptionInStringsFileFormat]);
                                      }
                                  }];
     [task resume];
