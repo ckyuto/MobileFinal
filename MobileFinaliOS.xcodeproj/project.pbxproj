@@ -41,6 +41,7 @@
 		D135C05C1D39F9D10087BC8A /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		D135C05E1D39F9DE0087BC8A /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		D135C0601D39F9E70087BC8A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		D19053AB1D3EAA2600539ECC /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		D2BA2D745D007767402234BD /* libPods-MobileFinaliOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MobileFinaliOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -93,6 +94,7 @@
 			children = (
 				D1347FC91D26FBA7007B32E2 /* AppDelegate.h */,
 				D1347FCA1D26FBA7007B32E2 /* AppDelegate.m */,
+				D19053AB1D3EAA2600539ECC /* Constants.h */,
 				D1347FCC1D26FBA7007B32E2 /* ViewController.h */,
 				D1347FCD1D26FBA7007B32E2 /* ViewController.m */,
 				D1347FCF1D26FBA7007B32E2 /* Main.storyboard */,

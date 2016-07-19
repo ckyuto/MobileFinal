@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "Constants.h"
 
 @interface AppDelegate ()
 
@@ -94,6 +95,8 @@ didSignInForUser:(GIDGoogleUser *)user
     NSString *email = user.profile.email;
     NSLog(email);
 }
+
+
 
 - (void)signIn:(GIDSignIn *)signIn
 didDisconnectWithUser:(GIDGoogleUser *)user
