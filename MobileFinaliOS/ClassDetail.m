@@ -48,22 +48,7 @@
 {
     NSLog(@"%@", _detailItem);
     
-    NSDictionary *entities = _detailItem[@"entities"];
-    NSArray *medias = entities[@"media"];
-    NSDictionary *ImageUrls = medias[0];
-    NSString *imageURL = ImageUrls[@"media_url_https"];
     
-    if (imageURL) {
-        
-        [self dismissModalViewControllerAnimated:YES];
-        
-        NSURL *url = [[NSURL alloc] initWithString:imageURL ];
-        NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
-        _assetImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:url]];
-        NSLog(@"imageURL:%@", imageURL);
-        NSLog(@"%@", _assetImage);
-        
-    }
 }
 
 

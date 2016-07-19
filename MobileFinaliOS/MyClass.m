@@ -79,7 +79,6 @@
     // Get the new view controller using [segue destinationViewController].
     if ([segue.identifier isEqualToString: @"classList"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
-        class
     }
     // Pass the selected object to the new view controller.
     
