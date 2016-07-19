@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "Constants.h"
+#import "Util.h"
 
 @interface AppDelegate ()
 
@@ -86,14 +88,41 @@
 didSignInForUser:(GIDGoogleUser *)user
      withError:(NSError *)error {
     // Perform any operations on signed in user here.
-    NSString *userId = user.userID;                  // For client-side use only!
-    NSString *idToken = user.authentication.idToken; // Safe to send to the server
-    NSString *fullName = user.profile.name;
-    NSString *givenName = user.profile.givenName;
-    NSString *familyName = user.profile.familyName;
+//    NSString *userId = user.userID;                  // For client-side use only!
+//    NSString *idToken = user.authentication.idToken; // Safe to send to the server
+//    NSString *fullName = user.profile.name;
+//    NSString *givenName = user.profile.givenName;
+//    NSString *familyName = user.profile.familyName;
     NSString *email = user.profile.email;
-    NSLog(email);
+    [self fetchUserObject:email];
 }
+
+- (void) fetchUserObject: (NSString*) userName{
+    
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+
+    NSURL *url = [NSURL URLWithString: [REST_BASE_URL stringByAppendingString:@"getUser"]];
+    
+    NSDictionary *params = @{@"userName": userName};
+    
+    [request setURL:url];
+    [request setHTTPMethod:@"POST"];
+    [request setHTTPBody:[Util httpBodyForParamsDictionary:params]];
+    
+    
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *task = [session dataTaskWithRequest:request
+                                 completionHandler: ^(NSData *data, NSURLResponse *response, NSError *error) {
+                                     if (data.length > 0 && error == nil){
+                                         NSDictionary *userDict = [NSJSONSerialization JSONObjectWithData:data
+                                                                                                  options:0
+                                                                                                    error:NULL];
+                                     }
+                                 }];
+    [task resume];
+}
+
+
 
 - (void)signIn:(GIDSignIn *)signIn
 didDisconnectWithUser:(GIDGoogleUser *)user
