@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <Social/Social.h>
 #import <Accounts/Accounts.h>
-#import "GTLCalendar.h"
 
 @interface Util : NSObject
 
