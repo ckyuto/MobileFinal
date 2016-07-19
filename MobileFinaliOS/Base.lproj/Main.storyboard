@@ -44,13 +44,13 @@
         <!--Root View Controller-->
         <scene sceneID="NcE-wY-hhH">
             <objects>
-                <tableViewController id="Y7r-sT-DZW" sceneMemberID="viewController">
+                <tableViewController id="Y7r-sT-DZW" customClass="MyClass" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="KCz-R7-tg2">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="oCf-51-BO9">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="classCell" id="oCf-51-BO9">
                                 <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oCf-51-BO9" id="jZu-Ic-jN7">
@@ -66,6 +66,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="lvj-Ye-juv"/>
                     <connections>
+                        <outlet property="myClassList" destination="KCz-R7-tg2" id="zDa-44-FPp"/>
                         <segue destination="fFf-se-EIt" kind="push" identifier="classList" id="pqp-tN-uUd"/>
                     </connections>
                 </tableViewController>
@@ -94,7 +95,7 @@
         <scene sceneID="a9F-2Q-Agz">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6tM-yS-2jb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="fFf-se-EIt" userLabel="Class Detail" sceneMemberID="viewController">
+                <viewController id="fFf-se-EIt" userLabel="Class Detail" customClass="ClassDetail" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GlF-ta-sbP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

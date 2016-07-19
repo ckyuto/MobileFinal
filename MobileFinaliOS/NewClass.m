@@ -37,6 +37,8 @@
 }
 */
 
+#pragma mark Save and cancel operations
+
 - (IBAction)saveClass:(id)sender {
     NSString * name = courseName.text;
     NSString * desc = description.text;
