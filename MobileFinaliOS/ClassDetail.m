@@ -44,6 +44,9 @@
     }
 }
 
+- (IBAction)jumpToQuizPage:(id)sender {
+}
+
 - (void)configureView
 {
     NSLog(@"%@", _detailItem);
