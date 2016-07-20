@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "Constants.h"
 #import "Util.h"
+#import "SettingViewController.h"
 
 @interface AppDelegate ()
 
@@ -24,7 +25,6 @@
     NSAssert(!configureError, @"Error configuring Google services: %@", configureError);
     
     [GIDSignIn sharedInstance].delegate = self;
-    
     return YES;
 }
 
@@ -117,8 +117,27 @@ didSignInForUser:(GIDGoogleUser *)user
                                          NSDictionary *userDict = [NSJSONSerialization JSONObjectWithData:data
                                                                                                   options:0
                                                                                                     error:NULL];
-                                         
+                                         globalUserDict = userDict;
                                          NSLog(@"%@", [userDict descriptionInStringsFileFormat]);
+                                         
+                                         //UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main.storyboard" bundle:nil];
+                                         if([userDict objectForKey:@"role"] == (id)[NSNull null]){
+                                                                                          UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                                             UIViewController *initViewController = [storyboard instantiateViewControllerWithIdentifier:@"SettingViewController"];
+                                             self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+                                             [self.window makeKeyAndVisible];
+                                             
+                                             
+                                             [UIView transitionWithView:self.window
+                                                               duration:0.5
+                                                                options:UIViewAnimationOptionTransitionFlipFromLeft
+                                                             animations:^{ self.window.rootViewController = initViewController; }
+                                                             completion:nil];
+                                             
+                                         }else{
+                                             
+                                         }
+                                         
                                      }
                                  }];
     [task resume];
