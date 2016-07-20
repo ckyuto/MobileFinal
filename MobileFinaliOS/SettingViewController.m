@@ -7,7 +7,6 @@
 //
 
 #import "SettingViewController.h"
-#import "Constants.h"
 #import "Util.h"
 
 @implementation SettingViewController

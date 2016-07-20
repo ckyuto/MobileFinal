@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "Constants.h"
 #import "Util.h"
 #import "SettingViewController.h"
 
