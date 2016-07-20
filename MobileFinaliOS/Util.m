@@ -11,6 +11,8 @@
 
 @implementation Util
 
+static NSMutableDictionary* globalUserDict;
+
 + (void) showAlert: (UIViewController *) view title:(NSString *) title message:(NSString *) message{
     UIAlertController * alert = [UIAlertController
                                  alertControllerWithTitle:title
@@ -29,7 +31,7 @@
 
 }
 
-+ (NSData *)httpBodyForParamsDictionary:(NSDictionary *)paramDictionary
++ (NSData *)httpBodyForParamsDictionary:(NSMutableDictionary *)paramDictionary
 {
     NSMutableArray *parameterArray = [NSMutableArray array];
     
@@ -43,6 +45,7 @@
     return [string dataUsingEncoding:NSUTF8StringEncoding];
 }
 
+
 + (NSString *)percentEscapeString:(NSString *)string
 {
     NSString *result = CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,
@@ -53,5 +56,16 @@
     return [result stringByReplacingOccurrencesOfString:@" " withString:@"+"];
 }
 
++ (NSString *)restBaseUrl{
+    return @"http://50.19.186.200:8080/mobilefinalbackend/rest/";
+}
+
++ (NSMutableDictionary*) getUserDict{
+    return globalUserDict;
+}
+
++(void) setUserDict:(NSMutableDictionary*) userDict{
+    globalUserDict = userDict;
+}
 
 @end

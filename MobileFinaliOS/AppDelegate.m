@@ -101,9 +101,10 @@ didSignInForUser:(GIDGoogleUser *)user
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
 
-    NSURL *url = [NSURL URLWithString: [REST_BASE_URL stringByAppendingString:@"getUser"]];
+    NSURL *url = [NSURL URLWithString: [[Util restBaseUrl] stringByAppendingString:@"getUser"]];
     
-    NSDictionary *params = @{@"userName": userName};
+    NSMutableDictionary *params = [[NSMutableDictionary alloc]init];
+    [params setObject:userName forKey:@"userName"];
     
     [request setURL:url];
     [request setHTTPMethod:@"POST"];
@@ -114,20 +115,19 @@ didSignInForUser:(GIDGoogleUser *)user
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request
                                  completionHandler: ^(NSData *data, NSURLResponse *response, NSError *error) {
                                      if (data.length > 0 && error == nil){
-                                         NSDictionary *userDict = [NSJSONSerialization JSONObjectWithData:data
+                                         NSMutableDictionary *userDict = [NSJSONSerialization JSONObjectWithData:data
                                                                                                   options:0
                                                                                                     error:NULL];
-                                         globalUserDict = userDict;
+                                         
+                                         [Util setUserDict:userDict];
                                          NSLog(@"%@", [userDict descriptionInStringsFileFormat]);
                                          
-                                         //UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main.storyboard" bundle:nil];
+                                         self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+                                         [self.window makeKeyAndVisible];
+                                         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                                         
                                          if([userDict objectForKey:@"role"] == (id)[NSNull null]){
-                                                                                          UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
                                              UIViewController *initViewController = [storyboard instantiateViewControllerWithIdentifier:@"SettingViewController"];
-                                             self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-                                             [self.window makeKeyAndVisible];
-                                             
-                                             
                                              [UIView transitionWithView:self.window
                                                                duration:0.5
                                                                 options:UIViewAnimationOptionTransitionFlipFromLeft

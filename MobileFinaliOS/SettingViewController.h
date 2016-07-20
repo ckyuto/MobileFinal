@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SettingViewController : UIViewController
+@interface SettingViewController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate>
+@property (strong, nonatomic) IBOutlet UITextField *tfName;
+@property (strong, nonatomic) IBOutlet UITextField *tfAndrewId;
+@property (strong, nonatomic) IBOutlet UITextField *tfRole;
+
+- (IBAction)nextBtnClick:(id)sender;
 
 @end

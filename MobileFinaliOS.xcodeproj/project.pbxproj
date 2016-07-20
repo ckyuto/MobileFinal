@@ -45,7 +45,6 @@
 		D135C05C1D39F9D10087BC8A /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		D135C05E1D39F9DE0087BC8A /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		D135C0601D39F9E70087BC8A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		D19053AB1D3EAA2600539ECC /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		D19053AC1D3EC68400539ECC /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
 		D19053AD1D3EC68400539ECC /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
 		D19053AF1D3F4E9800539ECC /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
@@ -109,7 +108,6 @@
 			children = (
 				D1347FC91D26FBA7007B32E2 /* AppDelegate.h */,
 				D1347FCA1D26FBA7007B32E2 /* AppDelegate.m */,
-				D19053AB1D3EAA2600539ECC /* Constants.h */,
 				D1347FCC1D26FBA7007B32E2 /* ViewController.h */,
 				D1347FCD1D26FBA7007B32E2 /* ViewController.m */,
 				E27FDBAC1D3EC2D000D29D29 /* ClassDetail.h */,
