@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -24,7 +24,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="130" y="299"/>
+            <point key="canvasLocation" x="-588" y="309"/>
         </scene>
         <!--Share-->
         <scene sceneID="XY6-g7-arc">
@@ -39,7 +39,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZLu-rC-2Rp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1422" y="306"/>
+            <point key="canvasLocation" x="704" y="316"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="NcE-wY-hhH">
@@ -72,7 +72,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ySc-Wz-q1z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="924" y="1048"/>
+            <point key="canvasLocation" x="206" y="1058"/>
         </scene>
         <!--My Class-->
         <scene sceneID="s2F-ZU-yXp">
@@ -89,22 +89,72 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3nV-Aw-4ne" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="498" y="1048"/>
+            <point key="canvasLocation" x="-220" y="1058"/>
         </scene>
         <!--Class Detail-->
         <scene sceneID="a9F-2Q-Agz">
             <objects>
                 <viewController id="fFf-se-EIt" userLabel="Class Detail" customClass="ClassDetail" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="GlF-ta-sbP">
+                    <view key="view" contentMode="scaleToFill" id="5lu-D1-vtD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ZHW-gp-Exw">
+                                <rect key="frame" x="34" y="269" width="95" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Start Auditing"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="gSG-Fw-65z" userLabel="Statistics">
+                                <rect key="frame" x="34" y="321" width="64" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Statistics"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="veH-jx-FTh">
+                                <rect key="frame" x="34" y="369" width="85" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Quiz History"/>
+                                <connections>
+                                    <action selector="jumpToQuizPage:" destination="fFf-se-EIt" eventType="touchUpInside" id="bWt-0X-uiB"/>
+                                    <segue destination="FUc-GG-Nlg" kind="push" id="CzJ-HU-4eP"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="FzS-Vb-78j"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6tM-yS-2jb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1318" y="1048"/>
+            <point key="canvasLocation" x="600" y="1058"/>
+        </scene>
+        <!--Quiz History-->
+        <scene sceneID="Ovb-HS-alx">
+            <objects>
+                <tableViewController id="FUc-GG-Nlg" userLabel="Quiz History" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ipk-gB-ob8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="a4Y-bH-iCL">
+                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a4Y-bH-iCL" id="TIS-hJ-3jN">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="FUc-GG-Nlg" id="kkU-BR-lRL"/>
+                            <outlet property="delegate" destination="FUc-GG-Nlg" id="DLO-ja-hbL"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Qqr-Gj-aSL"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pQn-ol-wfW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="976" y="1058"/>
         </scene>
         <!--New Class-->
         <scene sceneID="PHr-fP-CFF">
@@ -167,7 +217,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gAF-5D-hST" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="930" y="-107"/>
+            <point key="canvasLocation" x="212" y="-97"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="4SS-yp-jWQ">
@@ -186,7 +236,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F6c-X7-ZVK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="498" y="328"/>
+            <point key="canvasLocation" x="-220" y="338"/>
         </scene>
     </scenes>
 </document>

@@ -14,5 +14,6 @@
 
 - (void)setDetailItem:(NSDictionary*)newDetailItem;
 
+- (IBAction)jumpToQuizPage:(id)sender;
 
 @end
