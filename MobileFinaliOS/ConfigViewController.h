@@ -1,5 +1,5 @@
 //
-//  SettingViewController.h
+//  ConfigViewController.h
 //  MobileFinaliOS
 //
 //  Created by Wei YuYen on 2016/7/20.
@@ -8,11 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SettingViewController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate>
+@interface ConfigViewController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate>
 @property (strong, nonatomic) IBOutlet UITextField *tfName;
 @property (strong, nonatomic) IBOutlet UITextField *tfAndrewId;
 @property (strong, nonatomic) IBOutlet UITextField *tfRole;
-
 - (IBAction)nextBtnClick:(id)sender;
 
 @end

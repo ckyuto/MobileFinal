@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -24,12 +24,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-398" y="306"/>
+            <point key="canvasLocation" x="-593" y="285"/>
         </scene>
-        <!--Setting View Controller-->
+        <!--Config View Controller-->
         <scene sceneID="Qo9-lK-wlD">
             <objects>
-                <viewController storyboardIdentifier="SettingViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="SWo-kw-Rkl" customClass="SettingViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ConfigViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="SWo-kw-Rkl" customClass="ConfigViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dCQ-D3-y6A">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -78,21 +78,21 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Next"/>
                                 <connections>
-                                    <action selector="nextBtnClick:" destination="SWo-kw-Rkl" eventType="touchUpInside" id="69T-Bw-H7l"/>
+                                    <action selector="nextBtnClick:" destination="SWo-kw-Rkl" eventType="touchUpInside" id="AKu-Pe-11k"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="tfAndrewId" destination="oxK-Vb-hgG" id="IZm-4D-6Qm"/>
-                        <outlet property="tfName" destination="fsb-0v-7uI" id="01N-38-asj"/>
-                        <outlet property="tfRole" destination="1Uf-Ur-YmD" id="5Ms-kC-hOY"/>
+                        <outlet property="tfAndrewId" destination="oxK-Vb-hgG" id="ep2-U6-ZLa"/>
+                        <outlet property="tfName" destination="fsb-0v-7uI" id="xgD-yg-9Pe"/>
+                        <outlet property="tfRole" destination="1Uf-Ur-YmD" id="Wm3-XW-pXb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SGX-eF-QY4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="42" y="306"/>
+            <point key="canvasLocation" x="-209" y="266"/>
         </scene>
         <!--Share-->
         <scene sceneID="XY6-g7-arc">
@@ -119,7 +119,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="classCell" id="oCf-51-BO9">
-                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oCf-51-BO9" id="jZu-Ic-jN7">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -157,7 +157,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3nV-Aw-4ne" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-220" y="1058"/>
+            <point key="canvasLocation" x="-222" y="1330"/>
         </scene>
         <!--Class Detail-->
         <scene sceneID="a9F-2Q-Agz">
@@ -304,7 +304,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F6c-X7-ZVK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-220" y="338"/>
+            <point key="canvasLocation" x="-232" y="934"/>
         </scene>
     </scenes>
 </document>

@@ -20,7 +20,7 @@
 		D135C05F1D39F9DE0087BC8A /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D135C05E1D39F9DE0087BC8A /* SafariServices.framework */; };
 		D135C0611D39F9E70087BC8A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D135C0601D39F9E70087BC8A /* SystemConfiguration.framework */; };
 		D19053AE1D3EC68400539ECC /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = D19053AD1D3EC68400539ECC /* Util.m */; };
-		D19053B11D3F4E9900539ECC /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D19053B01D3F4E9800539ECC /* SettingViewController.m */; };
+		D19053B41D40283100539ECC /* ConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D19053B31D40283100539ECC /* ConfigViewController.m */; };
 		E23F33F71D3ECF3100C2B145 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E23F33F61D3ECF3100C2B145 /* Main.storyboard */; };
 		E2723E401D4016B40076C2BE /* QuizHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = E2723E3F1D4016B40076C2BE /* QuizHistory.m */; };
 		E27FDBA81D3E982E00D29D29 /* NewClass.m in Sources */ = {isa = PBXBuildFile; fileRef = E27FDBA71D3E982E00D29D29 /* NewClass.m */; };
@@ -48,8 +48,8 @@
 		D135C0601D39F9E70087BC8A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D19053AC1D3EC68400539ECC /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
 		D19053AD1D3EC68400539ECC /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
-		D19053AF1D3F4E9800539ECC /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
-		D19053B01D3F4E9800539ECC /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		D19053B21D40283100539ECC /* ConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigViewController.h; sourceTree = "<group>"; };
+		D19053B31D40283100539ECC /* ConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigViewController.m; sourceTree = "<group>"; };
 		D2BA2D745D007767402234BD /* libPods-MobileFinaliOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MobileFinaliOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E23F33F61D3ECF3100C2B145 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E2723E3E1D4016B40076C2BE /* QuizHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizHistory.h; sourceTree = "<group>"; };
@@ -115,12 +115,12 @@
 				D1347FCD1D26FBA7007B32E2 /* ViewController.m */,
 				E27FDBAC1D3EC2D000D29D29 /* ClassDetail.h */,
 				E27FDBAD1D3EC2D000D29D29 /* ClassDetail.m */,
+				D19053B21D40283100539ECC /* ConfigViewController.h */,
+				D19053B31D40283100539ECC /* ConfigViewController.m */,
 				E27FDBA91D3EB23000D29D29 /* MyClass.h */,
 				E27FDBAA1D3EB23000D29D29 /* MyClass.m */,
 				E27FDBA61D3E982E00D29D29 /* NewClass.h */,
 				E27FDBA71D3E982E00D29D29 /* NewClass.m */,
-				D19053AF1D3F4E9800539ECC /* SettingViewController.h */,
-				D19053B01D3F4E9800539ECC /* SettingViewController.m */,
 				D19053AC1D3EC68400539ECC /* Util.h */,
 				D19053AD1D3EC68400539ECC /* Util.m */,
 				D1347FD51D26FBA7007B32E2 /* Assets.xcassets */,
@@ -279,6 +279,7 @@
 			files = (
 				E27FDBAB1D3EB23000D29D29 /* MyClass.m in Sources */,
 				D1347FD41D26FBA7007B32E2 /* MobileFinaliOS.xcdatamodeld in Sources */,
+				D19053B41D40283100539ECC /* ConfigViewController.m in Sources */,
 				D1347FCE1D26FBA7007B32E2 /* ViewController.m in Sources */,
 				E27FDBAE1D3EC2D000D29D29 /* ClassDetail.m in Sources */,
 				D1347FCB1D26FBA7007B32E2 /* AppDelegate.m in Sources */,

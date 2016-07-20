@@ -1,15 +1,15 @@
 //
-//  SettingViewController.m
+//  ConfigViewController.m
 //  MobileFinaliOS
 //
 //  Created by Wei YuYen on 2016/7/20.
 //  Copyright © 2016年 Carnegie Mellon University. All rights reserved.
 //
 
-#import "SettingViewController.h"
+#import "ConfigViewController.h"
 #import "Util.h"
 
-@implementation SettingViewController
+@implementation ConfigViewController
 {
     NSArray *roleData;
 }
@@ -40,9 +40,9 @@
 }
 
 - (IBAction)nextBtnClick:(id)sender {
-//    [globalUserDict setObject:self.tfName.text forKey:@"name"];
-//    [globalUserDict setObject:self.tfAndrewId.text forKey:@"andrewId"];
-//    [globalUserDict setObject:self.tfRole.text forKey:@"role"];
+    //    [globalUserDict setObject:self.tfName.text forKey:@"name"];
+    //    [globalUserDict setObject:self.tfAndrewId.text forKey:@"andrewId"];
+    //    [globalUserDict setObject:self.tfRole.text forKey:@"role"];
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     
@@ -60,4 +60,5 @@
     
     [task resume];
 }
+
 @end

@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 #import "Util.h"
-#import "SettingViewController.h"
 
 @interface AppDelegate ()
 
@@ -126,7 +125,7 @@ didSignInForUser:(GIDGoogleUser *)user
                                          UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
                                          
                                          if([userDict objectForKey:@"role"] == (id)[NSNull null]){
-                                             UIViewController *initViewController = [storyboard instantiateViewControllerWithIdentifier:@"SettingViewController"];
+                                             UIViewController *initViewController = [storyboard instantiateViewControllerWithIdentifier:@"ConfigViewController"];
                                              [UIView transitionWithView:self.window
                                                                duration:0.5
                                                                 options:UIViewAnimationOptionTransitionFlipFromLeft
