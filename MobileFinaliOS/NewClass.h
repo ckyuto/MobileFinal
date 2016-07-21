@@ -12,7 +12,8 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *courseName;
 @property (weak, nonatomic) IBOutlet UITextField *courseNumber;
-@property (weak, nonatomic) IBOutlet UITextField *description;
+@property (weak, nonatomic) IBOutlet UITextField *classDescription;
+
 @property (weak, nonatomic) IBOutlet UITextField *startDate;
 @property (weak, nonatomic) IBOutlet UITextField *endDate;
 @property (weak, nonatomic) IBOutlet UITextField *startTime;
@@ -21,5 +22,7 @@
 - (IBAction)saveClass:(id)sender;
 - (IBAction)cancelClass:(id)sender;
 - (IBAction)onTouchStartDate:(id)sender;
+- (IBAction)onTouchEndDate:(id)sender;
+
 
 @end

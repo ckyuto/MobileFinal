@@ -17,6 +17,10 @@
 @synthesize courseName;
 @synthesize description;
 @synthesize courseNumber;
+@synthesize startDate;
+@synthesize endDate;
+@synthesize startTime;
+@synthesize endTime;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -42,9 +46,11 @@
 #pragma mark Save and cancel operations
 
 - (IBAction)saveClass:(id)sender {
+    NSMutableDictionary* classDict;
+    [classDict setObject:self.courseNumber.text forKey:@"courseNumber"];
+    
     NSString * name = courseName.text;
-    NSString * desc = description.text;
-    NSLog(@"%@" @"%@", name, desc);
+    NSLog(@"%@", name);
 }
 
 - (IBAction)cancelClass:(id)sender {
@@ -55,13 +61,30 @@
     {
         UIDatePicker *datePicker = [[UIDatePicker alloc] init];
         datePicker.datePickerMode = UIDatePickerModeDate;
-        [datePicker addTarget:self action:@selector(updateTextField:)
+        [datePicker addTarget:self action:@selector(updateStartDateField:)
              forControlEvents:UIControlEventValueChanged];
         [self.startDate setInputView:datePicker];
     }
 }
 
--(void)updateTextField:(id)sender
+- (IBAction)onTouchEndDate:(id)sender {
+    if (self.endDate.inputView == nil)
+    {
+        UIDatePicker *datePicker = [[UIDatePicker alloc] init];
+        datePicker.datePickerMode = UIDatePickerModeDate;
+        [datePicker addTarget:self action:@selector(updateEndDateField:)
+             forControlEvents:UIControlEventValueChanged];
+        [self.endDate setInputView:datePicker];
+    }
+}
+
+-(void)updateEndDateField:(id)sender
+{
+    UIDatePicker *picker = (UIDatePicker*)self.endDate.inputView;
+    self.endDate.text = [self formatDate:picker.date];
+}
+
+-(void)updateStartDateField:(id)sender
 {
     UIDatePicker *picker = (UIDatePicker*)self.startDate.inputView;
     self.startDate.text = [self formatDate:picker.date];

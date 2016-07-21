@@ -121,7 +121,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="classCell" id="oCf-51-BO9">
-                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oCf-51-BO9" id="jZu-Ic-jN7">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -353,7 +353,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="a4Y-bH-iCL">
-                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a4Y-bH-iCL" id="TIS-hJ-3jN">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -463,6 +463,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="onTouchEndDate:" destination="8gZ-uB-fHv" eventType="touchDown" id="lIH-Hh-7DA"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="1DI-in-xia">
                                 <rect key="frame" x="20" y="379" width="280" height="30"/>
@@ -495,6 +498,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="New Class" id="XUd-zJ-FC5"/>
                     <connections>
+                        <outlet property="classDescription" destination="2AI-4v-aqe" id="8Qb-Py-Shd"/>
                         <outlet property="courseName" destination="LOo-O6-Wyv" id="4Gl-Hr-gsE"/>
                         <outlet property="courseNumber" destination="Hj0-8d-9je" id="6dX-NN-ZKQ"/>
                         <outlet property="description" destination="2AI-4v-aqe" id="1XY-rU-Fpq"/>
