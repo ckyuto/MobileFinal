@@ -24,5 +24,7 @@
 - (IBAction)onTouchStartDate:(id)sender;
 - (IBAction)onTouchEndDate:(id)sender;
 
+- (IBAction)onTouchStartTime:(id)sender;
+- (IBAction)onTouchEndTime:(id)sender;
 
 @end

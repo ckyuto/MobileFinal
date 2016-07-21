@@ -57,6 +57,7 @@
     [classDict setObject:self.endTime forKey:@"endTime"];
     
     NSMutableURLRequest *request = [Util getBodyRequest:@"createCourse" object: classDict method:@"POST"];
+    NSLog(@"%@", classDict);
     
     NSURLSession *session = [NSURLSession sharedSession];
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request
@@ -65,15 +66,18 @@
                                                 NSLog(@"%@", [response description]);
                                                 NSLog(@"%@", @"Create Course success!");
                                                 
-                                                
                                             }];
-
-    
-    
     [task resume];
 }
 
 - (IBAction)cancelClass:(id)sender {
+    self.courseNumber.text = nil;
+    self.courseName.text = nil;
+    self.classDescription.text = nil;
+    self.startDate.text = nil;
+    self.endDate.text = nil;
+    self.startTime.text = nil;
+    self.endTime.text = nil;
 }
 
 - (IBAction)onTouchStartDate:(id)sender {
@@ -98,6 +102,40 @@
     }
 }
 
+- (IBAction)onTouchStartTime:(id)sender {
+    if (self.startTime.inputView == nil)
+    {
+        UIDatePicker *datePicker = [[UIDatePicker alloc] init];
+        datePicker.datePickerMode = UIDatePickerModeTime;
+        [datePicker addTarget:self action:@selector(updateStartTimeField:)
+             forControlEvents:UIControlEventValueChanged];
+        [self.startTime setInputView:datePicker];
+    }
+}
+
+- (IBAction)onTouchEndTime:(id)sender {
+    if (self.endTime.inputView == nil)
+    {
+        UIDatePicker *datePicker = [[UIDatePicker alloc] init];
+        datePicker.datePickerMode = UIDatePickerModeTime;
+        [datePicker addTarget:self action:@selector(updateEndTimeField:)
+             forControlEvents:UIControlEventValueChanged];
+        [self.endTime setInputView:datePicker];
+    }
+}
+
+-(void)updateStartTimeField:(id)sender
+{
+    UIDatePicker *picker = (UIDatePicker*)self.startTime.inputView;
+    self.startTime.text = [self formatTime:picker.date];
+}
+
+-(void)updateEndTimeField:(id)sender
+{
+    UIDatePicker *picker = (UIDatePicker*)self.endTime.inputView;
+    self.endTime.text = [self formatTime:picker.date];
+}
+
 -(void)updateEndDateField:(id)sender
 {
     UIDatePicker *picker = (UIDatePicker*)self.endDate.inputView;
@@ -108,6 +146,15 @@
 {
     UIDatePicker *picker = (UIDatePicker*)self.startDate.inputView;
     self.startDate.text = [self formatDate:picker.date];
+}
+
+- (NSString *)formatTime:(NSDate *)date
+{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateStyle:NSDateFormatterShortStyle];
+    [dateFormatter setDateFormat:@"HH:mm:ss"];
+    NSString *formattedDate = [dateFormatter stringFromDate:date];
+    return formattedDate;
 }
 
 - (NSString *)formatDate:(NSDate *)date
