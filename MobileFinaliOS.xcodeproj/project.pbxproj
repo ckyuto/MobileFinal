@@ -109,24 +109,18 @@
 		D1347FC51D26FBA7007B32E2 /* MobileFinaliOS */ = {
 			isa = PBXGroup;
 			children = (
+				D19053B61D409E6000539ECC /* Student */,
+				D19053B51D409E1600539ECC /* Teacher */,
 				D1347FC91D26FBA7007B32E2 /* AppDelegate.h */,
 				D1347FCA1D26FBA7007B32E2 /* AppDelegate.m */,
 				D1347FCC1D26FBA7007B32E2 /* ViewController.h */,
 				D1347FCD1D26FBA7007B32E2 /* ViewController.m */,
-				E27FDBAC1D3EC2D000D29D29 /* ClassDetail.h */,
-				E27FDBAD1D3EC2D000D29D29 /* ClassDetail.m */,
 				D19053B21D40283100539ECC /* ConfigViewController.h */,
 				D19053B31D40283100539ECC /* ConfigViewController.m */,
-				E27FDBA91D3EB23000D29D29 /* MyClass.h */,
-				E27FDBAA1D3EB23000D29D29 /* MyClass.m */,
-				E27FDBA61D3E982E00D29D29 /* NewClass.h */,
-				E27FDBA71D3E982E00D29D29 /* NewClass.m */,
 				D19053AC1D3EC68400539ECC /* Util.h */,
 				D19053AD1D3EC68400539ECC /* Util.m */,
 				D1347FD51D26FBA7007B32E2 /* Assets.xcassets */,
 				E23F33F61D3ECF3100C2B145 /* Main.storyboard */,
-				E2723E3E1D4016B40076C2BE /* QuizHistory.h */,
-				E2723E3F1D4016B40076C2BE /* QuizHistory.m */,
 				D1347FD71D26FBA7007B32E2 /* LaunchScreen.storyboard */,
 				D1347FDA1D26FBA7007B32E2 /* Info.plist */,
 				D1347FD21D26FBA7007B32E2 /* MobileFinaliOS.xcdatamodeld */,
@@ -141,6 +135,28 @@
 				D1347FC71D26FBA7007B32E2 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D19053B51D409E1600539ECC /* Teacher */ = {
+			isa = PBXGroup;
+			children = (
+				E27FDBAC1D3EC2D000D29D29 /* ClassDetail.h */,
+				E27FDBAD1D3EC2D000D29D29 /* ClassDetail.m */,
+				E27FDBA91D3EB23000D29D29 /* MyClass.h */,
+				E27FDBAA1D3EB23000D29D29 /* MyClass.m */,
+				E27FDBA61D3E982E00D29D29 /* NewClass.h */,
+				E27FDBA71D3E982E00D29D29 /* NewClass.m */,
+				E2723E3E1D4016B40076C2BE /* QuizHistory.h */,
+				E2723E3F1D4016B40076C2BE /* QuizHistory.m */,
+			);
+			name = Teacher;
+			sourceTree = "<group>";
+		};
+		D19053B61D409E6000539ECC /* Student */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Student;
 			sourceTree = "<group>";
 		};
 		D9A5DFD2869D58E151724460 /* Frameworks */ = {
