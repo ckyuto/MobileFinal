@@ -50,7 +50,17 @@
     NSURLSession *session = [NSURLSession sharedSession];
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request
                                             completionHandler: ^(NSData *data, NSURLResponse *response, NSError *error) {
-                                                //NSLog([error description]);
+                                                
+                
+                                                if([[userDict objectForKey:@"role"] isEqualToString:@"TEACHER"]){
+                                                    [self performSegueWithIdentifier:@"TeacherViewController" sender:self];
+                                                }
+                                                
+                                                if([[userDict objectForKey:@"role"] isEqualToString:@"STUDENT"]){
+                                                    [self performSegueWithIdentifier:@"StudentViewController" sender:self];
+                                                }
+                                                
+                                               
                                                 NSLog(@"%@", [response description]);
                                                 NSLog(@"%@", @"Update User info success!");
                                             }];
@@ -58,4 +68,7 @@
     [task resume];
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+}
 @end

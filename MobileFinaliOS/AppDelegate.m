@@ -120,19 +120,26 @@ didSignInForUser:(GIDGoogleUser *)user
                                          self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
                                          [self.window makeKeyAndVisible];
                                          UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                                         
+                                         UIViewController *initViewController;
                                          if([userDict objectForKey:@"role"] == (id)[NSNull null]){
-                                             UIViewController *initViewController = [storyboard instantiateViewControllerWithIdentifier:@"ConfigViewController"];
-                                             [UIView transitionWithView:self.window
-                                                               duration:0.5
-                                                                options:UIViewAnimationOptionTransitionFlipFromLeft
-                                                             animations:^{ self.window.rootViewController = initViewController; }
-                                                             completion:nil];
+                                              initViewController = [storyboard instantiateViewControllerWithIdentifier:@"ConfigViewController"];
+                                             
                                              
                                          }else{
+                                             if([[userDict objectForKey:@"role"] isEqualToString:@"TEACHER"]){
+                                                 initViewController = [storyboard instantiateViewControllerWithIdentifier:@"TeacherTabView"];
+                                             }
                                              
+                                             if([[userDict objectForKey:@"role"] isEqualToString:@"STUDENT"]){
+                                                 initViewController = [storyboard instantiateViewControllerWithIdentifier:@"StudentTabView"];
+                                             }
                                          }
                                          
+                                         [UIView transitionWithView:self.window
+                                                           duration:0.5
+                                                            options:UIViewAnimationOptionTransitionFlipFromLeft
+                                                         animations:^{ self.window.rootViewController = initViewController; }
+                                                         completion:nil];
                                      }
                                  }];
     [task resume];
