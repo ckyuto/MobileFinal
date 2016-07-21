@@ -447,6 +447,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="onTouchStartDate:" destination="8gZ-uB-fHv" eventType="touchDown" id="g3S-Ht-660"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BeK-vB-Qwh">
                                 <rect key="frame" x="20" y="283" width="87" height="21"/>
@@ -493,6 +496,12 @@
                     <tabBarItem key="tabBarItem" title="New Class" id="XUd-zJ-FC5"/>
                     <connections>
                         <outlet property="courseName" destination="LOo-O6-Wyv" id="4Gl-Hr-gsE"/>
+                        <outlet property="courseNumber" destination="Hj0-8d-9je" id="6dX-NN-ZKQ"/>
+                        <outlet property="description" destination="2AI-4v-aqe" id="1XY-rU-Fpq"/>
+                        <outlet property="endDate" destination="VY6-bE-sjM" id="Seh-tq-upz"/>
+                        <outlet property="endTime" destination="gYi-Fo-29X" id="cT9-TP-F63"/>
+                        <outlet property="startDate" destination="FTw-Oq-gAt" id="xw8-DG-x9W"/>
+                        <outlet property="startTime" destination="1DI-in-xia" id="Hxk-zb-0a9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gAF-5D-hST" userLabel="First Responder" sceneMemberID="firstResponder"/>
