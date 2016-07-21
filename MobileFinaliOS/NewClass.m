@@ -7,6 +7,7 @@
 //
 
 #import "NewClass.h"
+#import "Util.h"
 
 @interface NewClass ()
 
@@ -48,9 +49,28 @@
 - (IBAction)saveClass:(id)sender {
     NSMutableDictionary* classDict;
     [classDict setObject:self.courseNumber.text forKey:@"courseNumber"];
+    [classDict setObject:self.courseName.text forKey:@"courseName"];
+    [classDict setObject:self.classDescription.text forKey:@"description"];
+    [classDict setObject:self.startDate forKey:@"startDate"];
+    [classDict setObject:self.endDate forKey:@"endDate"];
+    [classDict setObject:self.startTime forKey:@"startTime"];
+    [classDict setObject:self.endTime forKey:@"endTime"];
     
-    NSString * name = courseName.text;
-    NSLog(@"%@", name);
+    NSMutableURLRequest *request = [Util getBodyRequest:@"createCourse" object: classDict method:@"POST"];
+    
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *task = [session dataTaskWithRequest:request
+                                            completionHandler: ^(NSData *data, NSURLResponse *response, NSError *error) {
+                                                
+                                                NSLog(@"%@", [response description]);
+                                                NSLog(@"%@", @"Create Course success!");
+                                                
+                                                
+                                            }];
+
+    
+    
+    [task resume];
 }
 
 - (IBAction)cancelClass:(id)sender {
