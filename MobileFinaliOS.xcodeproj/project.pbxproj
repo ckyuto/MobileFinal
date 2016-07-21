@@ -21,6 +21,7 @@
 		D135C0611D39F9E70087BC8A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D135C0601D39F9E70087BC8A /* SystemConfiguration.framework */; };
 		D19053AE1D3EC68400539ECC /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = D19053AD1D3EC68400539ECC /* Util.m */; };
 		D19053B41D40283100539ECC /* ConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D19053B31D40283100539ECC /* ConfigViewController.m */; };
+		D19053B91D41736300539ECC /* StudentCourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D19053B81D41736300539ECC /* StudentCourseViewController.m */; };
 		E23F33F71D3ECF3100C2B145 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E23F33F61D3ECF3100C2B145 /* Main.storyboard */; };
 		E2723E401D4016B40076C2BE /* QuizHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = E2723E3F1D4016B40076C2BE /* QuizHistory.m */; };
 		E27FDBA81D3E982E00D29D29 /* NewClass.m in Sources */ = {isa = PBXBuildFile; fileRef = E27FDBA71D3E982E00D29D29 /* NewClass.m */; };
@@ -50,6 +51,8 @@
 		D19053AD1D3EC68400539ECC /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
 		D19053B21D40283100539ECC /* ConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigViewController.h; sourceTree = "<group>"; };
 		D19053B31D40283100539ECC /* ConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigViewController.m; sourceTree = "<group>"; };
+		D19053B71D41736300539ECC /* StudentCourseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentCourseViewController.h; sourceTree = "<group>"; };
+		D19053B81D41736300539ECC /* StudentCourseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentCourseViewController.m; sourceTree = "<group>"; };
 		D2BA2D745D007767402234BD /* libPods-MobileFinaliOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MobileFinaliOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E23F33F61D3ECF3100C2B145 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E2723E3E1D4016B40076C2BE /* QuizHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizHistory.h; sourceTree = "<group>"; };
@@ -155,6 +158,8 @@
 		D19053B61D409E6000539ECC /* Student */ = {
 			isa = PBXGroup;
 			children = (
+				D19053B71D41736300539ECC /* StudentCourseViewController.h */,
+				D19053B81D41736300539ECC /* StudentCourseViewController.m */,
 			);
 			name = Student;
 			sourceTree = "<group>";
@@ -302,6 +307,7 @@
 				E2723E401D4016B40076C2BE /* QuizHistory.m in Sources */,
 				E27FDBA81D3E982E00D29D29 /* NewClass.m in Sources */,
 				D1347FC81D26FBA7007B32E2 /* main.m in Sources */,
+				D19053B91D41736300539ECC /* StudentCourseViewController.m in Sources */,
 				D19053AE1D3EC68400539ECC /* Util.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
