@@ -23,6 +23,7 @@
     NSAssert(!configureError, @"Error configuring Google services: %@", configureError);
     
     [GIDSignIn sharedInstance].delegate = self;
+
     return YES;
 }
 
@@ -95,47 +96,50 @@ didSignInForUser:(GIDGoogleUser *)user
     [self fetchUserObject:email];
 }
 
-- (void) fetchUserObject: (NSString*) userName{
-    
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
 
-    NSURL *url = [NSURL URLWithString: [[Util restBaseUrl] stringByAppendingString:@"getUser"]];
+
+- (void) fetchUserObject: (NSString*) userName{
     
     NSMutableDictionary *params = [[NSMutableDictionary alloc]init];
     [params setObject:userName forKey:@"userName"];
     
-    [request setURL:url];
-    [request setHTTPMethod:@"POST"];
-    [request setHTTPBody:[Util httpBodyForParamsDictionary:params]];
-    
+    NSMutableURLRequest *request = [Util getFormRequest:@"getUser" params:params method:@"POST"];
     
     NSURLSession *session = [NSURLSession sharedSession];
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request
                                  completionHandler: ^(NSData *data, NSURLResponse *response, NSError *error) {
                                      if (data.length > 0 && error == nil){
-                                         NSMutableDictionary *userDict = [NSJSONSerialization JSONObjectWithData:data
+                                         NSMutableDictionary *userDict = [[NSJSONSerialization JSONObjectWithData:data
                                                                                                   options:0
-                                                                                                    error:NULL];
+                                                                                                    error:NULL] mutableCopy];
                                          
                                          [Util setUserDict:userDict];
+                                         NSLog(@"%@", [response description]);
                                          NSLog(@"%@", [userDict descriptionInStringsFileFormat]);
                                          
                                          self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
                                          [self.window makeKeyAndVisible];
                                          UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                                         
+                                         UIViewController *initViewController;
                                          if([userDict objectForKey:@"role"] == (id)[NSNull null]){
-                                             UIViewController *initViewController = [storyboard instantiateViewControllerWithIdentifier:@"ConfigViewController"];
-                                             [UIView transitionWithView:self.window
-                                                               duration:0.5
-                                                                options:UIViewAnimationOptionTransitionFlipFromLeft
-                                                             animations:^{ self.window.rootViewController = initViewController; }
-                                                             completion:nil];
+                                              initViewController = [storyboard instantiateViewControllerWithIdentifier:@"ConfigViewController"];
+                                             
                                              
                                          }else{
+                                             if([[userDict objectForKey:@"role"] isEqualToString:@"TEACHER"]){
+                                                 initViewController = [storyboard instantiateViewControllerWithIdentifier:@"TeacherTabView"];
+                                             }
                                              
+                                             if([[userDict objectForKey:@"role"] isEqualToString:@"STUDENT"]){
+                                                 initViewController = [storyboard instantiateViewControllerWithIdentifier:@"StudentTabView"];
+                                             }
                                          }
                                          
+                                         [UIView transitionWithView:self.window
+                                                           duration:0.5
+                                                            options:UIViewAnimationOptionTransitionFlipFromLeft
+                                                         animations:^{ self.window.rootViewController = initViewController; }
+                                                         completion:nil];
                                      }
                                  }];
     [task resume];
