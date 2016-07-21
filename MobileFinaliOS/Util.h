@@ -15,9 +15,12 @@
 + (void) showAlert: (UIViewController *) view title:(NSString *) title message:(NSString *) message;
 + (NSData *)httpBodyForParamsDictionary:(NSDictionary *)paramDictionary;
 + (NSString *)percentEscapeString:(NSString *)string;
-+ (NSString *) restBaseUrl;
 + (NSMutableDictionary*) getUserDict;
 +(void) setUserDict:(NSMutableDictionary*) userDict;
++ (NSData*) getJsonFromDictionary: (NSDictionary*) dict;
 
++(NSMutableURLRequest*) getFormRequest: (NSString*) urlMapping params: (NSDictionary*) params method: (NSString*) method;
++(NSMutableURLRequest*) getBodyRequest: (NSString*) urlMapping object: (NSDictionary*) object method: (NSString*) method;
 
++(NSString *) showNSData: (NSData *) data;
 @end

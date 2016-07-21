@@ -12,6 +12,7 @@
 @implementation Util
 
 static NSMutableDictionary* globalUserDict;
+static NSString *const REST_BASE_URL = @"http://50.19.186.200:8080/mobilefinalbackend/rest/";
 
 + (void) showAlert: (UIViewController *) view title:(NSString *) title message:(NSString *) message{
     UIAlertController * alert = [UIAlertController
@@ -56,9 +57,6 @@ static NSMutableDictionary* globalUserDict;
     return [result stringByReplacingOccurrencesOfString:@" " withString:@"+"];
 }
 
-+ (NSString *)restBaseUrl{
-    return @"http://50.19.186.200:8080/mobilefinalbackend/rest/";
-}
 
 + (NSMutableDictionary*) getUserDict{
     return globalUserDict;
@@ -66,6 +64,42 @@ static NSMutableDictionary* globalUserDict;
 
 +(void) setUserDict:(NSMutableDictionary*) userDict{
     globalUserDict = userDict;
+}
+
++ (NSData*) getJsonFromDictionary: (NSDictionary*) dict{
+    NSError *error;
+    return [NSJSONSerialization dataWithJSONObject:dict
+                                           options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
+                                             error:&error];
+}
+
++(NSMutableURLRequest*) getFormRequest: (NSString*) urlMapping params: (NSDictionary*) params method: (NSString*) method{
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    
+    NSURL *url = [NSURL URLWithString: [REST_BASE_URL stringByAppendingString:urlMapping]];
+    
+    [request setURL:url];
+    [request setHTTPMethod:method];
+    [request setHTTPBody:[self httpBodyForParamsDictionary:params]];
+    
+    return request;
+}
+
++(NSMutableURLRequest*) getBodyRequest: (NSString*) urlMapping object: (NSDictionary*) object method: (NSString*) method{
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    
+    NSURL *url = [NSURL URLWithString: [REST_BASE_URL stringByAppendingString:urlMapping]];
+    
+    [request setURL:url];
+    [request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPMethod:method];
+    [request setHTTPBody:[self getJsonFromDictionary:object]];
+    
+    return request;
+}
+
++(NSString *) showNSData: (NSData *) data{
+    return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 }
 
 @end
