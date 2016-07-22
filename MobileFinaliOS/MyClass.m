@@ -8,6 +8,7 @@
 
 #import "MyClass.h"
 #import "Util.h"
+#import "ClassDetail.h"
 
 @interface MyClass ()
 
@@ -15,13 +16,13 @@
 
 @implementation MyClass{
     NSArray *classLists;
+    NSDictionary * class;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSMutableDictionary* userDict = [Util getUserDict];
-    NSString *teacherName = [userDict objectForKey:@"userName"];
-    [self fetchClassObject: teacherName];
+    
+    [self fetchClassObject];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -30,7 +31,22 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (void) fetchClassObject: (NSString*) teacherUserName{
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self fetchClassObject];
+}
+
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    // You code here to update the view.
+    [self fetchClassObject];
+    
+}
+
+- (void) fetchClassObject{
+    NSMutableDictionary* userDict = [Util getUserDict];
+    NSString *teacherUserName = [userDict objectForKey:@"userName"];
+    
     NSMutableDictionary *params = [[NSMutableDictionary alloc]init];
     [params setObject:teacherUserName forKey:@"teacherUserName"];
     
@@ -50,7 +66,7 @@
                                                     }
                                                     
                                                     NSLog(@"%@", [response description]);
-                                                    NSLog(@"%@", classDict);
+                                                    NSLog(@"classLists: %@", classLists);
                                                     
                                                 }
                                             }];
@@ -65,25 +81,23 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
-}
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+//#warning Incomplete implementation, return the number of sections
+//    return 0;
+//}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//#warning Incomplete implementation, return the number of rows
-//    return 0;
     return [classLists count];
+    
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"classCell" forIndexPath:indexPath];
-    
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleSubtitle reuseIdentifier:@"classCell"];
      //Configure the cell...
-    NSDictionary *class = classLists[[indexPath row]];
+    class = classLists[[indexPath row]];
     cell.textLabel.text = class[@"courseName"];
-    // where to set up the dictionary
+    cell.detailTextLabel.text = class[@"courseNumber"];
     
     return cell;
 }
@@ -110,7 +124,10 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     if ([segue.identifier isEqualToString: @"classList"]) {
+        NSLog(@"detailView");
         NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+        class = classLists[[indexPath row]];
+        [[segue destinationViewController] setDetailItem: class];
     }
     // Pass the selected object to the new view controller.
     

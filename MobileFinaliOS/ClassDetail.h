@@ -10,6 +10,7 @@
 
 @interface ClassDetail : UIViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *courseName;
 @property (strong, nonatomic) NSDictionary *detailItem;
 
 - (void)setDetailItem:(NSDictionary*)newDetailItem;

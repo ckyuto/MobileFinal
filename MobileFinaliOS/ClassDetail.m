@@ -50,6 +50,9 @@
 - (void)configureView
 {
     NSLog(@"%@", _detailItem);
+    if (_detailItem != nil) {
+        self.courseName = _detailItem;
+    }
     
     
 }
