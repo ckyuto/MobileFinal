@@ -134,7 +134,7 @@
                                 <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oCf-51-BO9" id="jZu-Ic-jN7">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -202,7 +202,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="i62-el-jWL" id="HWA-kA-qs1">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -219,7 +219,7 @@
             </objects>
             <point key="canvasLocation" x="-642" y="2049"/>
         </scene>
-        <!--Title-->
+        <!--Course-->
         <scene sceneID="saZ-Td-hcw">
             <objects>
                 <tableViewController id="H5O-kD-lar" customClass="StudentCourseViewController" sceneMemberID="viewController">
@@ -227,27 +227,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <navigationBar key="tableFooterView" contentMode="scaleToFill" id="It4-iH-nVk">
+                            <rect key="frame" x="0.0" y="72" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <items>
+                                <navigationItem title="Title" id="SUP-LK-jl9">
+                                    <barButtonItem key="rightBarButtonItem" systemItem="add" id="gkb-iY-2gs"/>
+                                </navigationItem>
+                            </items>
+                        </navigationBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ghf-se-fid">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="oar-qM-vaR" detailTextLabel="uhJ-8D-DFJ" style="IBUITableViewCellStyleSubtitle" id="ghf-se-fid">
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="right" tableViewCell="ghf-se-fid" id="VkK-cp-MFy">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <navigationBar contentMode="scaleToFill" id="hq9-sT-x6K">
-                                            <rect key="frame" x="0.0" y="-8" width="320" height="44"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                            <items>
-                                                <navigationItem title="Title" id="ORu-Ze-eAE">
-                                                    <barButtonItem key="rightBarButtonItem" title="Register" id="MmB-Uj-g0C">
-                                                        <connections>
-                                                            <segue destination="EOu-gL-YKW" kind="push" id="Hkf-H1-fr5"/>
-                                                        </connections>
-                                                    </barButtonItem>
-                                                </navigationItem>
-                                            </items>
-                                        </navigationBar>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oar-qM-vaR">
+                                            <rect key="frame" x="15" y="6" width="31.5" height="19.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uhJ-8D-DFJ">
+                                            <rect key="frame" x="15" y="25.5" width="40.5" height="13.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -258,7 +268,6 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Course" id="9Cs-FN-ahO"/>
-                    <navigationItem key="navigationItem" title="Title" id="WZW-nI-gdG"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Wl-mr-e2I" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -286,15 +295,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="lUK-Fr-oJS">
-                                <rect key="frame" x="225" y="87" width="75" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Register"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="DiK-ht-Nxa"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qaH-Wq-JuQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -113,7 +113,7 @@ didSignInForUser:(GIDGoogleUser *)user
     NSMutableDictionary *params = [[NSMutableDictionary alloc]init];
     [params setObject:userName forKey:@"userName"];
     
-    NSMutableURLRequest *request = [Util getFormRequest:@"getUser" params:params method:@"POST"];
+    NSMutableURLRequest *request = [Util getFormRequest:@"getUser" params:params];
     
     NSURLSession *session = [NSURLSession sharedSession];
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request
@@ -124,9 +124,7 @@ didSignInForUser:(GIDGoogleUser *)user
                                                                                                     error:NULL] mutableCopy];
                                          
                                          [Util setUserDict:userDict];
-                                         NSLog(@"%@", [response description]);
-                                         NSLog(@"%@", [userDict descriptionInStringsFileFormat]);
-                                         
+                                                                                 
                                          UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
                                          UIViewController *initViewController;
                                          if([userDict objectForKey:@"role"] == (id)[NSNull null]){

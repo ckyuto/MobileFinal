@@ -56,7 +56,7 @@
     [classDict setObject:self.startTime forKey:@"startTime"];
     [classDict setObject:self.endTime forKey:@"endTime"];
     
-    NSMutableURLRequest *request = [Util getBodyRequest:@"createCourse" object: classDict method:@"POST"];
+    NSMutableURLRequest *request = [Util getBodyRequest:@"createCourse" object: classDict];
     NSLog(@"%@", classDict);
     
     NSURLSession *session = [NSURLSession sharedSession];

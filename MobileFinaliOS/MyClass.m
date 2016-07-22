@@ -34,7 +34,7 @@
     NSMutableDictionary *params = [[NSMutableDictionary alloc]init];
     [params setObject:teacherUserName forKey:@"teacherUserName"];
     
-    NSMutableURLRequest *request = [Util getFormRequest:@"getCourseByTeacherUserName" params:params method:@"GET"];
+    NSMutableURLRequest *request = [Util getFormRequest:@"getCourseByTeacherUserName" params:params];
     NSURLSession *session = [NSURLSession sharedSession];
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request
                                             completionHandler: ^(NSData *data, NSURLResponse *response, NSError *error) {

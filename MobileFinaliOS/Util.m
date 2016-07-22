@@ -73,26 +73,26 @@ static NSString *const REST_BASE_URL = @"http://50.19.186.200:8080/mobilefinalba
                                              error:&error];
 }
 
-+(NSMutableURLRequest*) getFormRequest: (NSString*) urlMapping params: (NSDictionary*) params method: (NSString*) method{
++(NSMutableURLRequest*) getFormRequest: (NSString*) urlMapping params: (NSDictionary*) params{
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     
     NSURL *url = [NSURL URLWithString: [REST_BASE_URL stringByAppendingString:urlMapping]];
     
     [request setURL:url];
-    [request setHTTPMethod:method];
+    [request setHTTPMethod:@"POST"];
     [request setHTTPBody:[self httpBodyForParamsDictionary:params]];
     
     return request;
 }
 
-+(NSMutableURLRequest*) getBodyRequest: (NSString*) urlMapping object: (NSDictionary*) object method: (NSString*) method{
++(NSMutableURLRequest*) getBodyRequest: (NSString*) urlMapping object: (NSDictionary*) object{
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     
     NSURL *url = [NSURL URLWithString: [REST_BASE_URL stringByAppendingString:urlMapping]];
     
     [request setURL:url];
     [request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    [request setHTTPMethod:method];
+    [request setHTTPMethod:@"POST"];
     [request setHTTPBody:[self getJsonFromDictionary:object]];
     
     return request;

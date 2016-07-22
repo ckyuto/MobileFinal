@@ -19,8 +19,8 @@
 +(void) setUserDict:(NSMutableDictionary*) userDict;
 + (NSData*) getJsonFromDictionary: (NSDictionary*) dict;
 
-+(NSMutableURLRequest*) getFormRequest: (NSString*) urlMapping params: (NSDictionary*) params method: (NSString*) method;
-+(NSMutableURLRequest*) getBodyRequest: (NSString*) urlMapping object: (NSDictionary*) object method: (NSString*) method;
++(NSMutableURLRequest*) getFormRequest: (NSString*) urlMapping params: (NSDictionary*) params;
++(NSMutableURLRequest*) getBodyRequest: (NSString*) urlMapping object: (NSDictionary*) object;
 
 +(NSString *) showNSData: (NSData *) data;
 @end

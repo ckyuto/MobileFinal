@@ -45,7 +45,7 @@
     [userDict setObject:self.tfAndrewId.text forKey:@"andrewId"];
     [userDict setObject:self.tfRole.text forKey:@"role"];
    
-    NSMutableURLRequest *request = [Util getBodyRequest:@"updateUser" object:userDict method:@"POST"];
+    NSMutableURLRequest *request = [Util getBodyRequest:@"updateUser" object:userDict];
     
     NSURLSession *session = [NSURLSession sharedSession];
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request
