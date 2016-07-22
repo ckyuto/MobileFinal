@@ -143,24 +143,28 @@ UIDatePicker *endDatePicker;
 {
     UIDatePicker *picker = (UIDatePicker*)self.startTime.inputView;
     self.startTime.text = [self formatTime:picker.date];
+    [self.startTime resignFirstResponder];
 }
 
 -(void)updateEndTimeField:(id)sender
 {
     UIDatePicker *picker = (UIDatePicker*)self.endTime.inputView;
     self.endTime.text = [self formatTime:picker.date];
+    [self.endTime resignFirstResponder];
 }
 
 -(void)updateEndDateField:(id)sender
 {
     UIDatePicker *picker = (UIDatePicker*)self.endDate.inputView;
     self.endDate.text = [self formatDate:picker.date];
+    [self.endDate resignFirstResponder];
 }
 
 -(void)updateStartDateField:(id)sender
 {
     UIDatePicker *picker = (UIDatePicker*)self.startDate.inputView;
     self.startDate.text = [self formatDate:picker.date];
+    [self.startDate resignFirstResponder];
 }
 
 - (NSString *)formatTime:(NSDate *)date
