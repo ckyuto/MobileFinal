@@ -80,25 +80,32 @@
     self.endTime.text = nil;
 }
 
+
+UIDatePicker *startDatePicker;
+UIDatePicker *endDatePicker;
+
 - (IBAction)onTouchStartDate:(id)sender {
     if (self.startDate.inputView == nil)
     {
-        UIDatePicker *datePicker = [[UIDatePicker alloc] init];
-        datePicker.datePickerMode = UIDatePickerModeDate;
-        [datePicker addTarget:self action:@selector(updateStartDateField:)
-             forControlEvents:UIControlEventValueChanged];
-        [self.startDate setInputView:datePicker];
+        startDatePicker = [[UIDatePicker alloc] init];
+        startDatePicker.datePickerMode = UIDatePickerModeDate;
+        [startDatePicker addTarget:self action:@selector(updateStartDateField:)
+                  forControlEvents:UIControlEventValueChanged];
+        [self.startDate setInputView:startDatePicker];
+        [startDatePicker addTarget:self action:@selector(startDateChanged:)
+                  forControlEvents:UIControlEventEditingChanged];
     }
 }
+
 
 - (IBAction)onTouchEndDate:(id)sender {
     if (self.endDate.inputView == nil)
     {
-        UIDatePicker *datePicker = [[UIDatePicker alloc] init];
-        datePicker.datePickerMode = UIDatePickerModeDate;
-        [datePicker addTarget:self action:@selector(updateEndDateField:)
+        endDatePicker = [[UIDatePicker alloc] init];
+        endDatePicker.datePickerMode = UIDatePickerModeDate;
+        [endDatePicker addTarget:self action:@selector(updateEndDateField:)
              forControlEvents:UIControlEventValueChanged];
-        [self.endDate setInputView:datePicker];
+        [self.endDate setInputView:endDatePicker];
     }
 }
 
@@ -123,6 +130,14 @@
         [self.endTime setInputView:datePicker];
     }
 }
+
+- (void)startDateChanged:(id)sender
+{
+    NSDate *minDateFromStart = [NSDate dateWithTimeInterval:1.0 sinceDate:startDatePicker.date];
+    endDatePicker.minimumDate = minDateFromStart;
+    NSLog(@"%@", minDateFromStart);
+}
+
 
 -(void)updateStartTimeField:(id)sender
 {

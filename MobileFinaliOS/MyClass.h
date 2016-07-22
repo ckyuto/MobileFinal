@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MyClass : UITableViewController
+@interface MyClass : UITableViewController<UITableViewDelegate, UITableViewDataSource>
 @property (strong, nonatomic) IBOutlet UITableView *myClassList;
 
 @end
