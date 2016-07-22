@@ -11,26 +11,36 @@
 
 @implementation StudentCourseViewController
 {
-    NSMutableArray *courseName;
-    NSMutableArray *courseNumber;
+    NSMutableArray *courseNames;
+    NSMutableArray *courseNumbers;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    courseName = [[NSMutableArray alloc] init];
-    courseNumber = [[NSMutableArray alloc] init];
+    courseNames = [[NSMutableArray alloc] init];
+    courseNumbers = [[NSMutableArray alloc] init];
     
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [courseNames removeAllObjects];
+    [courseNumbers removeAllObjects];
     [self fetchCourse];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [courseName count];
+    return [courseNames count];
 }
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CourseCell" ];
+    cell.textLabel.text = [courseNames objectAtIndex:indexPath.row];
+    cell.detailTextLabel.text = [courseNumbers objectAtIndex:indexPath.row];
+    return cell;
+}
+
 
 -(void) fetchCourse{
     NSMutableDictionary* userDict = [Util getUserDict];
@@ -40,12 +50,19 @@
     NSURLSession *session = [NSURLSession sharedSession];
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request
                                             completionHandler: ^(NSData *data, NSURLResponse *response, NSError *error) {
-                                                
-                                                
-                                                                                        
-                                                NSLog(@"%@", [error description]);
-                                                NSLog(@"NSDATA %@", [Util showNSData:data]);
-                                                NSLog(@"%@", @"get registered course success!");
+                                                NSArray *courseData = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
+                                                if(courseData){
+                                                    for (NSDictionary *status in courseData){
+                                                        [courseNames addObject:[status objectForKey:@"courseName"]];
+                                                        [courseNumbers addObject:[status objectForKey:@"courseNumber"]];
+                                                    }
+                                                    
+                                                    dispatch_async(dispatch_get_main_queue(), ^{
+                                                        [self.tableView reloadData];
+                                                        
+                                                    });
+                                                    NSLog(@"%@", @"get registered course success!");
+                                                }
                                             }];
     
     [task resume];
