@@ -23,7 +23,17 @@
     NSAssert(!configureError, @"Error configuring Google services: %@", configureError);
     
     [GIDSignIn sharedInstance].delegate = self;
-
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    UIViewController *masterViewController = [storyboard instantiateViewControllerWithIdentifier:@"SignInViewController"];
+   
+    self.navigationController = [[UINavigationController alloc] initWithRootViewController:masterViewController];
+    self.window.rootViewController = self.navigationController;
+    
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
@@ -117,8 +127,6 @@ didSignInForUser:(GIDGoogleUser *)user
                                          NSLog(@"%@", [response description]);
                                          NSLog(@"%@", [userDict descriptionInStringsFileFormat]);
                                          
-                                         self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-                                         [self.window makeKeyAndVisible];
                                          UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
                                          UIViewController *initViewController;
                                          if([userDict objectForKey:@"role"] == (id)[NSNull null]){
