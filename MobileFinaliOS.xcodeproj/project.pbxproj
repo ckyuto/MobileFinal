@@ -27,6 +27,8 @@
 		E27FDBA81D3E982E00D29D29 /* NewClass.m in Sources */ = {isa = PBXBuildFile; fileRef = E27FDBA71D3E982E00D29D29 /* NewClass.m */; };
 		E27FDBAB1D3EB23000D29D29 /* MyClass.m in Sources */ = {isa = PBXBuildFile; fileRef = E27FDBAA1D3EB23000D29D29 /* MyClass.m */; };
 		E27FDBAE1D3EC2D000D29D29 /* ClassDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = E27FDBAD1D3EC2D000D29D29 /* ClassDetail.m */; };
+		E2CB21A01D41B4B00009945B /* SharePage.m in Sources */ = {isa = PBXBuildFile; fileRef = E2CB219F1D41B4B00009945B /* SharePage.m */; };
+		E2CB21A21D41BE200009945B /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2CB21A11D41BE200009945B /* Social.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +65,9 @@
 		E27FDBAA1D3EB23000D29D29 /* MyClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyClass.m; sourceTree = "<group>"; };
 		E27FDBAC1D3EC2D000D29D29 /* ClassDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassDetail.h; sourceTree = "<group>"; };
 		E27FDBAD1D3EC2D000D29D29 /* ClassDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassDetail.m; sourceTree = "<group>"; };
+		E2CB219E1D41B4B00009945B /* SharePage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharePage.h; sourceTree = "<group>"; };
+		E2CB219F1D41B4B00009945B /* SharePage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharePage.m; sourceTree = "<group>"; };
+		E2CB21A11D41BE200009945B /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2CB21A21D41BE200009945B /* Social.framework in Frameworks */,
 				D135C0611D39F9E70087BC8A /* SystemConfiguration.framework in Frameworks */,
 				D135C05F1D39F9DE0087BC8A /* SafariServices.framework in Frameworks */,
 				D135C05D1D39F9D10087BC8A /* AddressBook.framework in Frameworks */,
@@ -143,6 +149,8 @@
 		D19053B51D409E1600539ECC /* Teacher */ = {
 			isa = PBXGroup;
 			children = (
+				E2CB219E1D41B4B00009945B /* SharePage.h */,
+				E2CB219F1D41B4B00009945B /* SharePage.m */,
 				E27FDBAC1D3EC2D000D29D29 /* ClassDetail.h */,
 				E27FDBAD1D3EC2D000D29D29 /* ClassDetail.m */,
 				E27FDBA91D3EB23000D29D29 /* MyClass.h */,
@@ -167,6 +175,7 @@
 		D9A5DFD2869D58E151724460 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E2CB21A11D41BE200009945B /* Social.framework */,
 				D135C0601D39F9E70087BC8A /* SystemConfiguration.framework */,
 				D135C05E1D39F9DE0087BC8A /* SafariServices.framework */,
 				D135C05C1D39F9D10087BC8A /* AddressBook.framework */,
@@ -308,6 +317,7 @@
 				E27FDBA81D3E982E00D29D29 /* NewClass.m in Sources */,
 				D1347FC81D26FBA7007B32E2 /* main.m in Sources */,
 				D19053B91D41736300539ECC /* StudentCourseViewController.m in Sources */,
+				E2CB21A01D41B4B00009945B /* SharePage.m in Sources */,
 				D19053AE1D3EC68400539ECC /* Util.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -99,10 +99,20 @@
         <!--Share-->
         <scene sceneID="XY6-g7-arc">
             <objects>
-                <viewController id="jdi-uT-vEX" userLabel="Share" sceneMemberID="viewController">
+                <viewController id="jdi-uT-vEX" userLabel="Share" customClass="SharePage" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Joy-aF-4bC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ab3-f4-37R">
+                                <rect key="frame" x="96" y="269" width="128" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Share to Facebook"/>
+                                <connections>
+                                    <action selector="postToFacebook:" destination="jdi-uT-vEX" eventType="touchUpInside" id="1i9-vR-fnd"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Share" id="P7t-qg-c7F" userLabel="Share"/>
