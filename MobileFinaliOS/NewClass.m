@@ -145,16 +145,20 @@ UIDatePicker *endDatePicker;
     NSLog(@"%@", minDateFromStart);
 }
 
-double startDateInMs;
-double endDateInMs;
-double startTimeInMs;
-double endTimeInMs;
+long startDateInMs;
+long endDateInMs;
+long startTimeInMs;
+long endTimeInMs;
 
 -(void)updateStartTimeField:(id)sender
 {
     UIDatePicker *picker = (UIDatePicker*)self.startTime.inputView;
     self.startTime.text = [self formatTime:picker.date];
-    startTimeInMs = ([picker.date timeIntervalSinceReferenceDate] * 1000);
+    startTimeInMs = ([picker.date timeIntervalSince1970] * 1000);
+//    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+//    [df setDateFormat:@"A"];
+//    NSLog(@"%@", [df dateFromString:self.startTime.text]);
+//    NSLog(@"%ld", startTimeInMs);
     [self.startTime resignFirstResponder];
 }
 
@@ -162,7 +166,8 @@ double endTimeInMs;
 {
     UIDatePicker *picker = (UIDatePicker*)self.endTime.inputView;
     self.endTime.text = [self formatTime:picker.date];
-    endTimeInMs =  ([picker.date timeIntervalSinceReferenceDate] * 1000);
+    endTimeInMs =  ([picker.date timeIntervalSince1970] * 1000);
+    NSLog(@"%ld", endTimeInMs);
     [self.endTime resignFirstResponder];
 }
 
@@ -170,7 +175,8 @@ double endTimeInMs;
 {
     UIDatePicker *picker = (UIDatePicker*)self.endDate.inputView;
     self.endDate.text = [self formatDate:picker.date];
-    endDateInMs = ([picker.date timeIntervalSinceReferenceDate] * 1000);
+    endDateInMs = ([picker.date timeIntervalSince1970] * 1000);
+    NSLog(@"%ld", endDateInMs);
     [self.endDate resignFirstResponder];
 }
 
@@ -178,7 +184,8 @@ double endTimeInMs;
 {
     UIDatePicker *picker = (UIDatePicker*)self.startDate.inputView;
     self.startDate.text = [self formatDate:picker.date];
-    startDateInMs =([picker.date timeIntervalSinceReferenceDate] * 1000);
+    startDateInMs =([picker.date timeIntervalSince1970] * 1000);
+    NSLog(@"%ld", startDateInMs);
     [self.startDate resignFirstResponder];
 }
 
@@ -187,7 +194,8 @@ double endTimeInMs;
 {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateStyle:NSDateFormatterShortStyle];
-    [dateFormatter setDateFormat:@"HH:mm:ss"];
+    [dateFormatter setDateFormat:@"HH:mm:00"];
+    [dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"EST"]];
     NSString *formattedDate = [dateFormatter stringFromDate:date];
     return formattedDate;
 }
@@ -197,6 +205,7 @@ double endTimeInMs;
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateStyle:NSDateFormatterShortStyle];
     [dateFormatter setDateFormat:@"MM'/'dd'/'yyyy"];
+    [dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"EST"]];
     NSString *formattedDate = [dateFormatter stringFromDate:date];
     return formattedDate;
 }
