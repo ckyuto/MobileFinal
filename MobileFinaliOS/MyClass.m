@@ -123,6 +123,7 @@
  */
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
+    NSLog(@"%@", segue.identifier);
     if ([segue.identifier isEqualToString: @"classList"]) {
         NSLog(@"detailView");
         NSIndexPath *indexPath = [self.myClassList indexPathForCell:sender];

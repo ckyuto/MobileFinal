@@ -14,7 +14,6 @@
 @interface SharePage : UIViewController
 
 @property (nonatomic) ACAccountStore *accountStore;
-@property (nonatomic, strong) ACAccount *facebookAccount;
 - (IBAction)post:(id)sender;
 
 @end
