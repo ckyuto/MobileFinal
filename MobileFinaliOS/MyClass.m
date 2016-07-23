@@ -125,8 +125,9 @@
     // Get the new view controller using [segue destinationViewController].
     if ([segue.identifier isEqualToString: @"classList"]) {
         NSLog(@"detailView");
-        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+        NSIndexPath *indexPath = [self.myClassList indexPathForCell:sender];
         class = classLists[[indexPath row]];
+        NSLog(@"%@", class);
         [[segue destinationViewController] setDetailItem: class];
     }
     // Pass the selected object to the new view controller.

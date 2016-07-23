@@ -47,14 +47,14 @@
 #pragma mark Save and cancel operations
 
 - (IBAction)saveClass:(id)sender {
-    NSMutableDictionary* classDict;
+    NSMutableDictionary* classDict = [NSMutableDictionary new];
     [classDict setObject:self.courseNumber.text forKey:@"courseNumber"];
     [classDict setObject:self.courseName.text forKey:@"courseName"];
     [classDict setObject:self.classDescription.text forKey:@"description"];
-    [classDict setObject:self.startDate forKey:@"startDate"];
-    [classDict setObject:self.endDate forKey:@"endDate"];
-    [classDict setObject:self.startTime forKey:@"startTime"];
-    [classDict setObject:self.endTime forKey:@"endTime"];
+    [classDict setObject:[NSNumber numberWithDouble:startDateInMs] forKey:@"startDate"];
+    [classDict setObject:[NSNumber numberWithDouble:endDateInMs] forKey:@"endDate"];
+    [classDict setObject:[NSNumber numberWithDouble:startTimeInMs] forKey:@"startTime"];
+    [classDict setObject:[NSNumber numberWithDouble:endTimeInMs] forKey:@"endTime"];
     
     NSMutableURLRequest *request = [Util getBodyRequest:@"createCourse" object: classDict];
     NSLog(@"%@", classDict);
@@ -65,12 +65,12 @@
                                                 
                                                 NSLog(@"%@", [response description]);
                                                 NSLog(@"%@", @"Create Course success!");
-                                                
+                                                [self clearText];
                                             }];
     [task resume];
 }
 
-- (IBAction)cancelClass:(id)sender {
+- (void) clearText{
     self.courseNumber.text = nil;
     self.courseName.text = nil;
     self.classDescription.text = nil;
@@ -78,6 +78,11 @@
     self.endDate.text = nil;
     self.startTime.text = nil;
     self.endTime.text = nil;
+
+}
+
+- (IBAction)cancelClass:(id)sender {
+    [self clearText];
 }
 
 
@@ -138,11 +143,16 @@ UIDatePicker *endDatePicker;
     NSLog(@"%@", minDateFromStart);
 }
 
+double startDateInMs;
+double endDateInMs;
+double startTimeInMs;
+double endTimeInMs;
 
 -(void)updateStartTimeField:(id)sender
 {
     UIDatePicker *picker = (UIDatePicker*)self.startTime.inputView;
     self.startTime.text = [self formatTime:picker.date];
+    startTimeInMs = ([picker.date timeIntervalSinceReferenceDate] * 1000);
     [self.startTime resignFirstResponder];
 }
 
@@ -150,6 +160,7 @@ UIDatePicker *endDatePicker;
 {
     UIDatePicker *picker = (UIDatePicker*)self.endTime.inputView;
     self.endTime.text = [self formatTime:picker.date];
+    endTimeInMs =  ([picker.date timeIntervalSinceReferenceDate] * 1000);
     [self.endTime resignFirstResponder];
 }
 
@@ -157,6 +168,7 @@ UIDatePicker *endDatePicker;
 {
     UIDatePicker *picker = (UIDatePicker*)self.endDate.inputView;
     self.endDate.text = [self formatDate:picker.date];
+    endDateInMs = ([picker.date timeIntervalSinceReferenceDate] * 1000);
     [self.endDate resignFirstResponder];
 }
 
@@ -164,8 +176,10 @@ UIDatePicker *endDatePicker;
 {
     UIDatePicker *picker = (UIDatePicker*)self.startDate.inputView;
     self.startDate.text = [self formatDate:picker.date];
+    startDateInMs =([picker.date timeIntervalSinceReferenceDate] * 1000);
     [self.startDate resignFirstResponder];
 }
+
 
 - (NSString *)formatTime:(NSDate *)date
 {
