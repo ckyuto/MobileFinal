@@ -82,6 +82,8 @@ static NSString *const REST_BASE_URL = @"http://50.19.186.200:8080/mobilefinalba
     [request setHTTPMethod:@"POST"];
     [request setHTTPBody:[self httpBodyForParamsDictionary:params]];
     
+     NSLog(@"request params: %@", [self getJsonFromDictionary:params]);
+    
     return request;
 }
 
@@ -94,6 +96,8 @@ static NSString *const REST_BASE_URL = @"http://50.19.186.200:8080/mobilefinalba
     [request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [request setHTTPMethod:@"POST"];
     [request setHTTPBody:[self getJsonFromDictionary:object]];
+    
+    NSLog(@"request params: %@", [self getJsonFromDictionary:object]);
     
     return request;
 }

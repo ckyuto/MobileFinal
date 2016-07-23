@@ -51,10 +51,12 @@
     [classDict setObject:self.courseNumber.text forKey:@"courseNumber"];
     [classDict setObject:self.courseName.text forKey:@"courseName"];
     [classDict setObject:self.classDescription.text forKey:@"description"];
-    [classDict setObject:[NSNumber numberWithDouble:startDateInMs] forKey:@"startDate"];
-    [classDict setObject:[NSNumber numberWithDouble:endDateInMs] forKey:@"endDate"];
-    [classDict setObject:[NSNumber numberWithDouble:startTimeInMs] forKey:@"startTime"];
-    [classDict setObject:[NSNumber numberWithDouble:endTimeInMs] forKey:@"endTime"];
+    [classDict setObject:[NSNumber numberWithLong:startDateInMs] forKey:@"startDate"];
+    [classDict setObject:[NSNumber numberWithLong:endDateInMs] forKey:@"endDate"];
+    [classDict setObject:[NSNumber numberWithLong:startTimeInMs] forKey:@"startTime"];
+    [classDict setObject:[NSNumber numberWithLong:endTimeInMs] forKey:@"endTime"];
+    [classDict setObject:[[Util getUserDict] objectForKey:@"userName"] forKey:@"teacherUserName"];
+    
     
     NSMutableURLRequest *request = [Util getBodyRequest:@"createCourse" object: classDict];
     NSLog(@"%@", classDict);
