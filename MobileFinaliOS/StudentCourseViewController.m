@@ -45,7 +45,7 @@
 -(void) fetchCourse{
     NSMutableDictionary* userDict = [Util getUserDict];
     
-    NSMutableURLRequest *request = [Util getFormRequest:@"getRegistedCourse" params:userDict];
+    NSMutableURLRequest *request = [Util getFormRequest:@"getRegisteredCourse" params:userDict];
     
     NSURLSession *session = [NSURLSession sharedSession];
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request
