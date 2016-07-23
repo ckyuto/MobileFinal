@@ -23,6 +23,10 @@
 		D19053B41D40283100539ECC /* ConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D19053B31D40283100539ECC /* ConfigViewController.m */; };
 		D19053B91D41736300539ECC /* StudentCourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D19053B81D41736300539ECC /* StudentCourseViewController.m */; };
 		E20AA5E21D4314BA0005F45A /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E20AA5E11D4314BA0005F45A /* Accounts.framework */; };
+		E20AA5E41D4326D20005F45A /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E20AA5E31D4326D20005F45A /* CoreBluetooth.framework */; };
+		E20AA6221D432A9C0005F45A /* ESSEddystone.m in Sources */ = {isa = PBXBuildFile; fileRef = E20AA61D1D432A9C0005F45A /* ESSEddystone.m */; };
+		E20AA6231D432A9C0005F45A /* ESSBeaconScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = E20AA61F1D432A9C0005F45A /* ESSBeaconScanner.m */; };
+		E20AA6241D432A9C0005F45A /* ESSTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = E20AA6211D432A9C0005F45A /* ESSTimer.m */; };
 		E23F33F71D3ECF3100C2B145 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E23F33F61D3ECF3100C2B145 /* Main.storyboard */; };
 		E2723E401D4016B40076C2BE /* QuizHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = E2723E3F1D4016B40076C2BE /* QuizHistory.m */; };
 		E27FDBA81D3E982E00D29D29 /* NewClass.m in Sources */ = {isa = PBXBuildFile; fileRef = E27FDBA71D3E982E00D29D29 /* NewClass.m */; };
@@ -58,6 +62,13 @@
 		D19053B81D41736300539ECC /* StudentCourseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentCourseViewController.m; sourceTree = "<group>"; };
 		D2BA2D745D007767402234BD /* libPods-MobileFinaliOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MobileFinaliOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E20AA5E11D4314BA0005F45A /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		E20AA5E31D4326D20005F45A /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		E20AA61C1D432A9C0005F45A /* ESSEddystone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESSEddystone.h; sourceTree = "<group>"; };
+		E20AA61D1D432A9C0005F45A /* ESSEddystone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESSEddystone.m; sourceTree = "<group>"; };
+		E20AA61E1D432A9C0005F45A /* ESSBeaconScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESSBeaconScanner.h; sourceTree = "<group>"; };
+		E20AA61F1D432A9C0005F45A /* ESSBeaconScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESSBeaconScanner.m; sourceTree = "<group>"; };
+		E20AA6201D432A9C0005F45A /* ESSTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESSTimer.h; sourceTree = "<group>"; };
+		E20AA6211D432A9C0005F45A /* ESSTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESSTimer.m; sourceTree = "<group>"; };
 		E23F33F61D3ECF3100C2B145 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E2723E3E1D4016B40076C2BE /* QuizHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizHistory.h; sourceTree = "<group>"; };
 		E2723E3F1D4016B40076C2BE /* QuizHistory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizHistory.m; sourceTree = "<group>"; };
@@ -77,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E20AA5E41D4326D20005F45A /* CoreBluetooth.framework in Frameworks */,
 				E20AA5E21D4314BA0005F45A /* Accounts.framework in Frameworks */,
 				E2CB21A21D41BE200009945B /* Social.framework in Frameworks */,
 				D135C0611D39F9E70087BC8A /* SystemConfiguration.framework in Frameworks */,
@@ -121,6 +133,7 @@
 		D1347FC51D26FBA7007B32E2 /* MobileFinaliOS */ = {
 			isa = PBXGroup;
 			children = (
+				E20AA5E51D4327740005F45A /* Beacon */,
 				D19053B61D409E6000539ECC /* Student */,
 				D19053B51D409E1600539ECC /* Teacher */,
 				D1347FC91D26FBA7007B32E2 /* AppDelegate.h */,
@@ -178,6 +191,7 @@
 		D9A5DFD2869D58E151724460 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E20AA5E31D4326D20005F45A /* CoreBluetooth.framework */,
 				E20AA5E11D4314BA0005F45A /* Accounts.framework */,
 				E2CB21A11D41BE200009945B /* Social.framework */,
 				D135C0601D39F9E70087BC8A /* SystemConfiguration.framework */,
@@ -186,6 +200,19 @@
 				D2BA2D745D007767402234BD /* libPods-MobileFinaliOS.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E20AA5E51D4327740005F45A /* Beacon */ = {
+			isa = PBXGroup;
+			children = (
+				E20AA61C1D432A9C0005F45A /* ESSEddystone.h */,
+				E20AA61D1D432A9C0005F45A /* ESSEddystone.m */,
+				E20AA61E1D432A9C0005F45A /* ESSBeaconScanner.h */,
+				E20AA61F1D432A9C0005F45A /* ESSBeaconScanner.m */,
+				E20AA6201D432A9C0005F45A /* ESSTimer.h */,
+				E20AA6211D432A9C0005F45A /* ESSTimer.m */,
+			);
+			name = Beacon;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -314,6 +341,7 @@
 				E27FDBAB1D3EB23000D29D29 /* MyClass.m in Sources */,
 				D1347FD41D26FBA7007B32E2 /* MobileFinaliOS.xcdatamodeld in Sources */,
 				D19053B41D40283100539ECC /* ConfigViewController.m in Sources */,
+				E20AA6221D432A9C0005F45A /* ESSEddystone.m in Sources */,
 				D1347FCE1D26FBA7007B32E2 /* ViewController.m in Sources */,
 				E27FDBAE1D3EC2D000D29D29 /* ClassDetail.m in Sources */,
 				D1347FCB1D26FBA7007B32E2 /* AppDelegate.m in Sources */,
@@ -322,6 +350,8 @@
 				D1347FC81D26FBA7007B32E2 /* main.m in Sources */,
 				D19053B91D41736300539ECC /* StudentCourseViewController.m in Sources */,
 				E2CB21A01D41B4B00009945B /* SharePage.m in Sources */,
+				E20AA6241D432A9C0005F45A /* ESSTimer.m in Sources */,
+				E20AA6231D432A9C0005F45A /* ESSBeaconScanner.m in Sources */,
 				D19053AE1D3EC68400539ECC /* Util.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

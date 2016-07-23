@@ -9,8 +9,11 @@
 #import "MyClass.h"
 #import "Util.h"
 #import "ClassDetail.h"
+#import "ESSBeaconScanner.h"
 
-@interface MyClass ()
+@interface MyClass () <ESSBeaconScannerDelegate>{
+    ESSBeaconScanner *_scanner;
+}
 
 @end
 
@@ -38,9 +41,22 @@
 
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    _scanner = [[ESSBeaconScanner alloc] init];
+    _scanner.delegate = self;
+    [_scanner startScanning];
     // You code here to update the view.
     [self fetchClassObject];
     
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    [_scanner stopScanning];
+    _scanner = nil;
+}
+
+- (void)beaconScanner:(ESSBeaconScanner *)scanner didFindURL:(NSURL *)url {
+    NSLog(@"I Saw a URL!: %@", url);
 }
 
 - (void) fetchClassObject{
