@@ -12,8 +12,9 @@
 #import <Accounts/Accounts.h>
 
 @interface SharePage : UIViewController
-- (IBAction)postToFacebook:(id)sender;
 
 @property (nonatomic) ACAccountStore *accountStore;
+@property (nonatomic, strong) ACAccount *facebookAccount;
+- (IBAction)post:(id)sender;
 
 @end

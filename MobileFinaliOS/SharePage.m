@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.accountStore = [[ACAccountStore alloc] init];
     // Do any additional setup after loading the view.
 }
 
@@ -24,10 +25,10 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (BOOL)userHasAccessToFacebook
+- (BOOL)userHasAccessToTwitter
 {
     return [SLComposeViewController
-            isAvailableForServiceType:SLServiceTypeFacebook];
+            isAvailableForServiceType:SLServiceTypeTwitter];
 }
 
 /*
@@ -40,31 +41,47 @@
 }
 */
 
-- (IBAction)postToFacebook:(id)sender {
-    if ([self userHasAccessToFacebook])
+
+- (IBAction)post:(id)sender {
+    NSLog(@"button action activated");
+    if ([self userHasAccessToTwitter])
     {
         
+        NSLog(@"user has access token");
         //  Step 1:  Obtain access to the user's Twitter accounts
-        ACAccountType *facebookAccountType =
+        if(self.accountStore == nil){
+            self.accountStore = [[ACAccountStore alloc] init];
+        }
+        ACAccountType *twitterAccountType =
         [self.accountStore accountTypeWithAccountTypeIdentifier:
-         ACAccountTypeIdentifierFacebook];
+         ACAccountTypeIdentifierTwitter];
+        
+//        NSDictionary *options = @{
+//                                  @"ACFacebookAppIdKey" : @"123456789",
+//                                  @"ACFacebookPermissionsKey" : @[@"publish_stream"],
+//                                  @"ACFacebookAudienceKey" : ACFacebookAudienceEveryone};
         
         [self.accountStore
-         requestAccessToAccountsWithType:facebookAccountType
+         requestAccessToAccountsWithType:twitterAccountType
          options:NULL
          completion:^(BOOL granted, NSError *error) {
              if (granted) {
-                 if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
-        			SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
-        
+                 NSLog(@"granted");
+                 if([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
+                     NSLog(@"is available");
+                     SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+                     
                      [controller setInitialText:@"First post from my iPhone app"];
                      [self presentViewController:controller animated:YES completion:Nil];
+                 } else{
+                     NSLog(@"SLComposeViewController is not available");
                  }
              }
              else {
+                 NSLog(@"permission not granted");
                  UIAlertController * alert = [UIAlertController
-                                              alertControllerWithTitle:@"Facebook"
-                                              message:@"Permission to access Facebook Account is not guaranteed."
+                                              alertControllerWithTitle:@"Twitter"
+                                              message:@"Permission to access Twitter Account is not guaranteed."
                                               preferredStyle:UIAlertControllerStyleAlert];
                  UIAlertAction* ok = [UIAlertAction
                                       actionWithTitle:@"OK"
@@ -80,8 +97,9 @@
          }];
     }
     else {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Facebook"
-                                                        message:@"Facebook integration is not available.  A Facebook account must be set up on your device."
+        NSLog(@"integration not available");
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Twitter"
+                                                        message:@"Twitter integration is not available.  A Twitter account must be set up on your device."
                                                        delegate:self
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];
@@ -89,5 +107,4 @@
     }
 
 }
-
 @end
