@@ -12,7 +12,7 @@
 
 @interface Util : NSObject
 
-+ (void) showAlert: (UIViewController *) view title:(NSString *) title message:(NSString *) message;
++ (void) showAlert: (UIViewController *) view title:(NSString *) title message:(NSString *) message  callback:(SEL)callback;
 + (NSData *)httpBodyForParamsDictionary:(NSDictionary *)paramDictionary;
 + (NSString *)percentEscapeString:(NSString *)string;
 + (NSMutableDictionary*) getUserDict;

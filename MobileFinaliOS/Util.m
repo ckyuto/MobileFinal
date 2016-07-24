@@ -14,7 +14,7 @@
 static NSMutableDictionary* globalUserDict;
 static NSString *const REST_BASE_URL = @"http://50.19.186.200:8080/mobilefinalbackend/rest/";
 
-+ (void) showAlert: (UIViewController *) view title:(NSString *) title message:(NSString *) message{
++ (void) showAlert: (UIViewController *) view title:(NSString *) title message:(NSString *) message callback:(SEL)callback{
     UIAlertController * alert = [UIAlertController
                                  alertControllerWithTitle:title
                                  message:message
@@ -25,7 +25,9 @@ static NSString *const REST_BASE_URL = @"http://50.19.186.200:8080/mobilefinalba
                          handler:^(UIAlertAction * action)
                          {
                              [view dismissViewControllerAnimated:YES completion:nil];
-                             
+                             if(callback != nil){
+                                 [view performSelector:callback];
+                             }
                          }];
     [alert addAction:ok];
     [view presentViewController:alert animated:YES completion:nil];
@@ -82,7 +84,7 @@ static NSString *const REST_BASE_URL = @"http://50.19.186.200:8080/mobilefinalba
     [request setHTTPMethod:@"POST"];
     [request setHTTPBody:[self httpBodyForParamsDictionary:params]];
     
-     NSLog(@"request params: %@", [self getJsonFromDictionary:params]);
+     NSLog(@"request params: %@", [Util showNSData:[self getJsonFromDictionary:params]]);
     
     return request;
 }
@@ -97,7 +99,8 @@ static NSString *const REST_BASE_URL = @"http://50.19.186.200:8080/mobilefinalba
     [request setHTTPMethod:@"POST"];
     [request setHTTPBody:[self getJsonFromDictionary:object]];
     
-    NSLog(@"request params: %@", [self getJsonFromDictionary:object]);
+    NSLog(@"request params: %@", [Util showNSData:[self getJsonFromDictionary:object]]);
+
     
     return request;
 }
