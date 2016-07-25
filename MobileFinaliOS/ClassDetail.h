@@ -11,9 +11,14 @@
 @interface ClassDetail : UIViewController
 
 @property (weak, nonatomic) IBOutlet UILabel *courseName;
-@property (strong, nonatomic) NSDictionary *detailItem;
+@property (weak, nonatomic) IBOutlet UILabel *courseDesc;
 
-- (void)setDetailItem:(NSDictionary*)newDetailItem;
+@property (strong, nonatomic) id detailItem;
+
+// @property (strong, nonatomic) NSDictionary *detailItem;
+//- (void)setDetailItem:(NSDictionary*)newDetailItem;
+
+- (void)setDetailItem:(id)newDetailItem;
 
 - (IBAction)jumpToQuizPage:(id)sender;
 

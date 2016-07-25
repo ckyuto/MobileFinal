@@ -17,6 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self configureView];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,9 +51,12 @@
 
 - (void)configureView
 {
-    NSLog(@"%@", _detailItem);
+    NSLog(@"detail item in detail view: %@", _detailItem);
+    NSLog(@"%@", [[self.detailItem valueForKey:@"courseName"] description]);
     if (_detailItem != nil) {
-        self.courseName = _detailItem;
+        self.courseName.text = [[self.detailItem valueForKey:@"courseName"] description];
+        self.courseDesc.text = [[self.detailItem valueForKey:@"description"] description];
+
     }
     
     
