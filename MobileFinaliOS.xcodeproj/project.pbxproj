@@ -22,6 +22,7 @@
 		D19053AE1D3EC68400539ECC /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = D19053AD1D3EC68400539ECC /* Util.m */; };
 		D19053B41D40283100539ECC /* ConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D19053B31D40283100539ECC /* ConfigViewController.m */; };
 		D19053B91D41736300539ECC /* StudentCourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D19053B81D41736300539ECC /* StudentCourseViewController.m */; };
+		D19053BE1D446F9300539ECC /* RegisterCourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D19053BD1D446F9300539ECC /* RegisterCourseViewController.m */; };
 		E20AA5E21D4314BA0005F45A /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E20AA5E11D4314BA0005F45A /* Accounts.framework */; };
 		E20AA5E41D4326D20005F45A /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E20AA5E31D4326D20005F45A /* CoreBluetooth.framework */; };
 		E20AA6221D432A9C0005F45A /* ESSEddystone.m in Sources */ = {isa = PBXBuildFile; fileRef = E20AA61D1D432A9C0005F45A /* ESSEddystone.m */; };
@@ -60,6 +61,8 @@
 		D19053B31D40283100539ECC /* ConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigViewController.m; sourceTree = "<group>"; };
 		D19053B71D41736300539ECC /* StudentCourseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentCourseViewController.h; sourceTree = "<group>"; };
 		D19053B81D41736300539ECC /* StudentCourseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentCourseViewController.m; sourceTree = "<group>"; };
+		D19053BC1D446F9300539ECC /* RegisterCourseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterCourseViewController.h; sourceTree = "<group>"; };
+		D19053BD1D446F9300539ECC /* RegisterCourseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterCourseViewController.m; sourceTree = "<group>"; };
 		D2BA2D745D007767402234BD /* libPods-MobileFinaliOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MobileFinaliOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E20AA5E11D4314BA0005F45A /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		E20AA5E31D4326D20005F45A /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
@@ -184,6 +187,8 @@
 			children = (
 				D19053B71D41736300539ECC /* StudentCourseViewController.h */,
 				D19053B81D41736300539ECC /* StudentCourseViewController.m */,
+				D19053BC1D446F9300539ECC /* RegisterCourseViewController.h */,
+				D19053BD1D446F9300539ECC /* RegisterCourseViewController.m */,
 			);
 			name = Student;
 			sourceTree = "<group>";
@@ -352,6 +357,7 @@
 				E2CB21A01D41B4B00009945B /* SharePage.m in Sources */,
 				E20AA6241D432A9C0005F45A /* ESSTimer.m in Sources */,
 				E20AA6231D432A9C0005F45A /* ESSBeaconScanner.m in Sources */,
+				D19053BE1D446F9300539ECC /* RegisterCourseViewController.m in Sources */,
 				D19053AE1D3EC68400539ECC /* Util.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
