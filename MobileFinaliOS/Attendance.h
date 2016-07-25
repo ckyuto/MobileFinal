@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface QuizHistory : UITableViewController
+@interface Attendance : UITableViewController
 
 @end

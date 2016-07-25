@@ -27,8 +27,9 @@
 		E20AA6221D432A9C0005F45A /* ESSEddystone.m in Sources */ = {isa = PBXBuildFile; fileRef = E20AA61D1D432A9C0005F45A /* ESSEddystone.m */; };
 		E20AA6231D432A9C0005F45A /* ESSBeaconScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = E20AA61F1D432A9C0005F45A /* ESSBeaconScanner.m */; };
 		E20AA6241D432A9C0005F45A /* ESSTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = E20AA6211D432A9C0005F45A /* ESSTimer.m */; };
+		E23C92271D46C7E000922563 /* QuizLink.m in Sources */ = {isa = PBXBuildFile; fileRef = E23C92261D46C7E000922563 /* QuizLink.m */; };
 		E23F33F71D3ECF3100C2B145 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E23F33F61D3ECF3100C2B145 /* Main.storyboard */; };
-		E2723E401D4016B40076C2BE /* QuizHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = E2723E3F1D4016B40076C2BE /* QuizHistory.m */; };
+		E2723E401D4016B40076C2BE /* Attendance.m in Sources */ = {isa = PBXBuildFile; fileRef = E2723E3F1D4016B40076C2BE /* Attendance.m */; };
 		E27FDBA81D3E982E00D29D29 /* NewClass.m in Sources */ = {isa = PBXBuildFile; fileRef = E27FDBA71D3E982E00D29D29 /* NewClass.m */; };
 		E27FDBAB1D3EB23000D29D29 /* MyClass.m in Sources */ = {isa = PBXBuildFile; fileRef = E27FDBAA1D3EB23000D29D29 /* MyClass.m */; };
 		E27FDBAE1D3EC2D000D29D29 /* ClassDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = E27FDBAD1D3EC2D000D29D29 /* ClassDetail.m */; };
@@ -69,9 +70,11 @@
 		E20AA61F1D432A9C0005F45A /* ESSBeaconScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESSBeaconScanner.m; sourceTree = "<group>"; };
 		E20AA6201D432A9C0005F45A /* ESSTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESSTimer.h; sourceTree = "<group>"; };
 		E20AA6211D432A9C0005F45A /* ESSTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESSTimer.m; sourceTree = "<group>"; };
+		E23C92251D46C7E000922563 /* QuizLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizLink.h; sourceTree = "<group>"; };
+		E23C92261D46C7E000922563 /* QuizLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizLink.m; sourceTree = "<group>"; };
 		E23F33F61D3ECF3100C2B145 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		E2723E3E1D4016B40076C2BE /* QuizHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizHistory.h; sourceTree = "<group>"; };
-		E2723E3F1D4016B40076C2BE /* QuizHistory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizHistory.m; sourceTree = "<group>"; };
+		E2723E3E1D4016B40076C2BE /* Attendance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Attendance.h; sourceTree = "<group>"; };
+		E2723E3F1D4016B40076C2BE /* Attendance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Attendance.m; sourceTree = "<group>"; };
 		E27FDBA61D3E982E00D29D29 /* NewClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewClass.h; sourceTree = "<group>"; };
 		E27FDBA71D3E982E00D29D29 /* NewClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewClass.m; sourceTree = "<group>"; };
 		E27FDBA91D3EB23000D29D29 /* MyClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyClass.h; sourceTree = "<group>"; };
@@ -165,6 +168,8 @@
 		D19053B51D409E1600539ECC /* Teacher */ = {
 			isa = PBXGroup;
 			children = (
+				E23C92251D46C7E000922563 /* QuizLink.h */,
+				E23C92261D46C7E000922563 /* QuizLink.m */,
 				E2CB219E1D41B4B00009945B /* SharePage.h */,
 				E2CB219F1D41B4B00009945B /* SharePage.m */,
 				E27FDBAC1D3EC2D000D29D29 /* ClassDetail.h */,
@@ -173,8 +178,8 @@
 				E27FDBAA1D3EB23000D29D29 /* MyClass.m */,
 				E27FDBA61D3E982E00D29D29 /* NewClass.h */,
 				E27FDBA71D3E982E00D29D29 /* NewClass.m */,
-				E2723E3E1D4016B40076C2BE /* QuizHistory.h */,
-				E2723E3F1D4016B40076C2BE /* QuizHistory.m */,
+				E2723E3E1D4016B40076C2BE /* Attendance.h */,
+				E2723E3F1D4016B40076C2BE /* Attendance.m */,
 			);
 			name = Teacher;
 			sourceTree = "<group>";
@@ -345,11 +350,12 @@
 				D1347FCE1D26FBA7007B32E2 /* ViewController.m in Sources */,
 				E27FDBAE1D3EC2D000D29D29 /* ClassDetail.m in Sources */,
 				D1347FCB1D26FBA7007B32E2 /* AppDelegate.m in Sources */,
-				E2723E401D4016B40076C2BE /* QuizHistory.m in Sources */,
+				E2723E401D4016B40076C2BE /* Attendance.m in Sources */,
 				E27FDBA81D3E982E00D29D29 /* NewClass.m in Sources */,
 				D1347FC81D26FBA7007B32E2 /* main.m in Sources */,
 				D19053B91D41736300539ECC /* StudentCourseViewController.m in Sources */,
 				E2CB21A01D41B4B00009945B /* SharePage.m in Sources */,
+				E23C92271D46C7E000922563 /* QuizLink.m in Sources */,
 				E20AA6241D432A9C0005F45A /* ESSTimer.m in Sources */,
 				E20AA6231D432A9C0005F45A /* ESSBeaconScanner.m in Sources */,
 				D19053AE1D3EC68400539ECC /* Util.m in Sources */,

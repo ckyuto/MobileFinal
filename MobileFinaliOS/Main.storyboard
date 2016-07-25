@@ -94,7 +94,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SGX-eF-QY4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-628" y="-159"/>
+            <point key="canvasLocation" x="-642" y="-355"/>
         </scene>
         <!--Share-->
         <scene sceneID="XY6-g7-arc">
@@ -119,7 +119,62 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZLu-rC-2Rp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="738" y="-159"/>
+            <point key="canvasLocation" x="719" y="-593"/>
+        </scene>
+        <!--Send Quiz-->
+        <scene sceneID="0Gk-dp-NDH">
+            <objects>
+                <viewController id="p1r-K4-C1W" userLabel="Send Quiz" customClass="QuizLink" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fo8-gk-jp8" userLabel="View">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quiz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uVv-sV-utd">
+                                <rect key="frame" x="37" y="58" width="66" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="soL-gP-FDj">
+                                <rect key="frame" x="37" y="162" width="55" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Py7-lu-jJH">
+                                <rect key="frame" x="142" y="268" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveToDatabase:" destination="p1r-K4-C1W" eventType="touchUpInside" id="qOS-eL-dwT"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="dZM-UX-SBQ" userLabel="Course Id">
+                                <rect key="frame" x="100" y="162" width="168" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="c7m-W7-l7m" userLabel="Quiz Link">
+                                <rect key="frame" x="100" y="54" width="168" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Send Quiz" id="wRg-FZ-Obu"/>
+                    <connections>
+                        <outlet property="courseNumber" destination="dZM-UX-SBQ" id="PYS-1d-zSp"/>
+                        <outlet property="quizLink" destination="c7m-W7-l7m" id="7uh-9W-n3p"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LLr-Qd-vOZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="332" y="-56"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="NcE-wY-hhH">
@@ -271,7 +326,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CourseCell" textLabel="VF9-ya-Rpj" detailTextLabel="TuK-15-XOr" style="IBUITableViewCellStyleSubtitle" id="axo-Mh-afb">
-                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="axo-Mh-afb" id="0dI-Hz-qcI">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -384,7 +439,7 @@
                                 <state key="normal" title="Quiz History"/>
                                 <connections>
                                     <action selector="jumpToQuizPage:" destination="fFf-se-EIt" eventType="touchUpInside" id="bWt-0X-uiB"/>
-                                    <segue destination="FUc-GG-Nlg" kind="push" id="CzJ-HU-4eP"/>
+                                    <segue destination="FUc-GG-Nlg" kind="push" identifier="quizList" id="CzJ-HU-4eP"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="courseName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QYn-V0-5U6">
@@ -398,7 +453,7 @@
                                 <rect key="frame" x="34" y="134" width="247" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ZHW-gp-Exw">
@@ -422,7 +477,7 @@
         <!--Quiz History-->
         <scene sceneID="Ovb-HS-alx">
             <objects>
-                <tableViewController id="FUc-GG-Nlg" userLabel="Quiz History" customClass="QuizHistory" sceneMemberID="viewController">
+                <tableViewController id="FUc-GG-Nlg" userLabel="Quiz History" customClass="Attendance" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ipk-gB-ob8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -592,7 +647,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gAF-5D-hST" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="309" y="-519"/>
+            <point key="canvasLocation" x="276" y="-895"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="4SS-yp-jWQ">
@@ -607,11 +662,12 @@
                         <segue destination="a50-Gr-uAw" kind="relationship" relationship="viewControllers" id="5fW-k2-sws"/>
                         <segue destination="8gZ-uB-fHv" kind="relationship" relationship="viewControllers" id="2SX-GY-jWR"/>
                         <segue destination="jdi-uT-vEX" kind="relationship" relationship="viewControllers" id="RKX-cM-eFL"/>
+                        <segue destination="p1r-K4-C1W" kind="relationship" relationship="viewControllers" id="vd7-fo-S2E"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F6c-X7-ZVK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-186" y="-159"/>
+            <point key="canvasLocation" x="-186" y="-355"/>
         </scene>
     </scenes>
 </document>

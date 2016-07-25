@@ -6,13 +6,13 @@
 //  Copyright © 2016 Carnegie Mellon University. All rights reserved.
 //
 
-#import "QuizHistory.h"
+#import "Attendance.h"
 
-@interface QuizHistory ()
+@interface Attendance ()
 
 @end
 
-@implementation QuizHistory
+@implementation Attendance
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -31,10 +31,10 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
-}
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+//    #warning Incomplete implementation, return the number of sections
+//    return 0;
+//}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete implementation, return the number of rows

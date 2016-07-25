@@ -47,6 +47,7 @@
 }
 
 - (IBAction)jumpToQuizPage:(id)sender {
+    [self performSegueWithIdentifier:@"quizList" sender:nil];
 }
 
 - (void)configureView
