@@ -20,6 +20,7 @@
 
 - (void)setDetailItem:(id)newDetailItem;
 
-- (IBAction)jumpToQuizPage:(id)sender;
+- (IBAction)checkAttendance:(id)sender;
+
 
 @end

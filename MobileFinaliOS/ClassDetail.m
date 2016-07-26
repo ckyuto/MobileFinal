@@ -46,9 +46,10 @@
     }
 }
 
-- (IBAction)jumpToQuizPage:(id)sender {
-    [self performSegueWithIdentifier:@"quizList" sender:nil];
+- (IBAction)checkAttendance:(id)sender {
+    [self performSegueWithIdentifier:@"attendance" sender:nil];
 }
+
 
 - (void)configureView
 {
