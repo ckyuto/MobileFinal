@@ -15,12 +15,11 @@
 
 @property (strong, nonatomic) id detailItem;
 
-// @property (strong, nonatomic) NSDictionary *detailItem;
-//- (void)setDetailItem:(NSDictionary*)newDetailItem;
 
 - (void)setDetailItem:(id)newDetailItem;
 
 - (IBAction)checkAttendance:(id)sender;
 
+- (IBAction)showQuiz:(id)sender;
 
 @end

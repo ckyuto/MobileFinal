@@ -429,9 +429,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="gSG-Fw-65z" userLabel="Statistics">
-                                <rect key="frame" x="34" y="321" width="64" height="30"/>
+                                <rect key="frame" x="31" y="321" width="71" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Statistics"/>
+                                <state key="normal" title="Quiz Links"/>
+                                <connections>
+                                    <action selector="showQuiz:" destination="fFf-se-EIt" eventType="touchUpInside" id="Qnr-5h-3Si"/>
+                                    <segue destination="FUc-GG-Nlg" kind="push" identifier="quiz" id="zTg-m6-2Jq"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="courseName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QYn-V0-5U6">
                                 <rect key="frame" x="34" y="99" width="217" height="21"/>
@@ -485,6 +489,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <accessibility key="accessibilityConfiguration" identifier="tableCell"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -493,6 +498,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="Qqr-Gj-aSL"/>
+                    <connections>
+                        <outlet property="myTableView" destination="Ipk-gB-ob8" id="4Lj-vb-5Yu"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pQn-ol-wfW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -665,4 +673,7 @@
             <point key="canvasLocation" x="-186" y="-355"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="zTg-m6-2Jq"/>
+    </inferredMetricsTieBreakers>
 </document>
