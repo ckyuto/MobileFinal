@@ -49,11 +49,11 @@
     
 }
 
-- (void)viewDidDisappear:(BOOL)animated {
-    [super viewDidDisappear:animated];
-    [_scanner stopScanning];
-    _scanner = nil;
-}
+//- (void)viewDidDisappear:(BOOL)animated {
+//    [super viewDidDisappear:animated];
+//    [_scanner stopScanning];
+//    _scanner = nil;
+//}
 
 - (void)beaconScanner:(ESSBeaconScanner *)scanner didFindURL:(NSURL *)url {
     NSLog(@"I Saw a URL!: %@", url);
