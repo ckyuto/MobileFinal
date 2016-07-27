@@ -28,6 +28,7 @@
 		E20AA6231D432A9C0005F45A /* ESSBeaconScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = E20AA61F1D432A9C0005F45A /* ESSBeaconScanner.m */; };
 		E20AA6241D432A9C0005F45A /* ESSTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = E20AA6211D432A9C0005F45A /* ESSTimer.m */; };
 		E23C92271D46C7E000922563 /* QuizLink.m in Sources */ = {isa = PBXBuildFile; fileRef = E23C92261D46C7E000922563 /* QuizLink.m */; };
+		E23C922A1D493E8D00922563 /* QuizDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = E23C92291D493E8D00922563 /* QuizDetail.m */; };
 		E23F33F71D3ECF3100C2B145 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E23F33F61D3ECF3100C2B145 /* Main.storyboard */; };
 		E2723E401D4016B40076C2BE /* Attendance.m in Sources */ = {isa = PBXBuildFile; fileRef = E2723E3F1D4016B40076C2BE /* Attendance.m */; };
 		E27FDBA81D3E982E00D29D29 /* NewClass.m in Sources */ = {isa = PBXBuildFile; fileRef = E27FDBA71D3E982E00D29D29 /* NewClass.m */; };
@@ -72,6 +73,8 @@
 		E20AA6211D432A9C0005F45A /* ESSTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESSTimer.m; sourceTree = "<group>"; };
 		E23C92251D46C7E000922563 /* QuizLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizLink.h; sourceTree = "<group>"; };
 		E23C92261D46C7E000922563 /* QuizLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizLink.m; sourceTree = "<group>"; };
+		E23C92281D493E8D00922563 /* QuizDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizDetail.h; sourceTree = "<group>"; };
+		E23C92291D493E8D00922563 /* QuizDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizDetail.m; sourceTree = "<group>"; };
 		E23F33F61D3ECF3100C2B145 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E2723E3E1D4016B40076C2BE /* Attendance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Attendance.h; sourceTree = "<group>"; };
 		E2723E3F1D4016B40076C2BE /* Attendance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Attendance.m; sourceTree = "<group>"; };
@@ -172,14 +175,16 @@
 				E23C92261D46C7E000922563 /* QuizLink.m */,
 				E2CB219E1D41B4B00009945B /* SharePage.h */,
 				E2CB219F1D41B4B00009945B /* SharePage.m */,
-				E27FDBAC1D3EC2D000D29D29 /* ClassDetail.h */,
-				E27FDBAD1D3EC2D000D29D29 /* ClassDetail.m */,
 				E27FDBA91D3EB23000D29D29 /* MyClass.h */,
 				E27FDBAA1D3EB23000D29D29 /* MyClass.m */,
+				E27FDBAC1D3EC2D000D29D29 /* ClassDetail.h */,
+				E27FDBAD1D3EC2D000D29D29 /* ClassDetail.m */,
 				E27FDBA61D3E982E00D29D29 /* NewClass.h */,
 				E27FDBA71D3E982E00D29D29 /* NewClass.m */,
 				E2723E3E1D4016B40076C2BE /* Attendance.h */,
 				E2723E3F1D4016B40076C2BE /* Attendance.m */,
+				E23C92281D493E8D00922563 /* QuizDetail.h */,
+				E23C92291D493E8D00922563 /* QuizDetail.m */,
 			);
 			name = Teacher;
 			sourceTree = "<group>";
@@ -356,6 +361,7 @@
 				D19053B91D41736300539ECC /* StudentCourseViewController.m in Sources */,
 				E2CB21A01D41B4B00009945B /* SharePage.m in Sources */,
 				E23C92271D46C7E000922563 /* QuizLink.m in Sources */,
+				E23C922A1D493E8D00922563 /* QuizDetail.m in Sources */,
 				E20AA6241D432A9C0005F45A /* ESSTimer.m in Sources */,
 				E20AA6231D432A9C0005F45A /* ESSBeaconScanner.m in Sources */,
 				D19053AE1D3EC68400539ECC /* Util.m in Sources */,
