@@ -22,6 +22,7 @@
 @synthesize endDate;
 @synthesize startTime;
 @synthesize endTime;
+@synthesize beaconLink;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -55,6 +56,7 @@
     [classDict setObject:[NSNumber numberWithLong:endDateInMs] forKey:@"endDate"];
     [classDict setObject:[NSNumber numberWithLong:startTimeInMs] forKey:@"startTime"];
     [classDict setObject:[NSNumber numberWithLong:endTimeInMs] forKey:@"endTime"];
+    [classDict setObject:self.beaconLink.text forKey:@"beaconLink"];
     [classDict setObject:[[Util getUserDict] objectForKey:@"userName"] forKey:@"teacherUserName"];
     
     
@@ -80,6 +82,7 @@
     self.endDate.text = nil;
     self.startTime.text = nil;
     self.endTime.text = nil;
+    self.beaconLink.text = nil;
 
 }
 
