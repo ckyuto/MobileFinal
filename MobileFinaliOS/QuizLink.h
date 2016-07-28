@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface QuizLink : UIViewController
+@interface QuizLink : UIViewController<UIPickerViewDataSource,UIPickerViewDelegate>
 - (IBAction)saveToDatabase:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextField *quizLink;
 
