@@ -14,6 +14,7 @@
 
 @implementation QuizLink{
     NSArray *allQuiz;
+    NSArray *allCourse;
 }
 
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {

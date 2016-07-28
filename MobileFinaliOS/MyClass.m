@@ -55,9 +55,6 @@
 //    _scanner = nil;
 //}
 
-- (void)beaconScanner:(ESSBeaconScanner *)scanner didFindURL:(NSURL *)url {
-    NSLog(@"I Saw a URL!: %@", url);
-}
 
 - (void) fetchClassObject{
     NSMutableDictionary* userDict = [Util getUserDict];

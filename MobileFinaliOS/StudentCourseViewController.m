@@ -8,6 +8,13 @@
 
 #import "StudentCourseViewController.h"
 #import "Util.h"
+#import "ESSBeaconScanner.h"
+
+@interface StudentCourseViewController() <ESSBeaconScannerDelegate>{
+    ESSBeaconScanner *_scanner;
+}
+
+@end
 
 @implementation StudentCourseViewController
 {
@@ -29,6 +36,59 @@
     [courseNumbers removeAllObjects];
     [self fetchCourse];
 }
+
+# pragma beacon
+
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    _scanner = [[ESSBeaconScanner alloc] init];
+    _scanner.delegate = self;
+    [_scanner startScanning];
+    
+}
+
+- (void)beaconScanner:(ESSBeaconScanner *)scanner didFindURL:(NSURL *)url {
+    NSLog(@"I Saw a URL!: %@", url);
+    NSMutableDictionary* userDict = [Util getUserDict];
+    NSString *userName = [userDict objectForKey:@"userName"];
+    NSString *date = currentESTDate();
+    
+    NSMutableDictionary *params = [[NSMutableDictionary alloc]init];
+    [params setObject:userName forKey:@"userName"];
+    [params setObject:date forKey:@"date"];
+    [params setObject:url forKey:@"beaconUrl"];
+    
+    NSMutableURLRequest *request = [Util getFormRequest:@"createCheckin" params:params];
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *task = [session dataTaskWithRequest:request
+                                            completionHandler: ^(NSData *data, NSURLResponse *response, NSError *error) {
+                                                NSLog(@"%@", [response description]);
+                                            }];
+    [task resume];
+    
+    
+    
+}
+
+NSString *currentESTDate()
+{
+    NSString *formatterDate = @"yyyy-MM-dd";
+    
+    NSDate* date = [NSDate date];
+    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+    [formatter setTimeZone:[NSTimeZone systemTimeZone]];
+    [formatter setLocale:[[NSLocale alloc]initWithLocaleIdentifier:@"en_US"]];
+    [formatter setDateFormat:formatterDate];
+    NSString* currentDateStamp =[formatter stringFromDate:date];
+    NSDate * returnDate = [formatter dateFromString:currentDateStamp];
+    
+    if( returnDate )
+    {
+        return currentDateStamp;
+    }
+    return nil;
+}
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [courseNames count];
