@@ -52,11 +52,12 @@
     NSMutableDictionary* userDict = [Util getUserDict];
     NSString *userName = [userDict objectForKey:@"userName"];
     NSString *date = currentESTDate();
+    NSString *urlString = url.absoluteString;
     
     NSMutableDictionary *params = [[NSMutableDictionary alloc]init];
     [params setObject:userName forKey:@"userName"];
     [params setObject:date forKey:@"date"];
-    [params setObject:url forKey:@"beaconUrl"];
+    [params setObject:urlString forKey:@"beaconUrl"];
     
     NSMutableURLRequest *request = [Util getFormRequest:@"createCheckin" params:params];
     NSURLSession *session = [NSURLSession sharedSession];
@@ -72,7 +73,7 @@
 
 NSString *currentESTDate()
 {
-    NSString *formatterDate = @"yyyy-MM-dd";
+    NSString *formatterDate = @"dd-MM-yyyy";
     
     NSDate* date = [NSDate date];
     NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
