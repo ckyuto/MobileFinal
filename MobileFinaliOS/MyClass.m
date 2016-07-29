@@ -9,12 +9,8 @@
 #import "MyClass.h"
 #import "Util.h"
 #import "ClassDetail.h"
-#import "ESSBeaconScanner.h"
 
-@interface MyClass () <ESSBeaconScannerDelegate>{
-    ESSBeaconScanner *_scanner;
-}
-
+@interface MyClass ()
 @end
 
 @implementation MyClass{
@@ -41,20 +37,10 @@
 
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    _scanner = [[ESSBeaconScanner alloc] init];
-    _scanner.delegate = self;
-    [_scanner startScanning];
     // You code here to update the view.
     [self fetchClassObject];
     
 }
-
-//- (void)viewDidDisappear:(BOOL)animated {
-//    [super viewDidDisappear:animated];
-//    [_scanner stopScanning];
-//    _scanner = nil;
-//}
-
 
 - (void) fetchClassObject{
     NSMutableDictionary* userDict = [Util getUserDict];
