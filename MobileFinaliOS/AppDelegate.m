@@ -25,20 +25,7 @@ static NSString *const kClientSecret = @"f479rQ_GhKQh4JpfvciHO-tQ";
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     NSError* configureError;
-    [[GGLContext sharedInstance] configureWithError: &configureError];
     NSAssert(!configureError, @"Error configuring Google services: %@", configureError);
-    
-    [GIDSignIn sharedInstance].delegate = self;
-    
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    
-    UIViewController *masterViewController = [storyboard instantiateViewControllerWithIdentifier:@"SignInViewController"];
-   
-    self.navigationController = [[UINavigationController alloc] initWithRootViewController:masterViewController];
-    self.window.rootViewController = self.navigationController;
-    
-    [self.window makeKeyAndVisible];
     
     return YES;
 }
@@ -88,84 +75,6 @@ static NSString *const kClientSecret = @"f479rQ_GhKQh4JpfvciHO-tQ";
     return _managedObjectModel;
 }
 
-
-- (BOOL)application:(UIApplication *)app
-            openURL:(NSURL *)url
-            options:(NSDictionary *)options {
-    return [[GIDSignIn sharedInstance] handleURL:url
-                               sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]
-                                      annotation:options[UIApplicationOpenURLOptionsAnnotationKey]];
-}
-
-
-
-- (void)signIn:(GIDSignIn *)signIn
-didSignInForUser:(GIDGoogleUser *)user
-     withError:(NSError *)error {
-    // Perform any operations on signed in user here.
-//    NSString *userId = user.userID;                  // For client-side use only!
-//    NSString *idToken = user.authentication.idToken; // Safe to send to the server
-//    NSString *fullName = user.profile.name;
-//    NSString *givenName = user.profile.givenName;
-//    NSString *familyName = user.profile.familyName;
-    NSString *email = user.profile.email;
-    
-    [self fetchUserObject:email];
-}
-
-
-
-- (void) fetchUserObject: (NSString*) userName{
-    
-    NSMutableDictionary *params = [[NSMutableDictionary alloc]init];
-    [params setObject:userName forKey:@"userName"];
-    
-    NSMutableURLRequest *request = [Util getFormRequest:@"getUser" params:params];
-    
-    NSURLSession *session = [NSURLSession sharedSession];
-    NSURLSessionDataTask *task = [session dataTaskWithRequest:request
-                                 completionHandler: ^(NSData *data, NSURLResponse *response, NSError *error) {
-                                     if (data.length > 0 && error == nil){
-                                         NSMutableDictionary *userDict = [[NSJSONSerialization JSONObjectWithData:data
-                                                                                                  options:0
-                                                                                                    error:NULL] mutableCopy];
-                                         
-                                         [Util setUserDict:userDict];
-                                                                                 
-                                         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                                         UIViewController *initViewController;
-                                         if([userDict objectForKey:@"role"] == (id)[NSNull null]){
-                                              initViewController = [storyboard instantiateViewControllerWithIdentifier:@"ConfigViewController"];
-                                             
-                                             
-                                         }else{
-                                             if([[userDict objectForKey:@"role"] isEqualToString:@"TEACHER"]){
-                                                 initViewController = [storyboard instantiateViewControllerWithIdentifier:@"TeacherTabView"];
-                                             }
-                                             
-                                             if([[userDict objectForKey:@"role"] isEqualToString:@"STUDENT"]){
-                                                 initViewController = [storyboard instantiateViewControllerWithIdentifier:@"StudentTabView"];
-                                             }
-                                         }
-                                         
-                                         [UIView transitionWithView:self.window
-                                                           duration:0.5
-                                                            options:UIViewAnimationOptionTransitionFlipFromLeft
-                                                         animations:^{ self.window.rootViewController = initViewController; }
-                                                         completion:nil];
-                                     }
-                                 }];
-    [task resume];
-}
-
-
-
-- (void)signIn:(GIDSignIn *)signIn
-didDisconnectWithUser:(GIDGoogleUser *)user
-     withError:(NSError *)error {
-    // Perform any operations when the user disconnects from app here.
-    // ...
-}
 
 
 - (NSPersistentStoreCoordinator *)persistentStoreCoordinator {

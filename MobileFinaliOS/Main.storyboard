@@ -12,19 +12,17 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" id="aWI-ex-wFi" customClass="GIDSignInButton">
-                                <rect key="frame" x="40" y="429" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <segue destination="SWo-kw-Rkl" kind="modal" identifier="ConfigViewController" id="zL5-xG-piq"/>
+                        <segue destination="xEX-0y-sr7" kind="modal" identifier="StudentTabView" id="Q13-lw-APb"/>
+                        <segue destination="bSF-0D-PDh" kind="modal" identifier="TeacherTabView" id="p0h-Zu-tdI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1022" y="349"/>
+            <point key="canvasLocation" x="-1065" y="344"/>
         </scene>
         <!--Config View Controller-->
         <scene sceneID="Qo9-lK-wlD">
@@ -730,6 +728,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="p0h-Zu-tdI"/>
+        <segue reference="Q13-lw-APb"/>
         <segue reference="zTg-m6-2Jq"/>
     </inferredMetricsTieBreakers>
 </document>

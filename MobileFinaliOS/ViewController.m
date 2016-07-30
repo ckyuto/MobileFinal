@@ -38,6 +38,7 @@ static NSString *const kClientSecret = @"f479rQ_GhKQh4JpfvciHO-tQ";
                                                       clientSecret:kClientSecret];
     if ([auth canAuthorize]) {
         [self isAuthorizedWithAuthentication:auth];
+        [self fetchUserObject:auth.userEmail];
     }
 
     
@@ -64,7 +65,7 @@ static NSString *const kClientSecret = @"f479rQ_GhKQh4JpfvciHO-tQ";
 - (void)viewController:(GTMOAuth2ViewControllerTouch *)viewController
       finishedWithAuth:(GTMOAuth2Authentication *)auth
                  error:(NSError *)error {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self fetchUserObject: auth.userEmail];
     if (error == nil) {
         [self isAuthorizedWithAuthentication:auth];
     }
@@ -86,28 +87,20 @@ static NSString *const kClientSecret = @"f479rQ_GhKQh4JpfvciHO-tQ";
                                                                                                                        error:NULL] mutableCopy];
                                                     
                                                     [Util setUserDict:userDict];
-                                                    
-                                                    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                                                    UIViewController *initViewController;
+
                                                     if([userDict objectForKey:@"role"] == (id)[NSNull null]){
-                                                        initViewController = [storyboard instantiateViewControllerWithIdentifier:@"ConfigViewController"];
-                                                        
+                                                        [self performSegueWithIdentifier:@"ConfigViewController" sender:self];
                                                         
                                                     }else{
                                                         if([[userDict objectForKey:@"role"] isEqualToString:@"TEACHER"]){
-                                                            initViewController = [storyboard instantiateViewControllerWithIdentifier:@"TeacherTabView"];
+                                                            [self performSegueWithIdentifier:@"TeacherTabView" sender:self];
                                                         }
                                                         
                                                         if([[userDict objectForKey:@"role"] isEqualToString:@"STUDENT"]){
-                                                            initViewController = [storyboard instantiateViewControllerWithIdentifier:@"StudentTabView"];
+                                                            [self performSegueWithIdentifier:@"StudentTabView" sender:self];
                                                         }
                                                     }
                                                     
-                                                    [UIView transitionWithView:self.window
-                                                                      duration:0.5
-                                                                       options:UIViewAnimationOptionTransitionFlipFromLeft
-                                                                    animations:^{ self.window.rootViewController = initViewController; }
-                                                                    completion:nil];
                                                 }
                                             }];
     [task resume];
