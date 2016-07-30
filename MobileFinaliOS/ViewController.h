@@ -11,7 +11,7 @@
 
 @interface ViewController : UIViewController <GIDSignInUIDelegate>
 
-
+@property BOOL isAuthorized;
 
 @end
 
