@@ -37,6 +37,7 @@
 		E27FDBA81D3E982E00D29D29 /* NewClass.m in Sources */ = {isa = PBXBuildFile; fileRef = E27FDBA71D3E982E00D29D29 /* NewClass.m */; };
 		E27FDBAB1D3EB23000D29D29 /* MyClass.m in Sources */ = {isa = PBXBuildFile; fileRef = E27FDBAA1D3EB23000D29D29 /* MyClass.m */; };
 		E27FDBAE1D3EC2D000D29D29 /* ClassDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = E27FDBAD1D3EC2D000D29D29 /* ClassDetail.m */; };
+		E2A0FB041D4E84B200DFE87C /* TwitterShare.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A0FB031D4E84B200DFE87C /* TwitterShare.m */; };
 		E2CB21A01D41B4B00009945B /* SharePage.m in Sources */ = {isa = PBXBuildFile; fileRef = E2CB219F1D41B4B00009945B /* SharePage.m */; };
 		E2CB21A21D41BE200009945B /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2CB21A11D41BE200009945B /* Social.framework */; };
 /* End PBXBuildFile section */
@@ -96,6 +97,8 @@
 		E27FDBAA1D3EB23000D29D29 /* MyClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyClass.m; sourceTree = "<group>"; };
 		E27FDBAC1D3EC2D000D29D29 /* ClassDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassDetail.h; sourceTree = "<group>"; };
 		E27FDBAD1D3EC2D000D29D29 /* ClassDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassDetail.m; sourceTree = "<group>"; };
+		E2A0FB021D4E84B200DFE87C /* TwitterShare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterShare.h; sourceTree = "<group>"; };
+		E2A0FB031D4E84B200DFE87C /* TwitterShare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterShare.m; sourceTree = "<group>"; };
 		E2CB219E1D41B4B00009945B /* SharePage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharePage.h; sourceTree = "<group>"; };
 		E2CB219F1D41B4B00009945B /* SharePage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharePage.m; sourceTree = "<group>"; };
 		E2CB21A11D41BE200009945B /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
@@ -212,6 +215,8 @@
 				D19053B81D41736300539ECC /* StudentCourseViewController.m */,
 				D19053BC1D446F9300539ECC /* RegisterCourseViewController.h */,
 				D19053BD1D446F9300539ECC /* RegisterCourseViewController.m */,
+				E2A0FB021D4E84B200DFE87C /* TwitterShare.h */,
+				E2A0FB031D4E84B200DFE87C /* TwitterShare.m */,
 			);
 			name = Student;
 			sourceTree = "<group>";
@@ -374,6 +379,7 @@
 				D1347FD41D26FBA7007B32E2 /* MobileFinaliOS.xcdatamodeld in Sources */,
 				D19053B41D40283100539ECC /* ConfigViewController.m in Sources */,
 				E20AA6221D432A9C0005F45A /* ESSEddystone.m in Sources */,
+				E2A0FB041D4E84B200DFE87C /* TwitterShare.m in Sources */,
 				D1347FCE1D26FBA7007B32E2 /* ViewController.m in Sources */,
 				E27FDBAE1D3EC2D000D29D29 /* ClassDetail.m in Sources */,
 				D1347FCB1D26FBA7007B32E2 /* AppDelegate.m in Sources */,
