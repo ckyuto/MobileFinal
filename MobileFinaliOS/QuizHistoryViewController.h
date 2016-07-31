@@ -10,4 +10,6 @@
 
 @interface QuizHistoryViewController : UITableViewController
 
+- (void) setSelectCourse: (id) selectCourse;
+
 @end

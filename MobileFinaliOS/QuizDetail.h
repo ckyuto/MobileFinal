@@ -9,11 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface QuizDetail : UIViewController
-@property (weak, nonatomic) IBOutlet UILabel *url;
-@property (weak, nonatomic) IBOutlet UITextView *quizSummary;
+@property (weak, nonatomic) NSString *url;
 
 @property (strong, nonatomic) id detailItem;
+@property (strong, nonatomic) IBOutlet UIWebView *webView;
 
-- (void)setDetailItem:(id)newDetailItem;
 
 @end
