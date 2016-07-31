@@ -163,6 +163,30 @@
 
 - (IBAction)saveToDatabase:(id)sender {
     
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    [params setObject:[courseNameIdDict objectForKey:self.courseNumber.text] forKey:@"courseId"];
+    [params setObject:self.quizName.text forKey:@"quizName"];
+    [params setObject:self.lbUrl.text forKey:@"url"];
+    
+    NSMutableURLRequest *request = [Util getBodyRequest:@"createCourseQuiz" object:params];
+    
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *task = [session dataTaskWithRequest:request
+                                            completionHandler: ^(NSData *data, NSURLResponse *response, NSError *error) {
+                                                
+                                                if(error == nil){
+                                                    dispatch_async(dispatch_get_main_queue(), ^{
+                                                        [Util showAlert:self title:@"" message:@"Send quiz success" callback:@selector(clearValue)];
+                                                    });
+                                                    NSLog(@"create course quiz link success");
+                                                }
+                                                
+                                                
+                                                NSLog(@"%@", [response description]);
+                                            
+                                            }];
+    
+    [task resume];
     
 }
 
@@ -174,4 +198,11 @@
         self.lbUrl.text = @"";
     }
 }
+
+-(void) clearValue{
+    self.courseNumber.text = @"";
+    self.quizName.text = @"";
+    self.lbUrl.text = @"";
+}
+
 @end

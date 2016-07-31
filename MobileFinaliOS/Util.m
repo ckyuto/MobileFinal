@@ -27,7 +27,7 @@ static NSString *const REST_BASE_URL = @"http://50.19.186.200:8080/mobilefinalba
                          style:UIAlertActionStyleDefault
                          handler:^(UIAlertAction * action)
                          {
-                             [view dismissViewControllerAnimated:YES completion:nil];
+                             [alert dismissViewControllerAnimated:YES completion:nil];
                              if(callback != nil){
                                  [view performSelector:callback];
                              }
