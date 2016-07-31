@@ -19,8 +19,14 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.currentDate.text = [Util currentESTDate];
+    [self.webView.delegate self];
+    [self.webView setScalesPageToFit:YES];
     [self configureView];
 
+}
+
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
+    return YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -58,9 +64,8 @@
                                                 NSLog(@"%f",attendance);
                                                 double absence = 100 - attendance;
                                                 NSLog(@"%f",absence);
-//                                                NSString *GraphURL = [NSString stringWithFormat:@"https://chart.googleapis.com/chart?cht=p3&chs=250x100&chd=t:%f,%f&chl=Attendance%f|Absence%f&chtt=Attendence Percentage", attendance, absence, attendance,absence];
-//                                                NSLog(@"%@", GraphURL);
-                                                NSString * GraphURL = @"https://chart.googleapis.com/chart?cht=p3&chs=250x100&chd=t:0.000000,100.000000&chl=Attendance0.000000|Absence100.000000&chtt=Attendence%20Percentage";
+                                                NSString *GraphURL = [NSString stringWithFormat:@"https://chart.googleapis.com/chart?cht=p3&chs=450x450&chd=t:%f,%f&chl=Attendance%f|Absence%f&chtt=Attendence Percentage", attendance, absence, attendance,absence];
+                                                NSLog(@"%@", GraphURL);
 //                                                NSString *GraphURL = @"https://www.google.com";
                                                 NSURL *url = [NSURL URLWithString:GraphURL];
                                                 NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];

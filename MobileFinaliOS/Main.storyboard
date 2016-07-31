@@ -119,6 +119,54 @@
             </objects>
             <point key="canvasLocation" x="719" y="-557"/>
         </scene>
+        <!--Absence List-->
+        <scene sceneID="u3i-at-zDq">
+            <objects>
+                <viewController id="Tr1-2V-7bk" customClass="AbsenceList" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GXR-sn-YLK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="vCp-1u-Pfo">
+                                <rect key="frame" x="0.0" y="183" width="320" height="348"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="absent" id="xoU-sf-J2p">
+                                <rect key="frame" x="0.0" y="262" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xoU-sf-J2p" id="WUw-mB-9w3">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Attendance Rate:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NLR-JG-ZoY">
+                                <rect key="frame" x="12" y="91" width="132" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oaM-Ff-pvl">
+                                <rect key="frame" x="157" y="101" width="91" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="sj7-nc-mjs"/>
+                    <connections>
+                        <outlet property="absentList" destination="vCp-1u-Pfo" id="rT1-64-rfU"/>
+                        <outlet property="rate" destination="oaM-Ff-pvl" id="DiM-Yl-Oxl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eeC-IU-1PR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1187" y="-72"/>
+        </scene>
         <!--Send Quiz-->
         <scene sceneID="0Gk-dp-NDH">
             <objects>
@@ -301,7 +349,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" id="wB3-Tg-mgF">
-                                <rect key="frame" x="0.0" y="127" width="320" height="394"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
                             </webView>
@@ -502,6 +550,7 @@
                         <outlet property="courseDesc" destination="Ryb-8J-Tdn" id="hPR-H2-qEa"/>
                         <outlet property="courseName" destination="QYn-V0-5U6" id="YKm-S7-EIV"/>
                         <segue destination="FUc-GG-Nlg" kind="push" identifier="quiz" id="wgi-FZ-l8J"/>
+                        <segue destination="Tr1-2V-7bk" kind="push" identifier="attendance" id="d0A-ch-gvk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6tM-yS-2jb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -539,7 +588,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pQn-ol-wfW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1242" y="584"/>
+            <point key="canvasLocation" x="1242" y="612"/>
         </scene>
         <!--Quiz Detail-->
         <scene sceneID="yO1-i0-XQI">
@@ -564,7 +613,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Sm-DW-2Ee" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1683" y="584"/>
+            <point key="canvasLocation" x="1691" y="612"/>
         </scene>
         <!--New Class-->
         <scene sceneID="PHr-fP-CFF">

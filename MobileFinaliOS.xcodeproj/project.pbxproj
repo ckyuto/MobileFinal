@@ -39,6 +39,7 @@
 		E27FDBAE1D3EC2D000D29D29 /* ClassDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = E27FDBAD1D3EC2D000D29D29 /* ClassDetail.m */; };
 		E2A0FB041D4E84B200DFE87C /* TwitterShare.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A0FB031D4E84B200DFE87C /* TwitterShare.m */; };
 		E2A0FB071D4E883700DFE87C /* StudentDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A0FB061D4E883700DFE87C /* StudentDetail.m */; };
+		E2A0FB0D1D4EAB3E00DFE87C /* AbsenceList.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A0FB0C1D4EAB3E00DFE87C /* AbsenceList.m */; };
 		E2CB21A01D41B4B00009945B /* SharePage.m in Sources */ = {isa = PBXBuildFile; fileRef = E2CB219F1D41B4B00009945B /* SharePage.m */; };
 		E2CB21A21D41BE200009945B /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2CB21A11D41BE200009945B /* Social.framework */; };
 /* End PBXBuildFile section */
@@ -102,6 +103,8 @@
 		E2A0FB031D4E84B200DFE87C /* TwitterShare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterShare.m; sourceTree = "<group>"; };
 		E2A0FB051D4E883700DFE87C /* StudentDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentDetail.h; sourceTree = "<group>"; };
 		E2A0FB061D4E883700DFE87C /* StudentDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentDetail.m; sourceTree = "<group>"; };
+		E2A0FB0B1D4EAB3E00DFE87C /* AbsenceList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbsenceList.h; sourceTree = "<group>"; };
+		E2A0FB0C1D4EAB3E00DFE87C /* AbsenceList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbsenceList.m; sourceTree = "<group>"; };
 		E2CB219E1D41B4B00009945B /* SharePage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharePage.h; sourceTree = "<group>"; };
 		E2CB219F1D41B4B00009945B /* SharePage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharePage.m; sourceTree = "<group>"; };
 		E2CB21A11D41BE200009945B /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
@@ -207,6 +210,8 @@
 				E23C92291D493E8D00922563 /* QuizDetail.m */,
 				D1287C7D1D4D4BC500584D45 /* QuizHistoryViewController.h */,
 				D1287C7E1D4D4BC500584D45 /* QuizHistoryViewController.m */,
+				E2A0FB0B1D4EAB3E00DFE87C /* AbsenceList.h */,
+				E2A0FB0C1D4EAB3E00DFE87C /* AbsenceList.m */,
 			);
 			name = Teacher;
 			sourceTree = "<group>";
@@ -391,6 +396,7 @@
 				E2723E401D4016B40076C2BE /* Attendance.m in Sources */,
 				E27FDBA81D3E982E00D29D29 /* NewClass.m in Sources */,
 				D12166DA1D4D99B400D24ABE /* QEUtilities.m in Sources */,
+				E2A0FB0D1D4EAB3E00DFE87C /* AbsenceList.m in Sources */,
 				D1347FC81D26FBA7007B32E2 /* main.m in Sources */,
 				D19053B91D41736300539ECC /* StudentCourseViewController.m in Sources */,
 				E2CB21A01D41B4B00009945B /* SharePage.m in Sources */,

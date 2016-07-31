@@ -8,6 +8,7 @@
 
 #import "ClassDetail.h"
 #import "QuizHistoryViewController.h"
+#import "AbsenceList.h"
 
 @interface ClassDetail ()
 
@@ -61,6 +62,9 @@
        [(QuizHistoryViewController *)[segue destinationViewController] setSelectCourse:self.detailItem];
     }
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString: @"attendance"]) {
+        [[segue destinationViewController] setItem: self.detailItem];
+    }
     
 }
 
