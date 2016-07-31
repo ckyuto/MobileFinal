@@ -63,6 +63,7 @@
     [classDict setObject:[NSNumber numberWithLong:startTimeInMs] forKey:@"startTime"];
     [classDict setObject:[NSNumber numberWithLong:endTimeInMs] forKey:@"endTime"];
     [classDict setObject:self.beaconLink.text forKey:@"beaconLink"];
+    [classDict setObject:self.times.text forKey:@"numOfCourse"];
     [classDict setObject:[[Util getUserDict] objectForKey:@"userName"] forKey:@"teacherUserName"];
     
     
@@ -72,6 +73,12 @@
     NSURLSession *session = [NSURLSession sharedSession];
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request
                                             completionHandler: ^(NSData *data, NSURLResponse *response, NSError *error) {
+                                                if(error == nil){
+                                                    dispatch_async(dispatch_get_main_queue(), ^{
+                                                        [Util showAlert:self title:@"" message:@"Create Course success" callback:@selector(clearValue)];
+                                                    });
+                                                    NSLog(@"create course quiz link success");
+                                                }
                                                 
                                                 NSLog(@"%@", [response description]);
                                                 NSLog(@"%@", @"Create Course success!");
@@ -89,6 +96,7 @@
     self.startTime.text = nil;
     self.endTime.text = nil;
     self.beaconLink.text = nil;
+    self.times.text = nil;
 
 }
 

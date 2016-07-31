@@ -114,8 +114,11 @@
 }
 */
 
+NSDictionary* teacherClass;
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    teacherClass = [classLists objectAtIndex:indexPath.row];
     [self performSegueWithIdentifier:@"classList" sender:self];
 }
 
@@ -127,9 +130,9 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     if ([segue.identifier isEqualToString: @"classList"]) {
-        NSIndexPath *indexPath = [self.myClassList indexPathForCell:sender];
-        NSDictionary* class = classLists[[indexPath row]];
-        [[segue destinationViewController] setDetailItem: class];
+//        NSIndexPath *indexPath = [self.myClassList indexPathForCell:sender];
+//        NSDictionary* class = classLists[[indexPath row]];
+        [[segue destinationViewController] setDetailItem: teacherClass];
     }
     // Pass the selected object to the new view controller.
     

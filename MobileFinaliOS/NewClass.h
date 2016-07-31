@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *startTime;
 @property (weak, nonatomic) IBOutlet UITextField *endTime;
 @property (weak, nonatomic) IBOutlet UITextField *beaconLink;
+@property (weak, nonatomic) IBOutlet UITextField *times;
 
 - (IBAction)saveClass:(id)sender;
 - (IBAction)cancelClass:(id)sender;
