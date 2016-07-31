@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1B457D45D34AB3D92F96BDFF /* libPods-MobileFinaliOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2BA2D745D007767402234BD /* libPods-MobileFinaliOS.a */; };
 		D12166DA1D4D99B400D24ABE /* QEUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = D12166D91D4D99B400D24ABE /* QEUtilities.m */; };
-		D12166E81D4E7BCA00D24ABE /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D12166E71D4E7BCA00D24ABE /* MessageViewController.m */; };
 		D1287C7F1D4D4BC500584D45 /* QuizHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1287C7E1D4D4BC500584D45 /* QuizHistoryViewController.m */; };
 		D1347FC81D26FBA7007B32E2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D1347FC71D26FBA7007B32E2 /* main.m */; };
 		D1347FCB1D26FBA7007B32E2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D1347FCA1D26FBA7007B32E2 /* AppDelegate.m */; };
@@ -40,7 +39,6 @@
 		E27FDBAE1D3EC2D000D29D29 /* ClassDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = E27FDBAD1D3EC2D000D29D29 /* ClassDetail.m */; };
 		E2A0FB041D4E84B200DFE87C /* TwitterShare.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A0FB031D4E84B200DFE87C /* TwitterShare.m */; };
 		E2A0FB071D4E883700DFE87C /* StudentDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A0FB061D4E883700DFE87C /* StudentDetail.m */; };
-		E2A0FB0A1D4E950900DFE87C /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A0FB091D4E950900DFE87C /* MessageViewController.m */; };
 		E2CB21A01D41B4B00009945B /* SharePage.m in Sources */ = {isa = PBXBuildFile; fileRef = E2CB219F1D41B4B00009945B /* SharePage.m */; };
 		E2CB21A21D41BE200009945B /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2CB21A11D41BE200009945B /* Social.framework */; };
 /* End PBXBuildFile section */
@@ -53,7 +51,6 @@
 		D12166DB1D4D99EB00D24ABE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D12166DD1D4D9A2A00D24ABE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		D12166DF1D4D9A4100D24ABE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		D12166E71D4E7BCA00D24ABE /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
 		D1287C7D1D4D4BC500584D45 /* QuizHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizHistoryViewController.h; sourceTree = "<group>"; };
 		D1287C7E1D4D4BC500584D45 /* QuizHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizHistoryViewController.m; sourceTree = "<group>"; };
 		D1347FC31D26FBA7007B32E2 /* MobileFinaliOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileFinaliOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,8 +102,6 @@
 		E2A0FB031D4E84B200DFE87C /* TwitterShare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterShare.m; sourceTree = "<group>"; };
 		E2A0FB051D4E883700DFE87C /* StudentDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentDetail.h; sourceTree = "<group>"; };
 		E2A0FB061D4E883700DFE87C /* StudentDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentDetail.m; sourceTree = "<group>"; };
-		E2A0FB081D4E950900DFE87C /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
-		E2A0FB091D4E950900DFE87C /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
 		E2CB219E1D41B4B00009945B /* SharePage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharePage.h; sourceTree = "<group>"; };
 		E2CB219F1D41B4B00009945B /* SharePage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharePage.m; sourceTree = "<group>"; };
 		E2CB21A11D41BE200009945B /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
@@ -219,8 +214,6 @@
 		D19053B61D409E6000539ECC /* Student */ = {
 			isa = PBXGroup;
 			children = (
-				E2A0FB081D4E950900DFE87C /* MessageViewController.h */,
-				E2A0FB091D4E950900DFE87C /* MessageViewController.m */,
 				D19053B71D41736300539ECC /* StudentCourseViewController.h */,
 				D19053B81D41736300539ECC /* StudentCourseViewController.m */,
 				D19053BC1D446F9300539ECC /* RegisterCourseViewController.h */,
@@ -392,9 +385,7 @@
 				D19053B41D40283100539ECC /* ConfigViewController.m in Sources */,
 				E20AA6221D432A9C0005F45A /* ESSEddystone.m in Sources */,
 				E2A0FB041D4E84B200DFE87C /* TwitterShare.m in Sources */,
-				E2A0FB0A1D4E950900DFE87C /* MessageViewController.m in Sources */,
 				D1347FCE1D26FBA7007B32E2 /* ViewController.m in Sources */,
-				D12166E81D4E7BCA00D24ABE /* MessageViewController.m in Sources */,
 				E27FDBAE1D3EC2D000D29D29 /* ClassDetail.m in Sources */,
 				D1347FCB1D26FBA7007B32E2 /* AppDelegate.m in Sources */,
 				E2723E401D4016B40076C2BE /* Attendance.m in Sources */,

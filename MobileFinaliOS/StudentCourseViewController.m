@@ -9,6 +9,7 @@
 #import "StudentCourseViewController.h"
 #import "Util.h"
 #import "ESSBeaconScanner.h"
+#import "StudentDetail.h"
 
 @interface StudentCourseViewController() <ESSBeaconScannerDelegate>{
     ESSBeaconScanner *_scanner;
@@ -97,7 +98,7 @@ NSString *currentESTDate()
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CourseCell" ];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"courseCell" ];
     cell.textLabel.text = [courseNames objectAtIndex:indexPath.row];
     cell.detailTextLabel.text = [courseNumbers objectAtIndex:indexPath.row];
     return cell;
@@ -138,13 +139,13 @@ NSString *currentESTDate()
  */
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    [self performSegueWithIdentifier:@"CourseCell" sender:self];
+    [self performSegueWithIdentifier:@"courseCell" sender:self];
 }
 
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
-    if ([segue.identifier isEqualToString: @"CourseCell"]) {
+    if ([segue.identifier isEqualToString: @"courseCell"]) {
         NSIndexPath *indexPath = [self.studentCourseView indexPathForCell:sender];
         NSDictionary* class = courseLists[[indexPath row]];
         [[segue destinationViewController] setDetailItem: class];

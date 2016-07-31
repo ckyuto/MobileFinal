@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface StudentCourseViewController : UITableViewController
+@interface StudentCourseViewController : UITableViewController<UITableViewDelegate, UITableViewDataSource>
 @property (strong, nonatomic) IBOutlet UITableView *studentCourseView;
 
 @end

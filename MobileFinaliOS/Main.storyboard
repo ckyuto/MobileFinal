@@ -322,7 +322,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f6y-k7-yzm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="851" y="1595"/>
+            <point key="canvasLocation" x="725" y="1559"/>
         </scene>
         <!--Register Course View Controller-->
         <scene sceneID="Hse-nU-Yus">
@@ -397,9 +397,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="G7N-sa-ytO" kind="push" identifier="courseCell" id="UUt-4r-hfI"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -416,27 +413,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="studentCourseView" destination="fly-vs-IYz" id="LWe-bc-hUH"/>
-                        <segue destination="Ijc-ql-IVb" kind="push" id="UCF-ra-Tn1"/>
+                        <segue destination="G7N-sa-ytO" kind="push" identifier="courseCell" id="dnL-SU-nR3"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MJz-eE-uTZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="276" y="1233"/>
-        </scene>
-        <!--Course Information-->
-        <scene sceneID="Q5M-p3-gTp">
-            <objects>
-                <viewController title="Course Information" id="Ijc-ql-IVb" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="rot-zu-usG">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="nnM-L5-NaI"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VHE-B4-iCI" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="276" y="1899"/>
         </scene>
         <!--Course-->
         <scene sceneID="UBV-mx-ZkR">
