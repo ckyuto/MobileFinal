@@ -29,7 +29,7 @@
     
     courseNames = [[NSMutableArray alloc] init];
     courseNumbers = [[NSMutableArray alloc] init];
-    
+    courseLists = [[NSArray alloc] init];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -118,8 +118,11 @@
  
  // In a storyboard-based application, you will often want to do a little preparation before navigation
  */
+NSDictionary * class;
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    class = [courseLists objectAtIndex:indexPath.row];
     [self performSegueWithIdentifier:@"course" sender:self];
 }
 
@@ -127,8 +130,8 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     if ([segue.identifier isEqualToString: @"course"]) {
-        NSIndexPath *indexPath = [self.studentCourseView indexPathForCell:sender];
-        NSDictionary* class = courseLists[[indexPath row]];
+//        NSIndexPath *indexPath = [self.studentCourseView indexPathForCell:sender];
+//        NSDictionary* class = courseLists[[indexPath row]];
         [[segue destinationViewController] setDetailItem: class];
     }
     // Pass the selected object to the new view controller.

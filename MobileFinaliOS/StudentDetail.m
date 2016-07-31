@@ -45,18 +45,23 @@
     NSMutableDictionary* userDict = [Util getUserDict];
     
     NSMutableDictionary *params = [[NSMutableDictionary alloc]init];
-    NSString *courseId = [self.detailItem valueForKey:@"courseId"];
+    NSNumber* courseId = [self.detailItem valueForKey:@"courseId"];
     NSString *studentUserName = [userDict objectForKey:@"userName"];
     [params setObject:studentUserName forKey:@"studentUserName"];
-    [params setObject:courseId forKey:@"courseId"];
+    [params setObject: [courseId stringValue] forKey:@"courseId"];
     NSMutableURLRequest *request = [Util getFormRequest:@"getAttendantRate" params:params];
     NSURLSession *session = [NSURLSession sharedSession];
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request
                                             completionHandler: ^(NSData *data, NSURLResponse *response, NSError *error) {
                                                 NSString *result = [Util showNSData:data];
                                                 double attendance = [result doubleValue];
+                                                NSLog(@"%f",attendance);
                                                 double absence = 100 - attendance;
-                                                NSString *GraphURL = [NSString stringWithFormat:@"https://chart.googleapis.com/chart?cht=p3&chs=250x100&chd=t:%f,%f&chl=Attendance%f|Absence%f&chtt=Attendence Percentage", attendance, absence, attendance,absence];
+                                                NSLog(@"%f",absence);
+//                                                NSString *GraphURL = [NSString stringWithFormat:@"https://chart.googleapis.com/chart?cht=p3&chs=250x100&chd=t:%f,%f&chl=Attendance%f|Absence%f&chtt=Attendence Percentage", attendance, absence, attendance,absence];
+//                                                NSLog(@"%@", GraphURL);
+                                                NSString * GraphURL = @"https://chart.googleapis.com/chart?cht=p3&chs=250x100&chd=t:0.000000,100.000000&chl=Attendance0.000000|Absence100.000000&chtt=Attendence%20Percentage";
+//                                                NSString *GraphURL = @"https://www.google.com";
                                                 NSURL *url = [NSURL URLWithString:GraphURL];
                                                 NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
                                                 [self.webView loadRequest:urlRequest];
