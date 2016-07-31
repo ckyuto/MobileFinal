@@ -28,5 +28,6 @@
 
 +(void) setAuthForDriverService: (GTMOAuth2Authentication *)auth;
 +(GTLServiceDrive *) getGoogleDriverService;
++ (NSString*) currentESTDate;
 
 @end

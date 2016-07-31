@@ -13,5 +13,6 @@
 @property (strong, nonatomic) id detailItem;
 - (void)setDetailItem:(id)newDetailItem;
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
+@property (weak, nonatomic) IBOutlet UILabel *currentDate;
 
 @end

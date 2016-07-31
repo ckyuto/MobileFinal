@@ -37,6 +37,25 @@ static NSString *const REST_BASE_URL = @"http://50.19.186.200:8080/mobilefinalba
 
 }
 
++ (NSString*) currentESTDate
+{
+    NSString *formatterDate = @"dd-MM-yyyy";
+    
+    NSDate* date = [NSDate date];
+    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+    [formatter setTimeZone:[NSTimeZone systemTimeZone]];
+    [formatter setLocale:[[NSLocale alloc]initWithLocaleIdentifier:@"en_US"]];
+    [formatter setDateFormat:formatterDate];
+    NSString* currentDateStamp =[formatter stringFromDate:date];
+    NSDate * returnDate = [formatter dateFromString:currentDateStamp];
+    
+    if( returnDate )
+    {
+        return currentDateStamp;
+    }
+    return nil;
+}
+
 + (NSData *)httpBodyForParamsDictionary:(NSMutableDictionary *)paramDictionary
 {
     NSMutableArray *parameterArray = [NSMutableArray array];

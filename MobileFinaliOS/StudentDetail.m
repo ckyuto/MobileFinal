@@ -18,6 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.currentDate.text = [Util currentESTDate];
     [self configureView];
 
 }
@@ -31,7 +32,7 @@
 {
     if (_detailItem != newDetailItem) {
         _detailItem = newDetailItem;
-        
+        self.currentDate.text = [Util currentESTDate];
         // Update the view.
         [self configureView];
     }

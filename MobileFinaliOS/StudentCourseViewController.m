@@ -53,7 +53,7 @@
     NSLog(@"I Saw a URL!: %@", url);
     NSMutableDictionary* userDict = [Util getUserDict];
     NSString *userName = [userDict objectForKey:@"userName"];
-    NSString *date = currentESTDate();
+    NSString *date = [Util currentESTDate];
     NSString *urlString = url.absoluteString;
     
     NSMutableDictionary *params = [[NSMutableDictionary alloc]init];
@@ -71,25 +71,6 @@
     
     
     
-}
-
-NSString *currentESTDate()
-{
-    NSString *formatterDate = @"dd-MM-yyyy";
-    
-    NSDate* date = [NSDate date];
-    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
-    [formatter setTimeZone:[NSTimeZone systemTimeZone]];
-    [formatter setLocale:[[NSLocale alloc]initWithLocaleIdentifier:@"en_US"]];
-    [formatter setDateFormat:formatterDate];
-    NSString* currentDateStamp =[formatter stringFromDate:date];
-    NSDate * returnDate = [formatter dateFromString:currentDateStamp];
-    
-    if( returnDate )
-    {
-        return currentDateStamp;
-    }
-    return nil;
 }
 
 
@@ -139,13 +120,13 @@ NSString *currentESTDate()
  */
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    [self performSegueWithIdentifier:@"courseCell" sender:self];
+    [self performSegueWithIdentifier:@"course" sender:self];
 }
 
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
-    if ([segue.identifier isEqualToString: @"courseCell"]) {
+    if ([segue.identifier isEqualToString: @"course"]) {
         NSIndexPath *indexPath = [self.studentCourseView indexPathForCell:sender];
         NSDictionary* class = courseLists[[indexPath row]];
         [[segue destinationViewController] setDetailItem: class];

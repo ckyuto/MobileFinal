@@ -306,7 +306,7 @@
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
                             </webView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JFF-sZ-xCD">
-                                <rect key="frame" x="40" y="39" width="36" height="21"/>
+                                <rect key="frame" x="40" y="88" width="166" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -317,6 +317,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="KoM-fn-rDs"/>
                     <connections>
+                        <outlet property="currentDate" destination="JFF-sZ-xCD" id="NeB-2M-LcA"/>
                         <outlet property="webView" destination="wB3-Tg-mgF" id="UWo-i9-23g"/>
                     </connections>
                 </viewController>
@@ -374,7 +375,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CourseCell" textLabel="VF9-ya-Rpj" detailTextLabel="TuK-15-XOr" style="IBUITableViewCellStyleSubtitle" id="axo-Mh-afb">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="courseCell" textLabel="VF9-ya-Rpj" detailTextLabel="TuK-15-XOr" style="IBUITableViewCellStyleSubtitle" id="axo-Mh-afb">
                                 <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="axo-Mh-afb" id="0dI-Hz-qcI">
@@ -413,7 +414,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="studentCourseView" destination="fly-vs-IYz" id="LWe-bc-hUH"/>
-                        <segue destination="G7N-sa-ytO" kind="push" identifier="courseCell" id="dnL-SU-nR3"/>
+                        <segue destination="G7N-sa-ytO" kind="push" identifier="course" id="dnL-SU-nR3"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MJz-eE-uTZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
