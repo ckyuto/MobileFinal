@@ -2,12 +2,12 @@
 //  MessageViewController.h
 //  MobileFinaliOS
 //
-//  Created by Wei YuYen on 2016/7/31.
-//  Copyright © 2016年 Carnegie Mellon University. All rights reserved.
+//  Created by Mengzhen on 7/31/16.
+//  Copyright © 2016 Carnegie Mellon University. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface MessageViewController : UITableViewController
+@interface MessageViewController : UIViewController
 
 @end

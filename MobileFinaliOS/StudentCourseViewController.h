@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface StudentCourseViewController : UITableViewController
+@property (strong, nonatomic) IBOutlet UITableView *studentCourseView;
 
 @end
