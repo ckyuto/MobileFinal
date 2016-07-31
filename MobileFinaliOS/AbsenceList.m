@@ -19,6 +19,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.absentList.dataSource = self;
+    absentLists = [[NSArray alloc] init];
     // Do any additional setup after loading the view.
     [self configureView];
     [self fetchAbsentList];
@@ -80,8 +82,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleSubtitle reuseIdentifier:@"absent"];
     //Configure the cell...
-    NSDictionary* absent = absentLists[[indexPath row]];
-    cell.textLabel.text = absent[@"userName"];
+    NSString* absent = absentLists[[indexPath row]];
+    cell.textLabel.text = absent;
     
     return cell;
 }
