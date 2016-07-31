@@ -12,7 +12,7 @@
 #import "Util.h"
 
 // Constants used for OAuth 2.0 authorization.
-static NSString *const kKeychainItemName = @"Mobile Application Development1";
+static NSString *const kKeychainItemName = @"Mobile Application Development3";
 static NSString *const kClientId = @"25974626856-3pq3i2k03pu2fajve5hlj8cavvvp8412.apps.googleusercontent.com";
 static NSString *const kClientSecret = @"f479rQ_GhKQh4JpfvciHO-tQ";
 
@@ -24,13 +24,6 @@ static NSString *const kClientSecret = @"f479rQ_GhKQh4JpfvciHO-tQ";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // TODO(developer) Configure the sign-in button look/feel
-    
-//    [GIDSignIn sharedInstance].uiDelegate = self;
-//    
-//    // Uncomment to automatically sign in the user.
-//    [[GIDSignIn sharedInstance] signInSilently];
-    
     
     GTMOAuth2Authentication *auth =
     [GTMOAuth2ViewControllerTouch authForGoogleFromKeychainForName:kKeychainItemName
@@ -66,6 +59,7 @@ static NSString *const kClientSecret = @"f479rQ_GhKQh4JpfvciHO-tQ";
       finishedWithAuth:(GTMOAuth2Authentication *)auth
                  error:(NSError *)error {
     [self fetchUserObject: auth.userEmail];
+    [self dismissViewControllerAnimated:YES completion:nil];
     if (error == nil) {
         [self isAuthorizedWithAuthentication:auth];
     }
