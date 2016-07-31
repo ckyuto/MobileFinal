@@ -20,7 +20,10 @@
     NSMutableArray *allQuiz;
     NSMutableArray *allCourse;
     NSMutableArray *driveFiles;
-    NSArray *classLists;
+    NSMutableDictionary *courseNameIdDict;
+    NSMutableDictionary *quizNameUrlDict;
+    
+    
 }
 
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
@@ -28,7 +31,11 @@
 }
 
 -(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    return allQuiz.count;
+    if(pickerView.tag == 1){
+        return allCourse.count;
+    }else{
+        return allQuiz.count;
+    }
 }
 
 - (void)viewDidLoad {
@@ -36,22 +43,39 @@
     // Do any additional setup after loading the view.
     driveFiles = [[NSMutableArray alloc] init];
     allQuiz = [[NSMutableArray alloc] init];
+    allCourse = [[NSMutableArray alloc] init];
+    courseNameIdDict = [[NSMutableDictionary alloc] init];
+    quizNameUrlDict = [[NSMutableDictionary alloc] init];
     
-    UIPickerView *picker = [[UIPickerView alloc] init];
-    picker.dataSource = self;
-    picker.delegate = self;
-    self.quizName.inputView = picker;
+    UIPickerView *coursePicker = [[UIPickerView alloc] init];
+    coursePicker.tag = 1;
+    coursePicker.dataSource = self;
+    coursePicker.delegate = self;
+    self.courseNumber.inputView = coursePicker;
+    
+    
+    UIPickerView *quizPicker = [[UIPickerView alloc] init];
+    quizPicker.tag = 2;
+    quizPicker.dataSource = self;
+    quizPicker.delegate = self;
+    self.quizName.inputView = quizPicker;
     
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
+    [allQuiz removeAllObjects];
+    [allCourse removeAllObjects];
+    [driveFiles removeAllObjects];
+    [courseNameIdDict removeAllObjects];
+    [quizNameUrlDict removeAllObjects];
     
     [self loadDriveFiles];
+    [self fetchClassObject];
     
 
 }
+
 
 - (NSArray*) fetchAllQuiz{
     // to be implemented by following the example to fetch all links from google side
@@ -60,12 +84,21 @@
 }
 
 -(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    return allQuiz[row];
+    if(pickerView.tag == 1){
+        return allCourse[row];
+    }else{
+        return allQuiz[row];
+    }
 }
 
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    self.quizName.text = allQuiz[row];
-    [self.quizName resignFirstResponder];
+    if(pickerView.tag == 1){
+        self.courseNumber.text = allCourse[row];
+        [self.courseNumber resignFirstResponder];
+    }else{
+        self.quizName.text = allQuiz[row];
+        [self.quizName resignFirstResponder];
+    }
 }
 
 - (void)loadDriveFiles {
@@ -79,12 +112,12 @@
         if (error == nil) {
             
             [driveFiles removeAllObjects];
-            NSLog(@"description: %@", files.JSONString);
             [driveFiles addObjectsFromArray:files.files];
             
             for(GTLDriveFile *file in driveFiles){
+                NSString *url = [NSString stringWithFormat: @"https://docs.google.com/forms/d/%@/edit#responses", [[file JSONValueForKey:@"id"] description]];
                 [allQuiz addObject:file.name];
-                NSLog(@"%@", file.name);
+                [quizNameUrlDict setObject: url forKey:file.name];
             }
         } else {
             NSLog(@"An error occurred: %@", error);
@@ -105,14 +138,13 @@
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request
                                             completionHandler: ^(NSData *data, NSURLResponse *response, NSError *error) {
                                                 if (data.length > 0 && error == nil){
-                                                    classLists = [[NSJSONSerialization JSONObjectWithData:data options:0 error:NULL] mutableCopy];
+                                                    NSArray *classLists = [[NSJSONSerialization JSONObjectWithData:data options:0 error:NULL] mutableCopy];
                                                     
-                                                    
-                                                    
-                                                    
-                                                    NSLog(@"%@", [response description]);
-                                                    NSLog(@"classLists: %@", classLists);
-                                                    
+                                                    for(NSDictionary* course in classLists){
+                                                        NSString* courseNumber = [course objectForKey:@"courseNumber"];
+                                                        [allCourse addObject: courseNumber];
+                                                        [courseNameIdDict setObject: [course objectForKey:@"courseId"] forKey:courseNumber];
+                                                    }
                                                 }
                                             }];
     [task resume];
@@ -130,5 +162,16 @@
 */
 
 - (IBAction)saveToDatabase:(id)sender {
+    
+    
+}
+
+
+- (IBAction)onChangeQuizName:(UITextField *)sender {
+    if(sender.text != nil){
+        self.lbUrl.text = [quizNameUrlDict objectForKey:sender.text];
+    }else{
+        self.lbUrl.text = @"";
+    }
 }
 @end

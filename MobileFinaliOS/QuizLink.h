@@ -16,4 +16,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *courseNumber;
 
 @property (strong, nonatomic) IBOutlet UILabel *lbUrl;
+
+- (IBAction)onChangeQuizName:(UITextField *)sender;
+
 @end
