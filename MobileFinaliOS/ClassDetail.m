@@ -74,8 +74,6 @@
         self.courseDesc.text = [[self.detailItem valueForKey:@"description"] description];
 
     }
-    
-    
 }
 
 

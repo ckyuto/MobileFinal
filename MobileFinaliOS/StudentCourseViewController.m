@@ -20,6 +20,7 @@
 {
     NSMutableArray *courseNames;
     NSMutableArray *courseNumbers;
+    NSArray *courseLists;
 }
 
 - (void)viewDidLoad {
@@ -113,6 +114,7 @@ NSString *currentESTDate()
                                             completionHandler: ^(NSData *data, NSURLResponse *response, NSError *error) {
                                                 NSArray *courseData = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
                                                 if(courseData){
+                                                    courseLists = courseData;
                                                     for (NSDictionary *status in courseData){
                                                         [courseNames addObject:[status objectForKey:@"courseName"]];
                                                         [courseNumbers addObject:[status objectForKey:@"courseNumber"]];
@@ -128,5 +130,28 @@ NSString *currentESTDate()
     
     [task resume];
 }
+
+/*
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ */
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [self performSegueWithIdentifier:@"CourseCell" sender:self];
+}
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    if ([segue.identifier isEqualToString: @"CourseCell"]) {
+        NSIndexPath *indexPath = [self.studentCourseView indexPathForCell:sender];
+        NSDictionary* class = courseLists[[indexPath row]];
+        [[segue destinationViewController] setDetailItem: class];
+    }
+    // Pass the selected object to the new view controller.
+    
+}
+
 
 @end
