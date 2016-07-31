@@ -7,10 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <Social/Social.h>
-#import <Accounts/Accounts.h>
+#import "GTMOAuth2ViewControllerTouch.h"
+#import "GTLDrive.h"
+
 
 @interface Util : NSObject
+
 
 + (void) showAlert: (UIViewController *) view title:(NSString *) title message:(NSString *) message  callback:(SEL)callback;
 + (NSData *)httpBodyForParamsDictionary:(NSDictionary *)paramDictionary;
@@ -23,4 +25,8 @@
 +(NSMutableURLRequest*) getBodyRequest: (NSString*) urlMapping object: (NSDictionary*) object;
 
 +(NSString *) showNSData: (NSData *) data;
+
++(void) setAuthForDriverService: (GTMOAuth2Authentication *)auth;
++(GTLServiceDrive *) getGoogleDriverService;
+
 @end

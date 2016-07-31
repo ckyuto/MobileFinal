@@ -7,14 +7,20 @@
 //
 
 #import "QuizLink.h"
+#import "GTLDrive.h"
+#import "Util.h"
+#import "QEUtilities.h"
+
 
 @interface QuizLink ()
 
 @end
 
 @implementation QuizLink{
-    NSArray *allQuiz;
-    NSArray *allCourse;
+    NSMutableArray *allQuiz;
+    NSMutableArray *allCourse;
+    NSMutableArray *driveFiles;
+    NSArray *classLists;
 }
 
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
@@ -28,12 +34,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    driveFiles = [[NSMutableArray alloc] init];
+    allQuiz = [[NSMutableArray alloc] init];
+    
     UIPickerView *picker = [[UIPickerView alloc] init];
     picker.dataSource = self;
     picker.delegate = self;
-    self.quizLink.inputView = picker;
-    allQuiz = [self fetchAllQuiz];
+    self.quizName.inputView = picker;
     
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    
+    [self loadDriveFiles];
+    
+
 }
 
 - (NSArray*) fetchAllQuiz{
@@ -47,13 +64,59 @@
 }
 
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    self.quizLink.text = allQuiz[row];
-    [self.quizLink resignFirstResponder];
+    self.quizName.text = allQuiz[row];
+    [self.quizName resignFirstResponder];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)loadDriveFiles {
+    GTLQueryDrive *query = [GTLQueryDrive queryForFilesList];
+    query.q = @"mimeType = 'application/vnd.google-apps.form'";
+    
+    
+    [[Util getGoogleDriverService] executeQuery:query completionHandler:^(GTLServiceTicket *ticket,
+                                                              GTLDriveFileList *files,
+                                                              NSError *error) {
+        if (error == nil) {
+            
+            [driveFiles removeAllObjects];
+            NSLog(@"description: %@", files.JSONString);
+            [driveFiles addObjectsFromArray:files.files];
+            
+            for(GTLDriveFile *file in driveFiles){
+                [allQuiz addObject:file.name];
+                NSLog(@"%@", file.name);
+            }
+        } else {
+            NSLog(@"An error occurred: %@", error);
+        }
+    }];
+}
+
+
+- (void) fetchClassObject{
+    NSMutableDictionary* userDict = [Util getUserDict];
+    NSString *teacherUserName = [userDict objectForKey:@"userName"];
+    
+    NSMutableDictionary *params = [[NSMutableDictionary alloc]init];
+    [params setObject:teacherUserName forKey:@"teacherUserName"];
+    
+    NSMutableURLRequest *request = [Util getFormRequest:@"getCourseByTeacherUserName" params:params];
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *task = [session dataTaskWithRequest:request
+                                            completionHandler: ^(NSData *data, NSURLResponse *response, NSError *error) {
+                                                if (data.length > 0 && error == nil){
+                                                    classLists = [[NSJSONSerialization JSONObjectWithData:data options:0 error:NULL] mutableCopy];
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    NSLog(@"%@", [response description]);
+                                                    NSLog(@"classLists: %@", classLists);
+                                                    
+                                                }
+                                            }];
+    [task resume];
+    
 }
 
 /*

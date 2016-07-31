@@ -42,7 +42,7 @@ PODS:
 
 DEPENDENCIES:
   - Google/SignIn
-  - GoogleAPIClient/Drive (~> 1.0.2)
+  - GoogleAPIClient/Drive (~> 1.0.0)
   - GTMOAuth2 (~> 1.1.0)
 
 SPEC CHECKSUMS:
@@ -60,6 +60,6 @@ SPEC CHECKSUMS:
   GTMOAuth2: bdb12f3e0d2110bfe585f6151230b883beb4d042
   GTMSessionFetcher: 174bc61d5238f81f9ddb807b0b0170420f67de85
 
-PODFILE CHECKSUM: 85ff06641d651ca53d3cf1b69e751ac9a5db11be
+PODFILE CHECKSUM: 1711c74b38d9faa52a3e5c30d89a81fbe03a1464
 
 COCOAPODS: 1.0.1

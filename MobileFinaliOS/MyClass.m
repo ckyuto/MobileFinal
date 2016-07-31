@@ -15,7 +15,7 @@
 
 @implementation MyClass{
     NSArray *classLists;
-    NSDictionary * class;
+    
 }
 
 - (void)viewDidLoad {
@@ -54,9 +54,8 @@
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request
                                             completionHandler: ^(NSData *data, NSURLResponse *response, NSError *error) {
                                                 if (data.length > 0 && error == nil){
-                                                    NSArray *classDict = [[NSJSONSerialization JSONObjectWithData:data options:0 error:NULL] mutableCopy];
-                                                    if (classDict){
-                                                        classLists = classDict;
+                                                    classLists = [[NSJSONSerialization JSONObjectWithData:data options:0 error:NULL] mutableCopy];
+                                                    if (classLists){
                                                         if (classLists.count != 0){
                                                             dispatch_async(dispatch_get_main_queue(), ^{
                                                                 [self.myClassList reloadData];
@@ -94,7 +93,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleSubtitle reuseIdentifier:@"classCell"];
      //Configure the cell...
-    class = classLists[[indexPath row]];
+    NSDictionary* class = classLists[[indexPath row]];
     cell.textLabel.text = class[@"courseName"];
     cell.detailTextLabel.text = class[@"courseNumber"];
     
@@ -129,7 +128,7 @@
     // Get the new view controller using [segue destinationViewController].
     if ([segue.identifier isEqualToString: @"classList"]) {
         NSIndexPath *indexPath = [self.myClassList indexPathForCell:sender];
-        class = classLists[[indexPath row]];
+        NSDictionary* class = classLists[[indexPath row]];
         [[segue destinationViewController] setDetailItem: class];
     }
     // Pass the selected object to the new view controller.

@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0272C289796C8F952CFCABC8 /* libPods-MobileFinaliOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2BA2D745D007767402234BD /* libPods-MobileFinaliOS.a */; };
+		1B457D45D34AB3D92F96BDFF /* libPods-MobileFinaliOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2BA2D745D007767402234BD /* libPods-MobileFinaliOS.a */; };
+		D12166DA1D4D99B400D24ABE /* QEUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = D12166D91D4D99B400D24ABE /* QEUtilities.m */; };
+		D1287C7F1D4D4BC500584D45 /* QuizHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1287C7E1D4D4BC500584D45 /* QuizHistoryViewController.m */; };
 		D1347FC81D26FBA7007B32E2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D1347FC71D26FBA7007B32E2 /* main.m */; };
 		D1347FCB1D26FBA7007B32E2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D1347FCA1D26FBA7007B32E2 /* AppDelegate.m */; };
 		D1347FCE1D26FBA7007B32E2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1347FCD1D26FBA7007B32E2 /* ViewController.m */; };
@@ -42,6 +44,13 @@
 /* Begin PBXFileReference section */
 		692DB7F0BB074A33CCC36FD7 /* Pods-MobileFinaliOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileFinaliOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-MobileFinaliOS/Pods-MobileFinaliOS.release.xcconfig"; sourceTree = "<group>"; };
 		BD83143C2748E6702DEA32E4 /* Pods-MobileFinaliOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileFinaliOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MobileFinaliOS/Pods-MobileFinaliOS.debug.xcconfig"; sourceTree = "<group>"; };
+		D12166D81D4D99B400D24ABE /* QEUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QEUtilities.h; sourceTree = "<group>"; };
+		D12166D91D4D99B400D24ABE /* QEUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QEUtilities.m; sourceTree = "<group>"; };
+		D12166DB1D4D99EB00D24ABE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D12166DD1D4D9A2A00D24ABE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D12166DF1D4D9A4100D24ABE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D1287C7D1D4D4BC500584D45 /* QuizHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizHistoryViewController.h; sourceTree = "<group>"; };
+		D1287C7E1D4D4BC500584D45 /* QuizHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizHistoryViewController.m; sourceTree = "<group>"; };
 		D1347FC31D26FBA7007B32E2 /* MobileFinaliOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileFinaliOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1347FC71D26FBA7007B32E2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D1347FC91D26FBA7007B32E2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -103,7 +112,7 @@
 				D135C0611D39F9E70087BC8A /* SystemConfiguration.framework in Frameworks */,
 				D135C05F1D39F9DE0087BC8A /* SafariServices.framework in Frameworks */,
 				D135C05D1D39F9D10087BC8A /* AddressBook.framework in Frameworks */,
-				0272C289796C8F952CFCABC8 /* libPods-MobileFinaliOS.a in Frameworks */,
+				1B457D45D34AB3D92F96BDFF /* libPods-MobileFinaliOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,6 +160,8 @@
 				D1347FCD1D26FBA7007B32E2 /* ViewController.m */,
 				D19053B21D40283100539ECC /* ConfigViewController.h */,
 				D19053B31D40283100539ECC /* ConfigViewController.m */,
+				D12166D81D4D99B400D24ABE /* QEUtilities.h */,
+				D12166D91D4D99B400D24ABE /* QEUtilities.m */,
 				D19053AC1D3EC68400539ECC /* Util.h */,
 				D19053AD1D3EC68400539ECC /* Util.m */,
 				D1347FD51D26FBA7007B32E2 /* Assets.xcassets */,
@@ -188,6 +199,8 @@
 				E2723E3F1D4016B40076C2BE /* Attendance.m */,
 				E23C92281D493E8D00922563 /* QuizDetail.h */,
 				E23C92291D493E8D00922563 /* QuizDetail.m */,
+				D1287C7D1D4D4BC500584D45 /* QuizHistoryViewController.h */,
+				D1287C7E1D4D4BC500584D45 /* QuizHistoryViewController.m */,
 			);
 			name = Teacher;
 			sourceTree = "<group>";
@@ -206,6 +219,9 @@
 		D9A5DFD2869D58E151724460 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D12166DF1D4D9A4100D24ABE /* UIKit.framework */,
+				D12166DD1D4D9A2A00D24ABE /* CoreGraphics.framework */,
+				D12166DB1D4D99EB00D24ABE /* Foundation.framework */,
 				E20AA5E31D4326D20005F45A /* CoreBluetooth.framework */,
 				E20AA5E11D4314BA0005F45A /* Accounts.framework */,
 				E2CB21A11D41BE200009945B /* Social.framework */,
@@ -354,6 +370,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E27FDBAB1D3EB23000D29D29 /* MyClass.m in Sources */,
+				D1287C7F1D4D4BC500584D45 /* QuizHistoryViewController.m in Sources */,
 				D1347FD41D26FBA7007B32E2 /* MobileFinaliOS.xcdatamodeld in Sources */,
 				D19053B41D40283100539ECC /* ConfigViewController.m in Sources */,
 				E20AA6221D432A9C0005F45A /* ESSEddystone.m in Sources */,
@@ -362,6 +379,7 @@
 				D1347FCB1D26FBA7007B32E2 /* AppDelegate.m in Sources */,
 				E2723E401D4016B40076C2BE /* Attendance.m in Sources */,
 				E27FDBA81D3E982E00D29D29 /* NewClass.m in Sources */,
+				D12166DA1D4D99B400D24ABE /* QEUtilities.m in Sources */,
 				D1347FC81D26FBA7007B32E2 /* main.m in Sources */,
 				D19053B91D41736300539ECC /* StudentCourseViewController.m in Sources */,
 				E2CB21A01D41B4B00009945B /* SharePage.m in Sources */,

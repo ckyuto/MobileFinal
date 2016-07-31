@@ -12,7 +12,7 @@
 #import "Util.h"
 
 // Constants used for OAuth 2.0 authorization.
-static NSString *const kKeychainItemName = @"Mobile Application Development";
+static NSString *const kKeychainItemName = @"Mobile Application Development1";
 static NSString *const kClientId = @"25974626856-3pq3i2k03pu2fajve5hlj8cavvvp8412.apps.googleusercontent.com";
 static NSString *const kClientSecret = @"f479rQ_GhKQh4JpfvciHO-tQ";
 
@@ -50,7 +50,7 @@ static NSString *const kClientSecret = @"f479rQ_GhKQh4JpfvciHO-tQ";
         // Sign in.
         SEL finishedSelector = @selector(viewController:finishedWithAuth:error:);
         GTMOAuth2ViewControllerTouch *authViewController =
-        [[GTMOAuth2ViewControllerTouch alloc] initWithScope:kGTLAuthScopeDriveFile
+        [[GTMOAuth2ViewControllerTouch alloc] initWithScope:kGTLAuthScopeDrive
                                                    clientID:kClientId
                                                clientSecret:kClientSecret
                                            keychainItemName:kKeychainItemName
@@ -111,6 +111,7 @@ static NSString *const kClientSecret = @"f479rQ_GhKQh4JpfvciHO-tQ";
 
 - (void)isAuthorizedWithAuthentication:(GTMOAuth2Authentication *)auth {
     //add auth for drive service
+    [Util setAuthForDriverService:auth];
     self.isAuthorized = YES;
 }
 

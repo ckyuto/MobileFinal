@@ -10,8 +10,10 @@
 
 @interface QuizLink : UIViewController<UIPickerViewDataSource,UIPickerViewDelegate>
 - (IBAction)saveToDatabase:(id)sender;
-@property (weak, nonatomic) IBOutlet UITextField *quizLink;
+
+@property (strong, nonatomic) IBOutlet UITextField *quizName;
 
 @property (weak, nonatomic) IBOutlet UITextField *courseNumber;
 
+@property (strong, nonatomic) IBOutlet UILabel *lbUrl;
 @end

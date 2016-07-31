@@ -54,14 +54,14 @@
     [self performSegueWithIdentifier:@"quiz" sender:nil];
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    if ([segue.identifier isEqualToString: @"quiz"]) {
-        [[segue destinationViewController] setDetailItem: _detailItem];
-    }
-    // Pass the selected object to the new view controller.
-    
-}
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//    // Get the new view controller using [segue destinationViewController].
+//    if ([segue.identifier isEqualToString: @"quiz"]) {
+//        [[segue destinationViewController] setDetailItem: _detailItem];
+//    }
+//    // Pass the selected object to the new view controller.
+//    
+//}
 
 
 - (void)configureView

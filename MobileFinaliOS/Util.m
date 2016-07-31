@@ -7,12 +7,15 @@
 //
 
 #import "Util.h"
-#import <sys/utsname.h>
+#import "GTMOAuth2ViewControllerTouch.h"
+
 
 @implementation Util
 
 static NSMutableDictionary* globalUserDict;
+static GTLServiceDrive *driveService;
 static NSString *const REST_BASE_URL = @"http://50.19.186.200:8080/mobilefinalbackend/rest/";
+
 
 + (void) showAlert: (UIViewController *) view title:(NSString *) title message:(NSString *) message callback:(SEL)callback{
     UIAlertController * alert = [UIAlertController
@@ -107,6 +110,19 @@ static NSString *const REST_BASE_URL = @"http://50.19.186.200:8080/mobilefinalba
 
 +(NSString *) showNSData: (NSData *) data{
     return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+}
+
++(void) setAuthForDriverService: (GTMOAuth2Authentication *)auth{
+    if(!driveService){
+        driveService = [[GTLServiceDrive alloc] init];
+        driveService.shouldFetchNextPages = YES;
+        driveService.retryEnabled = YES;
+    }
+    
+    [driveService setAuthorizer:auth];
+}
++(GTLServiceDrive *) getGoogleDriverService{
+    return driveService;
 }
 
 @end
