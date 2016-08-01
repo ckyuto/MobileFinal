@@ -25,6 +25,9 @@ static NSString *const kClientSecret = @"f479rQ_GhKQh4JpfvciHO-tQ";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
+    
+    
     GTMOAuth2Authentication *auth =
     [GTMOAuth2ViewControllerTouch authForGoogleFromKeychainForName:kKeychainItemName
                                                           clientID:kClientId
@@ -39,6 +42,10 @@ static NSString *const kClientSecret = @"f479rQ_GhKQh4JpfvciHO-tQ";
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    
+    self.myTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateProgressBar:) userInfo:nil repeats:YES];
+    
+    
     if (!self.isAuthorized) {
         // Sign in.
         SEL finishedSelector = @selector(viewController:finishedWithAuth:error:);
@@ -52,6 +59,20 @@ static NSString *const kClientSecret = @"f479rQ_GhKQh4JpfvciHO-tQ";
         [self presentViewController:authViewController
                            animated:YES
                          completion:nil];
+    }
+}
+
+static float count =0;
+
+- (void)updateProgressBar:(NSTimer *)timer{
+    int load = 1 + arc4random_uniform(20);
+    count += load;
+    if (count <=100){
+        self.progressView.progress = (float)count/100.0f;
+    } else
+    {
+        [self.myTimer invalidate];
+        self.myTimer = nil;
     }
 }
 
