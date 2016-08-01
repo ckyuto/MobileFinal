@@ -124,7 +124,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Share" id="P7t-qg-c7F" userLabel="Share"/>
+                    <tabBarItem key="tabBarItem" title="Share" image="Tweet" id="P7t-qg-c7F" userLabel="Share"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZLu-rC-2Rp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -144,7 +144,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="absent" id="prD-7j-ia5">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="prD-7j-ia5" id="nCL-EL-oj6">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -242,7 +242,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Send Quiz" id="wRg-FZ-Obu"/>
+                    <tabBarItem key="tabBarItem" title="Send Quiz" image="google.png" selectedImage="Quiz" id="wRg-FZ-Obu"/>
                     <connections>
                         <outlet property="courseNumber" destination="dZM-UX-SBQ" id="PYS-1d-zSp"/>
                         <outlet property="lbUrl" destination="vck-KV-tHd" id="6LI-VO-iiD"/>
@@ -323,7 +323,7 @@
             </objects>
             <point key="canvasLocation" x="-642" y="1233"/>
         </scene>
-        <!--Message-->
+        <!--Quiz-->
         <scene sceneID="7V1-Ql-JsS">
             <objects>
                 <tableViewController id="QIE-RH-FgZ" customClass="QuizMessage" sceneMemberID="viewController">
@@ -346,7 +346,7 @@
                             <outlet property="delegate" destination="QIE-RH-FgZ" id="Q7U-Cu-oKo"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Message" id="NBK-tm-ekR"/>
+                    <tabBarItem key="tabBarItem" title="Quiz" image="google.png" id="NBK-tm-ekR" userLabel="Quiz"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="quizTable" destination="hZd-u1-35Q" id="qwv-vq-ng3"/>
@@ -489,7 +489,7 @@
         <scene sceneID="UBV-mx-ZkR">
             <objects>
                 <navigationController id="sfe-79-bqS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Course" id="XqU-QO-zyi"/>
+                    <tabBarItem key="tabBarItem" title="Course" image="Class" id="XqU-QO-zyi"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gx1-4p-Mbc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -507,7 +507,7 @@
         <scene sceneID="s2F-ZU-yXp">
             <objects>
                 <navigationController id="a50-Gr-uAw" userLabel="My Class" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Course" id="58x-Nf-ZY6" userLabel="My Class"/>
+                    <tabBarItem key="tabBarItem" title="Course" image="Class" id="58x-Nf-ZY6" userLabel="My Class"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="z5H-0D-R9t">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -583,7 +583,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="QuizCell" id="a4Y-bH-iCL">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a4Y-bH-iCL" id="TIS-hJ-3jN">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -787,7 +787,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="New Class" id="XUd-zJ-FC5"/>
+                    <tabBarItem key="tabBarItem" title="New Class" image="New" id="XUd-zJ-FC5"/>
                     <connections>
                         <outlet property="beaconLink" destination="beq-jE-Niy" id="dug-ED-nLX"/>
                         <outlet property="classDescription" destination="2AI-4v-aqe" id="8Qb-Py-Shd"/>
@@ -846,7 +846,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Share" id="u9s-kA-GBy" userLabel="Share"/>
+                    <tabBarItem key="tabBarItem" title="Share" image="Tweet" id="u9s-kA-GBy" userLabel="Share"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ezg-3v-Jh2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -854,7 +854,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Class" width="25" height="25"/>
+        <image name="New" width="25" height="25"/>
+        <image name="Quiz" width="25" height="25"/>
+        <image name="Tweet" width="25" height="25"/>
         <image name="attending_logo.png" width="960" height="310"/>
+        <image name="google.png" width="18" height="18"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Q13-lw-APb"/>
