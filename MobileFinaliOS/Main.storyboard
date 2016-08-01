@@ -315,13 +315,13 @@
         <!--Message-->
         <scene sceneID="7V1-Ql-JsS">
             <objects>
-                <tableViewController id="QIE-RH-FgZ" sceneMemberID="viewController">
+                <tableViewController id="QIE-RH-FgZ" customClass="QuizMessage" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="hZd-u1-35Q">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="i62-el-jWL">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="quiz" id="i62-el-jWL">
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="i62-el-jWL" id="HWA-kA-qs1">
@@ -337,6 +337,9 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Message" id="NBK-tm-ekR"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="quizTable" destination="hZd-u1-35Q" id="qwv-vq-ng3"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f0L-aj-8fm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
