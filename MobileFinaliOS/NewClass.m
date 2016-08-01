@@ -75,14 +75,15 @@
                                             completionHandler: ^(NSData *data, NSURLResponse *response, NSError *error) {
                                                 if(error == nil){
                                                     dispatch_async(dispatch_get_main_queue(), ^{
-                                                        [Util showAlert:self title:@"" message:@"Create Course success" callback:@selector(clearValue)];
+                                                        [Util showAlert:self title:@"" message:@"Create Course success" callback:@selector(clearText)];
                                                     });
-                                                    NSLog(@"create course quiz link success");
+                                                    
+                                                    
                                                 }
                                                 
                                                 NSLog(@"%@", [response description]);
                                                 NSLog(@"%@", @"Create Course success!");
-                                                [self clearText];
+                                                
                                             }];
     [task resume];
 }
