@@ -19,6 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+//    [self.view sendSubviewToBack:aWebView];
     [self fetchQuiz];
     
     quizSet = [[NSArray alloc]init];
@@ -32,12 +33,13 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+//    [self.view sendSubviewToBack:aWebView];
     [self fetchQuiz];
 }
 
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    // You code here to update the view.
+//    [self.view sendSubviewToBack:aWebView];    // You code here to update the view.
     [self fetchQuiz];
     
 }
@@ -101,13 +103,12 @@
 
 }
 
-
+UIWebView *aWebView;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     NSDictionary *quiz = [quizSet objectAtIndex:indexPath.row];
     
-    UIWebView *aWebView;
     CGRect screen = [[UIScreen mainScreen] bounds];
     aWebView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, screen.size.width, screen.size.height)];//init and create the UIWebView
     aWebView.autoresizesSubviews = YES;
