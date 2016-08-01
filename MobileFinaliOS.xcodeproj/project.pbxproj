@@ -57,7 +57,7 @@
 		D1287C7D1D4D4BC500584D45 /* QuizHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizHistoryViewController.h; sourceTree = "<group>"; };
 		D1287C7E1D4D4BC500584D45 /* QuizHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizHistoryViewController.m; sourceTree = "<group>"; };
 		D12947611D4F47DC0010B431 /* attending_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = attending_logo.png; sourceTree = "<group>"; };
-		D1347FC31D26FBA7007B32E2 /* MobileFinaliOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileFinaliOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1347FC31D26FBA7007B32E2 /* Attending.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Attending.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1347FC71D26FBA7007B32E2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D1347FC91D26FBA7007B32E2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D1347FCA1D26FBA7007B32E2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -165,7 +165,7 @@
 		D1347FC41D26FBA7007B32E2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D1347FC31D26FBA7007B32E2 /* MobileFinaliOS.app */,
+				D1347FC31D26FBA7007B32E2 /* Attending.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -297,7 +297,7 @@
 			);
 			name = MobileFinaliOS;
 			productName = MobileFinaliOS;
-			productReference = D1347FC31D26FBA7007B32E2 /* MobileFinaliOS.app */;
+			productReference = D1347FC31D26FBA7007B32E2 /* Attending.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -589,7 +589,7 @@
 					"\"SystemConfiguration\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = mobile.final.project.team4;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Attending;
 			};
 			name = Debug;
 		};
@@ -656,7 +656,7 @@
 					"\"SystemConfiguration\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = mobile.final.project.team4;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Attending;
 			};
 			name = Release;
 		};
