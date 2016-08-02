@@ -213,7 +213,7 @@ long endTimeInMs;
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateStyle:NSDateFormatterShortStyle];
     [dateFormatter setDateFormat:@"HH:mm:00"];
-    [dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"EST"]];
+//    [dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"EST"]];
     NSString *formattedDate = [dateFormatter stringFromDate:date];
     return formattedDate;
 }
