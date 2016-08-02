@@ -39,6 +39,7 @@
     [super viewWillAppear:animated];
     // You code here to update the view.
     [self fetchClassObject];
+    [self.myClassList reloadData];
     
 }
 

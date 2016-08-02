@@ -124,7 +124,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Share" id="P7t-qg-c7F" userLabel="Share"/>
+                    <tabBarItem key="tabBarItem" title="Share" image="Tweet" id="P7t-qg-c7F" userLabel="Share"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZLu-rC-2Rp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -144,7 +144,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="absent" id="prD-7j-ia5">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="prD-7j-ia5" id="nCL-EL-oj6">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -242,7 +242,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Send Quiz" id="wRg-FZ-Obu"/>
+                    <tabBarItem key="tabBarItem" title="Send Quiz" image="Quiz" selectedImage="Quiz" id="wRg-FZ-Obu"/>
                     <connections>
                         <outlet property="courseNumber" destination="dZM-UX-SBQ" id="PYS-1d-zSp"/>
                         <outlet property="lbUrl" destination="vck-KV-tHd" id="6LI-VO-iiD"/>
@@ -323,7 +323,7 @@
             </objects>
             <point key="canvasLocation" x="-642" y="1233"/>
         </scene>
-        <!--Message-->
+        <!--Quiz-->
         <scene sceneID="7V1-Ql-JsS">
             <objects>
                 <tableViewController id="QIE-RH-FgZ" customClass="QuizMessage" sceneMemberID="viewController">
@@ -346,7 +346,7 @@
                             <outlet property="delegate" destination="QIE-RH-FgZ" id="Q7U-Cu-oKo"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Message" id="NBK-tm-ekR"/>
+                    <tabBarItem key="tabBarItem" title="Quiz" image="Message" id="NBK-tm-ekR" userLabel="Quiz"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="quizTable" destination="hZd-u1-35Q" id="qwv-vq-ng3"/>
@@ -489,7 +489,7 @@
         <scene sceneID="UBV-mx-ZkR">
             <objects>
                 <navigationController id="sfe-79-bqS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Course" id="XqU-QO-zyi"/>
+                    <tabBarItem key="tabBarItem" title="Course" image="Class" id="XqU-QO-zyi"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gx1-4p-Mbc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -507,7 +507,7 @@
         <scene sceneID="s2F-ZU-yXp">
             <objects>
                 <navigationController id="a50-Gr-uAw" userLabel="My Class" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Course" id="58x-Nf-ZY6" userLabel="My Class"/>
+                    <tabBarItem key="tabBarItem" title="Course" image="Class" id="58x-Nf-ZY6" userLabel="My Class"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="z5H-0D-R9t">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -529,29 +529,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="gSG-Fw-65z" userLabel="Statistics">
-                                <rect key="frame" x="31" y="321" width="71" height="30"/>
+                                <rect key="frame" x="31" y="375" width="71" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Quiz Links"/>
                                 <connections>
                                     <action selector="showQuiz:" destination="fFf-se-EIt" eventType="touchUpInside" id="Qnr-5h-3Si"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="courseName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QYn-V0-5U6">
-                                <rect key="frame" x="34" y="99" width="217" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="courseName" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QYn-V0-5U6">
+                                <rect key="frame" x="34" y="99" width="266" height="89"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="courseDesc" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ryb-8J-Tdn">
-                                <rect key="frame" x="34" y="134" width="247" height="57"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="courseDesc" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ryb-8J-Tdn">
+                                <rect key="frame" x="34" y="196" width="247" height="127"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ZHW-gp-Exw">
-                                <rect key="frame" x="34" y="269" width="79" height="30"/>
+                                <rect key="frame" x="31" y="334" width="79" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Attendance"/>
                                 <connections>
@@ -583,7 +583,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="QuizCell" id="a4Y-bH-iCL">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a4Y-bH-iCL" id="TIS-hJ-3jN">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -640,21 +640,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wLA-cI-243">
-                                <rect key="frame" x="20" y="64" width="123" height="21"/>
+                                <rect key="frame" x="20" y="68" width="123" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jtr-5s-GUJ">
-                                <rect key="frame" x="20" y="111" width="135" height="21"/>
+                                <rect key="frame" x="20" y="125" width="135" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="LOo-O6-Wyv">
-                                <rect key="frame" x="20" y="85" width="280" height="30"/>
+                                <rect key="frame" x="20" y="93" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -668,27 +668,27 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="2AI-4v-aqe">
-                                <rect key="frame" x="20" y="134" width="280" height="30"/>
+                                <rect key="frame" x="20" y="150" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course Number:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oCz-zm-5d9">
-                                <rect key="frame" x="20" y="12" width="135" height="21"/>
+                                <rect key="frame" x="20" y="14" width="135" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mTs-gq-WpN">
-                                <rect key="frame" x="20" y="168" width="102" height="21"/>
+                                <rect key="frame" x="20" y="184" width="102" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="FTw-Oq-gAt">
-                                <rect key="frame" x="20" y="192" width="280" height="30"/>
+                                <rect key="frame" x="20" y="210" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -697,14 +697,14 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BeK-vB-Qwh">
-                                <rect key="frame" x="20" y="227" width="87" height="21"/>
+                                <rect key="frame" x="20" y="242" width="87" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="VY6-bE-sjM">
-                                <rect key="frame" x="20" y="249" width="280" height="30"/>
+                                <rect key="frame" x="20" y="267" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -713,7 +713,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="1DI-in-xia">
-                                <rect key="frame" x="20" y="315" width="280" height="30"/>
+                                <rect key="frame" x="20" y="329" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -722,14 +722,14 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End Time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ten-qT-O8p">
-                                <rect key="frame" x="20" y="353" width="102" height="21"/>
+                                <rect key="frame" x="20" y="363" width="102" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="gYi-Fo-29X">
-                                <rect key="frame" x="20" y="379" width="280" height="30"/>
+                                <rect key="frame" x="20" y="390" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -738,27 +738,27 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sOD-S1-fow">
-                                <rect key="frame" x="20" y="288" width="102" height="21"/>
+                                <rect key="frame" x="20" y="300" width="102" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beacon  Link" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pin-ec-Jd4">
-                                <rect key="frame" x="20" y="417" width="98" height="21"/>
+                                <rect key="frame" x="20" y="421" width="98" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="beq-jE-Niy">
-                                <rect key="frame" x="20" y="440" width="280" height="30"/>
+                                <rect key="frame" x="20" y="445" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Courses" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PPy-mR-y7c">
-                                <rect key="frame" x="20" y="472" width="150" height="21"/>
+                                <rect key="frame" x="20" y="475" width="150" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -771,7 +771,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="Hj0-8d-9je">
-                                <rect key="frame" x="20" y="34" width="280" height="30"/>
+                                <rect key="frame" x="20" y="35" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -787,7 +787,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="New Class" id="XUd-zJ-FC5"/>
+                    <tabBarItem key="tabBarItem" title="New Class" image="New" id="XUd-zJ-FC5"/>
                     <connections>
                         <outlet property="beaconLink" destination="beq-jE-Niy" id="dug-ED-nLX"/>
                         <outlet property="classDescription" destination="2AI-4v-aqe" id="8Qb-Py-Shd"/>
@@ -846,7 +846,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Share" id="u9s-kA-GBy" userLabel="Share"/>
+                    <tabBarItem key="tabBarItem" title="Share" image="Tweet" id="u9s-kA-GBy" userLabel="Share"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ezg-3v-Jh2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -854,6 +854,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Class" width="30" height="30"/>
+        <image name="Message" width="30" height="30"/>
+        <image name="New" width="15" height="15"/>
+        <image name="Quiz" width="15" height="15"/>
+        <image name="Tweet" width="30" height="30"/>
         <image name="attending_logo.png" width="960" height="310"/>
     </resources>
     <inferredMetricsTieBreakers>
