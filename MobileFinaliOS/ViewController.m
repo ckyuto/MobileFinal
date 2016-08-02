@@ -43,9 +43,9 @@ static NSString *const kClientSecret = @"f479rQ_GhKQh4JpfvciHO-tQ";
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    self.myTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateProgressBar:) userInfo:nil repeats:YES];
+    self.myTimer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(updateProgressBar:) userInfo:nil repeats:YES];
     
-    
+    [NSThread sleepForTimeInterval:5.0f];
     if (!self.isAuthorized) {
         // Sign in.
         SEL finishedSelector = @selector(viewController:finishedWithAuth:error:);
@@ -65,7 +65,7 @@ static NSString *const kClientSecret = @"f479rQ_GhKQh4JpfvciHO-tQ";
 static float count =0;
 
 - (void)updateProgressBar:(NSTimer *)timer{
-    int load = 1 + arc4random_uniform(20);
+    int load = 1 + arc4random_uniform(100);
     count += load;
     if (count <=100){
         self.progressView.progress = (float)count/100.0f;
