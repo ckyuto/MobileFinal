@@ -110,13 +110,15 @@ static float count =0;
                                                         });
                                                         
                                                     }else{
-                                                        if([[userDict objectForKey:@"role"] isEqualToString:@"TEACHER"]){
-                                                            [self performSegueWithIdentifier:@"TeacherTabView" sender:self];
-                                                        }
-                                                        
-                                                        if([[userDict objectForKey:@"role"] isEqualToString:@"STUDENT"]){
-                                                            [self performSegueWithIdentifier:@"StudentTabView" sender:self];
-                                                        }
+                                                        dispatch_async(dispatch_get_main_queue(), ^{
+                                                            if([[userDict objectForKey:@"role"] isEqualToString:@"TEACHER"]){
+                                                                [self performSegueWithIdentifier:@"TeacherTabView" sender:self];
+                                                            }
+                                                            
+                                                            if([[userDict objectForKey:@"role"] isEqualToString:@"STUDENT"]){
+                                                                [self performSegueWithIdentifier:@"StudentTabView" sender:self];
+                                                            }
+                                                        });
                                                     }
                                                     
                                                 }
