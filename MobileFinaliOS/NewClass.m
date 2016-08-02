@@ -228,4 +228,8 @@ long endTimeInMs;
     return formattedDate;
 }
 
+- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [[self view] endEditing:YES];
+}
+
 @end
