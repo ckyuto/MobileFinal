@@ -104,7 +104,10 @@ static float count =0;
                                                     [Util setUserDict:userDict];
 
                                                     if([userDict objectForKey:@"role"] == (id)[NSNull null]){
-                                                        [self performSegueWithIdentifier:@"ConfigViewController" sender:self];
+                                                        dispatch_async(dispatch_get_main_queue(), ^{
+                                                            [self performSegueWithIdentifier:@"ConfigViewController" sender:self];
+                                                            
+                                                        });
                                                         
                                                     }else{
                                                         if([[userDict objectForKey:@"role"] isEqualToString:@"TEACHER"]){
