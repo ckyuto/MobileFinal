@@ -62,7 +62,7 @@
     [classDict setObject:[NSNumber numberWithLong:endDateInMs] forKey:@"endDate"];
     [classDict setObject:[NSNumber numberWithLong:startTimeInMs] forKey:@"startTime"];
     [classDict setObject:[NSNumber numberWithLong:endTimeInMs] forKey:@"endTime"];
-    [classDict setObject:self.beaconLink.text forKey:@"beaconLink"];
+    [classDict setObject:self.beaconLink.text forKey:@"beaconUrl"];
     [classDict setObject:self.times.text forKey:@"numOfCourse"];
     [classDict setObject:[[Util getUserDict] objectForKey:@"userName"] forKey:@"teacherUserName"];
     
