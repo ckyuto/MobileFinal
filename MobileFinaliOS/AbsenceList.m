@@ -112,7 +112,9 @@
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request
                                             completionHandler: ^(NSData *data, NSURLResponse *response, NSError *error) {
                                                 NSString *result = [Util showNSData:data];
-                                                self.rate.text = result;
+                                                dispatch_async(dispatch_get_main_queue(), ^{
+                                                    self.rate.text = result;
+                                                });
                                                 double attendance = [result doubleValue];
                                                 NSLog(@"%f",attendance);
                                                 
